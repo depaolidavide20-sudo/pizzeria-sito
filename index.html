@@ -1,113 +1,31 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="it">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2022.6">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pizzeria</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif}
+header{height:100vh;background:url('https://images.unsplash.com/photo-1548365328-9f547fb0953c') center/cover no-repeat;display:flex;align-items:center;justify-content:center;color:white}
+.hero{text-align:center;background:rgba(0,0,0,0.6);padding:40px;border-radius:10px}
+button{padding:12px 20px;border:none;border-radius:8px;background:black;color:white;cursor:pointer}
+section{padding:40px}
+</style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="it"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1">&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1">&lt;title&gt;Pizzeria&lt;/title&gt;</p>
-<p class="p1">&lt;link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet"&gt;</p>
-<p class="p1">&lt;style&gt;</p>
-<p class="p1">body{margin:0;font-family:Inter, sans-serif;color:#222}</p>
-<p class="p1">header{height:100vh;background:url('https://images.unsplash.com/photo-1548365328-9f547fb0953c') center/cover no-repeat;display:flex;align-items:center;justify-content:center;position:relative}</p>
-<p class="p1">header::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.6)}</p>
-<p class="p1">.hero{position:relative;color:white;text-align:center;max-width:800px}</p>
-<p class="p1">.hero h1{font-family:"Playfair Display";font-size:56px;margin:0}</p>
-<p class="p1">.btn{background:#000;color:#fff;padding:14px 28px;border-radius:12px;border:none;cursor:pointer;font-size:16px}</p>
-<p class="p1">section{padding:80px 20px;max-width:1100px;margin:auto}</p>
-<p class="p1">.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}</p>
-<p class="p1">.card{padding:25px;border-radius:16px;box-shadow:0 10px 25px rgba(0,0,0,.08)}</p>
-<p class="p1">.map{border-radius:16px;overflow:hidden}</p>
-<p class="p1">footer{text-align:center;padding:30px;color:#777}</p>
-<p class="p1">.modal{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center}</p>
-<p class="p1">.modal-content{background:#fff;padding:30px;border-radius:16px;width:90%;max-width:400px}</p>
-<p class="p1">input,textarea{width:100%;padding:12px;margin-top:10px;border-radius:10px;border:1px solid #ccc}</p>
-<p class="p1">&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;header&gt;</p>
-<p class="p1">&lt;div class="hero"&gt;</p>
-<p class="p1">&lt;h1&gt;Pizza Artigianale con Forno a Legna&lt;/h1&gt;</p>
-<p class="p1">&lt;p&gt;Impasto leggero, ingredienti genuini e opzioni senza glutine&lt;/p&gt;</p>
-<p class="p1">&lt;button class="btn" onclick="openModal()"&gt;Prenota Ora&lt;/button&gt;</p>
-<p class="p1">&lt;/div&gt;</p>
-<p class="p1">&lt;/header&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;section&gt;</p>
-<p class="p1">&lt;h2&gt;La nostra storia&lt;/h2&gt;</p>
-<p class="p1">&lt;p&gt;Tradizione, forno a legna e attenzione alla digeribilità dell'impasto. I clienti apprezzano la qualità e le opzioni senza glutine.&lt;/p&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;section&gt;</p>
-<p class="p1">&lt;h2&gt;Menu&lt;/h2&gt;</p>
-<p class="p1">&lt;div class="cards"&gt;</p>
-<p class="p1">&lt;div class="card"&gt;Le Pizze&lt;/div&gt;</p>
-<p class="p1">&lt;div class="card"&gt;Pizza Senza Glutine&lt;/div&gt;</p>
-<p class="p1">&lt;div class="card"&gt;Dolci Artigianali&lt;/div&gt;</p>
-<p class="p1">&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;section&gt;</p>
-<p class="p1">&lt;h2&gt;Senza Glutine&lt;/h2&gt;</p>
-<p class="p1">&lt;p&gt;Pizza senza glutine leggera, non unta e altamente digeribile.&lt;/p&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;section&gt;</p>
-<p class="p1">&lt;h2&gt;Recensioni&lt;/h2&gt;</p>
-<p class="p1">&lt;div class="cards"&gt;</p>
-<p class="p1">&lt;div class="card"&gt;"Pizza buonissima, serviti in un batter d'occhio."&lt;/div&gt;</p>
-<p class="p1">&lt;div class="card"&gt;"Impasto leggero e ingredienti genuini."&lt;/div&gt;</p>
-<p class="p1">&lt;div class="card"&gt;"La migliore pizza senza glutine."&lt;/div&gt;</p>
-<p class="p1">&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;section&gt;</p>
-<p class="p1">&lt;h2&gt;Contatti&lt;/h2&gt;</p>
-<p class="p1">&lt;p&gt;Telefono: &lt;a href="tel:0185312963"&gt;0185 312963&lt;/a&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;div class="map"&gt;</p>
-<p class="p1">&lt;iframe src="https://www.google.com/maps?q=pizzeria&amp;output=embed" width="100%" height="350" style="border:0"&gt;&lt;/iframe&gt;</p>
-<p class="p1">&lt;/div&gt;</p>
-<p class="p1">&lt;br&gt;</p>
-<p class="p1">&lt;button class="btn" onclick="openModal()"&gt;Prenota Ora&lt;/button&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;div class="modal" id="modal"&gt;</p>
-<p class="p1">&lt;div class="modal-content"&gt;</p>
-<p class="p1">&lt;h3&gt;Prenota un tavolo&lt;/h3&gt;</p>
-<p class="p1">&lt;input placeholder="Nome"&gt;</p>
-<p class="p1">&lt;input placeholder="Telefono"&gt;</p>
-<p class="p1">&lt;input type="date"&gt;</p>
-<p class="p1">&lt;input type="time"&gt;</p>
-<p class="p1">&lt;textarea placeholder="Note"&gt;&lt;/textarea&gt;</p>
-<p class="p1">&lt;br&gt;&lt;br&gt;</p>
-<p class="p1">&lt;button class="btn"&gt;Invia&lt;/button&gt;</p>
-<p class="p1">&lt;button class="btn" onclick="closeModal()"&gt;Chiudi&lt;/button&gt;</p>
-<p class="p1">&lt;/div&gt;</p>
-<p class="p1">&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;footer&gt;</p>
-<p class="p1">© 2026 Pizzeria</p>
-<p class="p1">&lt;/footer&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;script&gt;</p>
-<p class="p1">function openModal(){document.getElementById('modal').style.display='flex'}</p>
-<p class="p1">function closeModal(){document.getElementById('modal').style.display='none'}</p>
-<p class="p1">&lt;/script&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+
+<header>
+<div class="hero">
+<h1>Pizza Artigianale</h1>
+<p>Impasto leggero e ingredienti genuini</p>
+<button>Prenota Ora</button>
+</div>
+</header>
+
+<section>
+<h2>Menu</h2>
+<p>Le Pizze - Senza Glutine - Dolci</p>
+</section>
+
 </body>
 </html>
