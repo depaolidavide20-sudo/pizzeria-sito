@@ -113,6 +113,7 @@
     .modal-box h3{font-size:42px;margin-bottom:8px}
     .modal-box p{margin:0 0 20px;color:var(--muted);line-height:1.7}
     .wa-float{position:fixed;bottom:20px;right:20px;background:var(--wa);color:#fff;width:60px;height:60px;padding:0;box-shadow:0 8px 25px rgba(0,0,0,.3);z-index:100;border-radius:50%}
+    .mobile-bookbar{display:none}
     @media (max-width:920px){
       .nav{flex-wrap:wrap}
       .brand{min-width:auto}
@@ -123,24 +124,71 @@
       .brand img{width:110px}
     }
     @media (max-width:780px){
-      .container{width:min(var(--max),calc(100% - 22px))}
-      .nav{padding:12px 0}
+      body{padding-bottom:88px}
+      .container{width:min(var(--max),calc(100% - 18px))}
+      .topbar{background:linear-gradient(180deg,rgba(9,8,7,.94),rgba(9,8,7,.82));backdrop-filter:blur(14px)}
+      .nav{padding:10px 0;min-height:auto;align-items:flex-start;gap:10px}
       .nav-links{display:none}
-      .brand img{width:118px}
-      .since{font-size:12px;letter-spacing:2px}
-      h1{font-size:54px}
-      .hero-text p{font-size:18px}
-      .hero-actions{display:grid;grid-template-columns:1fr}
-      .cta,.btn-secondary,.google-btn{width:100%;text-align:center}
-      .grid-2{grid-template-columns:1fr}
-      .showcase-top{flex-direction:column;align-items:flex-start}
-      .showcase-title{max-width:100%}
-      .showcase-price{font-size:22px}
-      .section{padding:72px 0}
-      .booking-card,.story-panel,.review,.contact-card,.gluten-box,.cta-band,.showcase-overlay{padding:22px}
-      .cta-band{flex-direction:column;align-items:flex-start}
-      .lang-switcher{justify-content:flex-end}
-      .wa-float{bottom:16px;right:16px}
+      .nav-right{width:100%;display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:center}
+      .nav-right > .cta{display:none}
+      .lang-switcher{justify-content:flex-start;width:100%;margin:0}
+      .lang-btn{padding:8px 10px;font-size:12px}
+      .brand{gap:10px;align-items:center;width:100%}
+      .brand img{width:120px}
+      .since{font-size:11px;letter-spacing:2px}
+      .hero{min-height:auto;background-position:center center}
+      .hero-grid{min-height:auto;padding:34px 0 22px;gap:16px}
+      h1{font-size:40px;line-height:.98;margin-bottom:10px;max-width:100%}
+      .hero-text p{font-size:16px;line-height:1.55;margin:0 0 16px;max-width:100%}
+      .hero-actions{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:14px}
+      .cta,.btn-secondary,.google-btn{width:100%;text-align:center;justify-content:center;min-height:52px;padding:14px 18px;font-size:15px;border-radius:18px}
+      .proofs{grid-template-columns:1fr;gap:10px}
+      .proof{padding:14px;border-radius:16px}
+      .proof strong{font-size:22px}
+      .proof span{font-size:13px;line-height:1.45}
+      .booking-card{margin-left:0;max-width:none;padding:18px;border-radius:22px;background:linear-gradient(180deg,rgba(18,14,11,.84),rgba(18,14,11,.74))}
+      .booking-card h3{font-size:28px}
+      .booking-card p{font-size:15px;line-height:1.52}
+      .form{gap:10px}
+      .grid-2{grid-template-columns:1fr;gap:10px}
+      input,textarea,select{padding:14px 14px;font-size:16px;border-radius:14px}
+      .section{padding:48px 0}
+      .section-title{margin-bottom:18px}
+      .section-title h2{font-size:34px;line-height:1.02}
+      .section-title p{font-size:15px;line-height:1.62}
+      .story,.menu-showcase,.gluten-box,.review-grid,.contact-grid{grid-template-columns:1fr;gap:16px}
+      .story-panel,.review,.contact-card,.gluten-box,.cta-band,.showcase-overlay{padding:18px}
+      .story-image{min-height:240px;border-radius:22px}
+      .story-stats{grid-template-columns:1fr 1fr;gap:10px}
+      .showcase-card{min-height:320px;border-radius:24px}
+      .showcase-top{flex-direction:column;align-items:flex-start;gap:6px}
+      .showcase-title{max-width:100%;font-size:32px}
+      .showcase-price{font-size:20px}
+      .showcase-line{width:92px;margin-bottom:14px}
+      .showcase-text{font-size:14px;line-height:1.58;margin-bottom:12px}
+      .showcase-tags{gap:8px}
+      .showcase-tags span{padding:8px 12px;font-size:12px}
+      .gluten-box img{border-radius:14px}
+      .review{padding-top:22px;border-radius:20px}
+      .review p{font-size:15px;line-height:1.62}
+      .google-score{font-size:15px;line-height:1.45}
+      .cta-band{flex-direction:column;align-items:flex-start;gap:12px;border-radius:24px}
+      .cta-band h3{font-size:28px}
+      .cta-band p{font-size:15px;line-height:1.58}
+      .contact-list{gap:12px;margin:18px 0}
+      .contact-item p,.contact-item a,.contact-item strong{font-size:15px;line-height:1.55}
+      .map-wrap{border-radius:22px}
+      .map-wrap iframe{min-height:280px}
+      .modal{padding:12px}
+      .modal-box{padding:20px;border-radius:22px}
+      .modal-box h3{font-size:30px}
+      .modal-box p{font-size:15px;line-height:1.58}
+      .footer-row{gap:10px;font-size:13px}
+      .wa-float{bottom:84px;right:14px;width:58px;height:58px}
+      .mobile-bookbar{display:flex;position:fixed;left:10px;right:10px;bottom:12px;z-index:110;background:rgba(16,13,10,.94);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.08);box-shadow:0 18px 36px rgba(0,0,0,.34);border-radius:22px;padding:10px;gap:10px}
+      .mobile-bookbar .cta,.mobile-bookbar .btn-secondary{min-height:50px;font-size:15px;padding:12px 14px;border-radius:16px}
+      .mobile-bookbar .cta{flex:1}
+      .mobile-bookbar .btn-secondary{width:auto;min-width:58px;padding:0 14px}
     }
   </style>
 </head>
@@ -406,6 +454,13 @@
   <a href="https://wa.me/393XXXXXXXXX" target="_blank" class="wa-float" aria-label="WhatsApp">
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" viewBox="0 0 24 24"><path d="M20.52 3.48A11.8 11.8 0 0012.01 0C5.38 0 .01 5.37 0 12c0 2.11.55 4.17 1.6 6L0 24l6.18-1.6A11.94 11.94 0 0012.01 24C18.64 24 24 18.63 24 12c0-3.2-1.25-6.2-3.48-8.52zM12.01 21.8c-1.8 0-3.57-.48-5.12-1.39l-.37-.22-3.67.95.98-3.58-.24-.37A9.77 9.77 0 012.2 12c0-5.4 4.4-9.8 9.8-9.8 2.62 0 5.08 1.02 6.93 2.87A9.72 9.72 0 0121.8 12c0 5.4-4.4 9.8-9.79 9.8zm5.39-7.34c-.29-.15-1.72-.85-1.99-.94-.27-.1-.47-.15-.67.15-.2.29-.77.94-.95 1.14-.17.2-.35.22-.64.07-.29-.15-1.24-.46-2.36-1.46-.87-.77-1.46-1.72-1.63-2.01-.17-.29-.02-.44.13-.59.13-.13.29-.35.44-.52.15-.17.2-.29.3-.49.1-.2.05-.37-.02-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.29-1.04 1.02-1.04 2.49 0 1.47 1.07 2.9 1.22 3.1.15.2 2.11 3.22 5.11 4.52.71.31 1.27.5 1.7.64.71.22 1.35.19 1.86.12.57-.08 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.12-.26-.2-.55-.35z"/></svg>
   </a>
+
+  <div class="mobile-bookbar">
+    <button class="cta" onclick="openModal()"><span data-key="book_now">Prenota ora</span></button>
+    <a class="btn-secondary" href="tel:0185312963" aria-label="Chiama">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.054 15.054 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.56 3.58.56a1 1 0 011 1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.19 2.46.56 3.58a1 1 0 01-.25 1.01l-2.19 2.2z"/></svg>
+    </a>
+  </div>
 
   <script>
     const translations = {
