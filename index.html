@@ -126,7 +126,7 @@
     @media (max-width:780px){
       body{padding-bottom:88px}
       .container{width:min(var(--max),calc(100% - 18px))}
-      .topbar{background:linear-gradient(180deg,rgba(9,8,7,.94),rgba(9,8,7,.82));backdrop-filter:blur(14px)}
+      .topbar{background:linear-gradient(180deg,rgba(9,8,7,.97),rgba(9,8,7,.88));backdrop-filter:blur(16px)}
       .nav{padding:10px 0;min-height:auto;align-items:flex-start;gap:10px}
       .nav-links{display:none}
       .nav-right{width:100%;display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:center}
@@ -134,35 +134,30 @@
       .lang-switcher{justify-content:flex-start;width:100%;margin:0}
       .lang-btn{padding:8px 10px;font-size:12px}
       .brand{gap:10px;align-items:center;width:100%}
-      .brand img{width:120px}
+      .brand img{width:124px}
       .since{font-size:11px;letter-spacing:2px}
       .hero{min-height:auto;background-position:center center}
-      .hero-grid{min-height:auto;padding:34px 0 22px;gap:16px}
-      h1{font-size:40px;line-height:.98;margin-bottom:10px;max-width:100%}
-      .hero-text p{font-size:16px;line-height:1.55;margin:0 0 16px;max-width:100%}
-      .hero-actions{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:14px}
+      .hero-grid{min-height:auto;padding:30px 0 18px;gap:14px}
+      .booking-card{display:none}
+      h1{font-size:38px;line-height:.98;margin-bottom:10px;max-width:100%;text-wrap:balance}
+      .hero-text p{font-size:15px;line-height:1.55;margin:0 0 14px;max-width:100%}
+      .hero-actions{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:12px}
       .cta,.btn-secondary,.google-btn{width:100%;text-align:center;justify-content:center;min-height:52px;padding:14px 18px;font-size:15px;border-radius:18px}
       .proofs{grid-template-columns:1fr;gap:10px}
-      .proof{padding:14px;border-radius:16px}
+      .proof{padding:14px;border-radius:16px;background:rgba(15,12,9,.56)}
       .proof strong{font-size:22px}
       .proof span{font-size:13px;line-height:1.45}
-      .booking-card{margin-left:0;max-width:none;padding:18px;border-radius:22px;background:linear-gradient(180deg,rgba(18,14,11,.84),rgba(18,14,11,.74))}
-      .booking-card h3{font-size:28px}
-      .booking-card p{font-size:15px;line-height:1.52}
-      .form{gap:10px}
-      .grid-2{grid-template-columns:1fr;gap:10px}
-      input,textarea,select{padding:14px 14px;font-size:16px;border-radius:14px}
-      .section{padding:48px 0}
+      .section{padding:46px 0}
       .section-title{margin-bottom:18px}
-      .section-title h2{font-size:34px;line-height:1.02}
+      .section-title h2{font-size:32px;line-height:1.02;text-wrap:balance}
       .section-title p{font-size:15px;line-height:1.62}
       .story,.menu-showcase,.gluten-box,.review-grid,.contact-grid{grid-template-columns:1fr;gap:16px}
       .story-panel,.review,.contact-card,.gluten-box,.cta-band,.showcase-overlay{padding:18px}
       .story-image{min-height:240px;border-radius:22px}
       .story-stats{grid-template-columns:1fr 1fr;gap:10px}
-      .showcase-card{min-height:320px;border-radius:24px}
+      .showcase-card{min-height:300px;border-radius:24px}
       .showcase-top{flex-direction:column;align-items:flex-start;gap:6px}
-      .showcase-title{max-width:100%;font-size:32px}
+      .showcase-title{max-width:100%;font-size:30px}
       .showcase-price{font-size:20px}
       .showcase-line{width:92px;margin-bottom:14px}
       .showcase-text{font-size:14px;line-height:1.58;margin-bottom:12px}
@@ -173,7 +168,7 @@
       .review p{font-size:15px;line-height:1.62}
       .google-score{font-size:15px;line-height:1.45}
       .cta-band{flex-direction:column;align-items:flex-start;gap:12px;border-radius:24px}
-      .cta-band h3{font-size:28px}
+      .cta-band h3{font-size:27px}
       .cta-band p{font-size:15px;line-height:1.58}
       .contact-list{gap:12px;margin:18px 0}
       .contact-item p,.contact-item a,.contact-item strong{font-size:15px;line-height:1.55}
@@ -185,8 +180,11 @@
       .modal-box p{font-size:15px;line-height:1.58}
       .footer-row{gap:10px;font-size:13px}
       .wa-float{bottom:84px;right:14px;width:58px;height:58px}
-      .mobile-bookbar{display:flex;position:fixed;left:10px;right:10px;bottom:12px;z-index:110;background:rgba(16,13,10,.94);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.08);box-shadow:0 18px 36px rgba(0,0,0,.34);border-radius:22px;padding:10px;gap:10px}
+      .mobile-bookbar{display:flex;position:fixed;left:10px;right:10px;bottom:12px;z-index:110;background:rgba(16,13,10,.95);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.08);box-shadow:0 18px 36px rgba(0,0,0,.34);border-radius:22px;padding:10px;gap:10px}
       .mobile-bookbar .cta,.mobile-bookbar .btn-secondary{min-height:50px;font-size:15px;padding:12px 14px;border-radius:16px}
+      .mobile-bookbar .cta{flex:1}
+      .mobile-bookbar .btn-secondary{width:auto;min-width:58px;padding:0 14px}
+    }
       .mobile-bookbar .cta{flex:1}
       .mobile-bookbar .btn-secondary{width:auto;min-width:58px;padding:0 14px}
     }
