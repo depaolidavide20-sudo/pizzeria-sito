@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>La Bitta - Pizzeria & Ristorante</title>
-  <meta name="description" content="Pizzeria e Ristorante a Chiavari. La vera pizza in forno a legna, specialità di mare e un menù 100% senza glutine." />
+  <meta name="description" content="Pizzeria e Ristorante a Chiavari. Pizza in forno a legna, specialità di mare e menù senza glutine." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -20,672 +20,187 @@
       --shadow:0 24px 70px rgba(0,0,0,.42);
       --radius:26px;
       --max:1180px;
+      --wa:#25D366;
     }
-
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:Inter, sans-serif;
-      background:linear-gradient(180deg,#090807 0%, #13100d 100%);
-      color:var(--text);
-    }
-
+    body{margin:0;font-family:Inter,sans-serif;background:linear-gradient(180deg,#090807 0%,#13100d 100%);color:var(--text)}
     a{text-decoration:none;color:inherit}
     img{display:block;max-width:100%}
     .container{width:min(var(--max),calc(100% - 32px));margin:0 auto}
-
-    .topbar{
-      position:sticky;
-      top:0;
-      z-index:30;
-      background:rgba(9,8,7,.36);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid rgba(255,255,255,.04);
-    }
-
-    
-
-    .logo-fixed:hover{
-      transform:scale(1.05);
-    }
-
-    .nav{
-      min-height:82px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:18px;
-    }
-
-    .brand strong{
-      display:block;
-      font-family:"Cormorant Garamond", serif;
-      font-size:34px;
-      line-height:1;
-      letter-spacing:.2px;
-    }
-
-    .brand span{
-      color:var(--muted);
-      font-size:12px;
-      letter-spacing:2px;
-      text-transform:uppercase;
-    }
-
-    .nav-links{
-      display:flex;
-      gap:26px;
-      align-items:center;
-    }
-
-    .nav-links a{
-      color:#f0e8dc;
-      font-size:15px;
-    }
-
-    .cta,.btn-secondary{
-      border:0;
-      cursor:pointer;
-      border-radius:999px;
-      padding:14px 24px;
-      font-weight:700;
-      font-size:16px;
-      transition:.2s transform ease,.2s opacity ease;
-    }
-
-    .cta:hover,.btn-secondary:hover{transform:translateY(-1px)}
-
-    .cta{
-      color:#1b1408;
-      background:linear-gradient(135deg,var(--gold),var(--gold2));
-      box-shadow:0 12px 28px rgba(215,178,109,.24);
-    }
-
-    .btn-secondary{
-      background:transparent;
-      color:#fff;
-      border:1px solid rgba(255,255,255,.15);
-    }
-
-    .hero{
-      min-height:100vh;
-      display:flex;
-      align-items:flex-start;
-      background:
-        linear-gradient(180deg, rgba(0,0,0,.10) 0%, rgba(0,0,0,.18) 55%, rgba(0,0,0,.35) 100%),
-        url('https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
-    }
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:28px;
-      align-items:end;
-      min-height:calc(100vh - 82px);
-      padding:120px 0 70px;
-    }
-
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:12px;
-      color:#f2d28f;
-      text-transform:uppercase;
-      letter-spacing:3px;
-      font-size:13px;
-      margin-bottom:18px;
-      text-shadow:0 2px 12px rgba(0,0,0,.35);
-    }
-
-    .eyebrow:before{
-      content:"";
-      width:42px;
-      height:1px;
-      background:var(--gold);
-    }
-
-    h1,h2,h3{
-      font-family:"Cormorant Garamond", serif;
-      margin:0;
-      letter-spacing:.1px;
-    }
-
-    h1{
-      font-size:clamp(52px,6.6vw,90px);
-      line-height:.94;
-      max-width:900px;
-      margin-bottom:18px;
-      text-shadow:0 4px 24px rgba(0,0,0,.35);
-    }
-
-    .hero-text p{
-      font-size:21px;
-      line-height:1.7;
-      color:#f7efe4;
-      max-width:760px;
-      margin:0 0 28px;
-      text-shadow:0 3px 16px rgba(0,0,0,.28);
-    }
-
-    .hero-actions{
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-      margin-bottom:26px;
-    }
-
-    .proofs{
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:16px;
-      max-width:880px;
-    }
-
-    .proof{
-      background:rgba(20,15,11,.38);
-      border:1px solid rgba(255,255,255,.14);
-      border-radius:18px;
-      padding:18px;
-      box-shadow:var(--shadow);
-      backdrop-filter:blur(6px);
-    }
-
-    .proof strong{
-      display:block;
-      font-size:28px;
-      margin-bottom:4px;
-    }
-
-    .proof span{
-      display:block;
-      color:#f0e7db;
-      line-height:1.45;
-      font-size:14px;
-    }
-
-    .booking-card{
-      background:rgba(18,14,11,.72);
-      border:1px solid rgba(255,255,255,.12);
-      border-radius:30px;
-      padding:28px;
-      box-shadow:var(--shadow);
-      backdrop-filter:blur(8px);
-      max-width:520px;
-      margin-left:auto;
-    }
-
-    .booking-card h3{
-      font-size:33px;
-      margin-bottom:10px;
-    }
-
-    .booking-card p{
-      margin:0 0 18px;
-      color:var(--muted);
-      line-height:1.65;
-    }
-
+    .topbar{position:sticky;top:0;z-index:30;background:rgba(9,8,7,.48);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.04)}
+    .nav{min-height:92px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;justify-content:flex-start;gap:16px;min-width:260px}
+    .brand img{width:140px;height:auto}
+    .since{color:#f2d28f;text-transform:uppercase;letter-spacing:3px;font-size:13px;white-space:nowrap}
+    .nav-links{display:flex;gap:22px;align-items:center;flex-wrap:wrap;justify-content:center}
+    .nav-links a{color:#f0e8dc;font-size:15px}
+    .nav-right{display:flex;align-items:center;gap:10px}
+    .lang-switcher{display:flex;align-items:center;gap:8px}
+    .lang-btn{background:transparent;border:1px solid rgba(255,255,255,.14);color:#fff;border-radius:999px;padding:8px 12px;font:inherit;cursor:pointer;font-size:13px}
+    .lang-btn.active{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#1b1408;border-color:transparent;font-weight:700}
+    .cta,.btn-secondary,.google-btn,.wa-float{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;cursor:pointer;border-radius:999px;padding:14px 24px;font-weight:700;font-size:16px;transition:.2s transform ease,.2s opacity ease}
+    .cta:hover,.btn-secondary:hover,.google-btn:hover,.wa-float:hover{transform:translateY(-1px)}
+    .cta{color:#1b1408;background:linear-gradient(135deg,var(--gold),var(--gold2));box-shadow:0 12px 28px rgba(215,178,109,.24)}
+    .btn-secondary{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.15)}
+    .hero{min-height:100vh;display:flex;align-items:flex-start;background:linear-gradient(180deg,rgba(0,0,0,.10) 0%,rgba(0,0,0,.18) 55%,rgba(0,0,0,.35) 100%),url('https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat}
+    .hero-grid{display:grid;grid-template-columns:1fr;gap:28px;align-items:end;min-height:calc(100vh - 92px);padding:120px 0 70px}
+    h1,h2,h3{font-family:"Cormorant Garamond",serif;margin:0;letter-spacing:.1px}
+    h1{font-size:clamp(52px,6.6vw,90px);line-height:.94;max-width:900px;margin-bottom:18px;text-shadow:0 4px 24px rgba(0,0,0,.35)}
+    .hero-text p{font-size:21px;line-height:1.7;color:#f7efe4;max-width:760px;margin:0 0 28px;text-shadow:0 3px 16px rgba(0,0,0,.28)}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:26px}
+    .proofs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;max-width:880px}
+    .proof{background:rgba(20,15,11,.38);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:18px;box-shadow:var(--shadow);backdrop-filter:blur(6px)}
+    .proof strong{display:block;font-size:28px;margin-bottom:4px}
+    .proof span{display:block;color:#f0e7db;line-height:1.45;font-size:14px}
+    .booking-card{background:rgba(18,14,11,.72);border:1px solid rgba(255,255,255,.12);border-radius:30px;padding:28px;box-shadow:var(--shadow);backdrop-filter:blur(8px);max-width:520px;margin-left:auto}
+    .booking-card h3{font-size:33px;margin-bottom:10px}
+    .booking-card p{margin:0 0 18px;color:var(--muted);line-height:1.65}
     .form{display:grid;gap:12px}
     .grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-
-    input,textarea,select{
-      width:100%;
-      padding:15px 16px;
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.11);
-      background:rgba(255,255,255,.05);
-      color:#fff;
-      font:inherit;
-      outline:none;
-    }
-
+    input,textarea,select{width:100%;padding:15px 16px;border-radius:16px;border:1px solid rgba(255,255,255,.11);background:rgba(255,255,255,.05);color:#fff;font:inherit;outline:none}
     input::placeholder,textarea::placeholder{color:#c2b4a2}
     .hint{font-size:12px;color:var(--muted);line-height:1.5}
-
     .section{padding:96px 0}
     .section-title{max-width:780px;margin-bottom:28px}
-
-    .kicker{
-      display:block;
-      text-transform:uppercase;
-      letter-spacing:2px;
-      color:var(--gold);
-      font-size:12px;
-      margin-bottom:10px;
-    }
-
-    .section-title h2{
-      font-size:clamp(38px,5vw,58px);
-      margin-bottom:12px;
-    }
-
-    .section-title p{
-      margin:0;
-      color:var(--muted);
-      line-height:1.8;
-      font-size:17px;
-    }
-
-    .story{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:28px;
-      align-items:center;
-    }
-
-    .story-panel,.menu-card,.review,.contact-card,.gluten-box{
-      background:rgba(255,255,255,.04);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-    }
-
+    .kicker{display:block;text-transform:uppercase;letter-spacing:2px;color:var(--gold);font-size:12px;margin-bottom:10px}
+    .section-title h2{font-size:clamp(38px,5vw,58px);margin-bottom:12px}
+    .section-title p{margin:0;color:var(--muted);line-height:1.8;font-size:17px}
+    .story{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+    .story-panel,.review,.contact-card,.gluten-box{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
     .story-panel{padding:34px}
-
-    .story-stats{
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:16px;
-      margin-top:26px;
-    }
-
-    .story-image{
-      min-height:560px;
-      border-radius:28px;
-      border:1px solid var(--line);
-      box-shadow:var(--shadow);
-      background:
-        linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,.18)),
-        url('IMG_0222.jpg') center/cover no-repeat;
-    }
-
-    .menu-grid,.review-grid,.contact-grid{
-      display:grid;
-      gap:20px;
-    }
-
-    .menu-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-
-    .menu-card{padding:26px}
-
-    .menu-card h3{
-      font-size:31px;
-      margin-bottom:8px;
-    }
-
-    .menu-card p{
-      margin:0 0 18px;
-      color:var(--muted);
-      line-height:1.7;
-    }
-
-    .menu-card ul{
-      list-style:none;
-      margin:0;
-      padding:0;
-      display:grid;
-      gap:10px;
-    }
-
-    .menu-card li{
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
-      padding-bottom:10px;
-      border-bottom:1px dashed rgba(255,255,255,.08);
-    }
-
-    .menu-card li span:last-child{color:var(--gold2)}
-
-    .menu-showcase{
-      display:grid;
-      grid-template-columns:repeat(2, minmax(0,1fr));
-      gap:28px;
-    }
-
-    .showcase-card{
-      position:relative;
-      min-height:520px;
-      border-radius:34px;
-      overflow:hidden;
-      box-shadow:var(--shadow);
-      border:1px solid rgba(255,255,255,.08);
-      display:flex;
-      align-items:flex-end;
-    }
-
-    .showcase-overlay{
-      width:100%;
-      padding:34px;
-      background:linear-gradient(180deg, rgba(0,0,0,.02) 0%, rgba(0,0,0,.16) 36%, rgba(0,0,0,.74) 100%);
-    }
-
-    .showcase-top{
-      display:flex;
-      justify-content:space-between;
-      gap:18px;
-      align-items:flex-end;
-      margin-bottom:14px;
-    }
-
-    .showcase-title{
-      font-size:clamp(36px,4vw,58px);
-      line-height:.95;
-      max-width:70%;
-    }
-
-    .showcase-price{
-      font-size:26px;
-      color:var(--gold2);
-      white-space:nowrap;
-    }
-
-    .showcase-line{
-      width:130px;
-      height:2px;
-      background:rgba(255,255,255,.7);
-      margin-bottom:18px;
-    }
-
-    .showcase-text{
-      max-width:560px;
-      color:#f4ecdf;
-      font-size:17px;
-      line-height:1.7;
-      margin:0 0 20px;
-    }
-
-    .showcase-tags{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-    }
-
-    .showcase-tags span{
-      padding:10px 16px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.22);
-      background:rgba(255,255,255,.08);
-    }
-
-    .gluten-box{
-      padding:34px;
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:26px;
-      align-items:center;
-    }
-
-    .gluten-box p{
-      margin:0;
-      color:var(--muted);
-      line-height:1.8;
-    }
-
+    .story-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:26px}
+    .story-image{min-height:560px;border-radius:28px;border:1px solid var(--line);box-shadow:var(--shadow);background:linear-gradient(180deg,rgba(0,0,0,.06),rgba(0,0,0,.18)),url('IMG_0222.jpg') center/cover no-repeat}
+    .menu-showcase{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+    .showcase-card{position:relative;min-height:520px;border-radius:34px;overflow:hidden;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.08);display:flex;align-items:flex-end;background-size:cover;background-position:center}
+    .showcase-overlay{width:100%;padding:34px;background:linear-gradient(180deg,rgba(0,0,0,.02) 0%,rgba(0,0,0,.16) 36%,rgba(0,0,0,.74) 100%)}
+    .showcase-top{display:flex;justify-content:space-between;gap:18px;align-items:flex-end;margin-bottom:14px}
+    .showcase-title{font-size:clamp(36px,4vw,58px);line-height:.95;max-width:70%}
+    .showcase-price{font-size:26px;color:var(--gold2);white-space:nowrap}
+    .showcase-line{width:130px;height:2px;background:rgba(255,255,255,.7);margin-bottom:18px}
+    .showcase-text{max-width:560px;color:#f4ecdf;font-size:17px;line-height:1.7;margin:0 0 20px}
+    .showcase-tags{display:flex;flex-wrap:wrap;gap:10px}
+    .showcase-tags span{padding:10px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.08)}
+    .gluten-box{padding:34px;display:grid;grid-template-columns:1.15fr .85fr;gap:26px;align-items:flex-start}
     .gluten-points{display:grid;gap:12px}
-
-    .gluten-pill{
-      border-radius:16px;
-      padding:14px 16px;
-      border:1px solid rgba(255,255,255,.09);
-      background:rgba(255,255,255,.03);
-    }
-
-    .review-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-
-    .review{padding:26px}
-
-    .stars{
-      color:var(--gold2);
-      letter-spacing:2px;
-      margin-bottom:16px;
-    }
-
-    .review p{
-      margin:0 0 18px;
-      line-height:1.8;
-      color:#f8f0e6;
-    }
-
-    .review strong{
-      display:block;
-      font-size:15px;
-    }
-
-    .review span{
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    .cta-band{
-      margin-top:34px;
-      padding:40px;
-      border-radius:30px;
-      background:linear-gradient(135deg, rgba(215,178,109,.15), rgba(255,255,255,.03));
-      border:1px solid rgba(255,255,255,.09);
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:18px;
-    }
-
-    .cta-band h3{
-      font-size:40px;
-      margin-bottom:8px;
-    }
-
-    .cta-band p{
-      margin:0;
-      color:var(--muted);
-      line-height:1.7;
-    }
-
-    .contact-grid{grid-template-columns:.95fr 1.05fr}
-
+    .gluten-pill{border-radius:16px;padding:14px 16px;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.03)}
+    .review-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+    .review{padding:26px;position:relative}
+    .review-g{position:absolute;top:16px;right:16px;opacity:.85}
+    .stars{color:var(--gold2);letter-spacing:2px;margin-bottom:16px}
+    .review p{margin:0 0 18px;line-height:1.8;color:#f8f0e6}
+    .review strong{display:block;font-size:15px}
+    .review span{color:var(--muted);font-size:14px}
+    .google-score{text-align:center;margin-top:20px;margin-bottom:10px;font-size:18px;color:var(--gold2)}
+    .google-btn{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#1b1408}
+    .cta-band{margin-top:34px;padding:40px;border-radius:30px;background:linear-gradient(135deg,rgba(215,178,109,.15),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.09);display:flex;justify-content:space-between;align-items:center;gap:18px}
+    .cta-band h3{font-size:40px;margin-bottom:8px}
+    .cta-band p{margin:0;color:var(--muted);line-height:1.7}
+    .contact-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:20px}
     .contact-card{padding:30px}
-
-    .contact-card h3{
-      font-size:32px;
-      margin-bottom:16px;
-    }
-
-    .contact-list{
-      display:grid;
-      gap:16px;
-      margin:24px 0;
-    }
-
-    .contact-item{
-      border-bottom:1px solid rgba(255,255,255,.08);
-      padding-bottom:16px;
-    }
-
-    .contact-item small{
-      display:block;
-      color:var(--gold2);
-      text-transform:uppercase;
-      letter-spacing:1.5px;
-      margin-bottom:6px;
-      font-size:11px;
-    }
-
-    .contact-item strong,.contact-item a{
-      font-size:18px;
-    }
-
-    .contact-item p{
-      margin:0;
-      color:var(--muted);
-      line-height:1.7;
-    }
-
-    .map-wrap{
-      min-height:100%;
-      overflow:hidden;
-      border-radius:28px;
-      border:1px solid var(--line);
-      box-shadow:var(--shadow);
-      background:#111;
-    }
-
-    .map-wrap iframe{
-      width:100%;
-      height:100%;
-      min-height:520px;
-      border:0;
-      display:block;
-    }
-
-    footer{
-      padding:28px 0 40px;
-      border-top:1px solid rgba(255,255,255,.08);
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    .footer-row{
-      display:flex;
-      justify-content:space-between;
-      gap:16px;
-      flex-wrap:wrap;
-    }
-
-    .modal{
-      position:fixed;
-      inset:0;
-      display:none;
-      align-items:center;
-      justify-content:center;
-      background:rgba(7,6,5,.72);
-      backdrop-filter:blur(8px);
-      z-index:100;
-      padding:20px;
-    }
-
-    .modal-box{
-      position:relative;
-      width:min(620px,100%);
-      background:linear-gradient(180deg,#181511,#100f0d);
-      border:1px solid rgba(255,255,255,.1);
-      border-radius:28px;
-      padding:30px;
-      box-shadow:var(--shadow);
-    }
-
-    .modal-close{
-      position:absolute;
-      top:14px;
-      right:14px;
-      width:40px;
-      height:40px;
-      border-radius:50%;
-      border:1px solid rgba(255,255,255,.12);
-      background:transparent;
-      color:#fff;
-      cursor:pointer;
-      font-size:18px;
-    }
-
-    .modal-box h3{
-      font-size:42px;
-      margin-bottom:8px;
-    }
-
-    .modal-box p{
-      margin:0 0 20px;
-      color:var(--muted);
-      line-height:1.7;
-    }
-
-    @media (max-width:1080px){
-      .story,.gluten-box,.contact-grid,.menu-grid,.review-grid,.menu-showcase{grid-template-columns:1fr}
-      .story-image{min-height:420px}
-      .proofs{grid-template-columns:1fr}
-      .cta-band{flex-direction:column;align-items:flex-start}
+    .contact-list{display:grid;gap:16px;margin:24px 0}
+    .contact-item{border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:16px}
+    .contact-item small{display:block;color:var(--gold2);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px;font-size:11px}
+    .contact-item strong,.contact-item a{font-size:18px}
+    .contact-item p{margin:0;color:var(--muted);line-height:1.7}
+    .map-wrap{min-height:100%;overflow:hidden;border-radius:28px;border:1px solid var(--line);box-shadow:var(--shadow);background:#111}
+    .map-wrap iframe{width:100%;height:100%;min-height:520px;border:0;display:block}
+    footer{padding:28px 0 40px;border-top:1px solid rgba(255,255,255,.08);color:var(--muted);font-size:14px}
+    .footer-row{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:14px;text-align:center}
+    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(7,6,5,.72);backdrop-filter:blur(8px);z-index:100;padding:20px}
+    .modal-box{position:relative;width:min(620px,100%);background:linear-gradient(180deg,#181511,#100f0d);border:1px solid rgba(255,255,255,.1);border-radius:28px;padding:30px;box-shadow:var(--shadow)}
+    .modal-close{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.12);background:transparent;color:#fff;cursor:pointer;font-size:18px}
+    .modal-box h3{font-size:42px;margin-bottom:8px}
+    .modal-box p{margin:0 0 20px;color:var(--muted);line-height:1.7}
+    .wa-float{position:fixed;bottom:20px;right:20px;background:var(--wa);color:#fff;width:60px;height:60px;padding:0;box-shadow:0 8px 25px rgba(0,0,0,.3);z-index:100;border-radius:50%}
+    @media (max-width:920px){
+      .nav{flex-wrap:wrap}
+      .brand{min-width:auto}
+      .nav-right{width:100%;justify-content:space-between}
+      .proofs,.story,.menu-showcase,.gluten-box,.review-grid,.contact-grid{grid-template-columns:1fr}
+      .hero-grid{padding-top:96px}
       .booking-card{margin-left:0;max-width:none}
+      .brand img{width:110px}
     }
-
     @media (max-width:780px){
-      .nav{padding:14px 0;align-items:flex-start}
+      .container{width:min(var(--max),calc(100% - 22px))}
+      .nav{padding:12px 0}
       .nav-links{display:none}
+      .brand img{width:118px}
+      .since{font-size:12px;letter-spacing:2px}
       h1{font-size:54px}
+      .hero-text p{font-size:18px}
+      .hero-actions{display:grid;grid-template-columns:1fr}
+      .cta,.btn-secondary,.google-btn{width:100%;text-align:center}
       .grid-2{grid-template-columns:1fr}
+      .showcase-top{flex-direction:column;align-items:flex-start}
+      .showcase-title{max-width:100%}
+      .showcase-price{font-size:22px}
       .section{padding:72px 0}
-      .booking-card,.story-panel,.menu-card,.review,.contact-card,.gluten-box,.cta-band,.showcase-overlay{padding:22px}
-      .modal-box{padding:24px}
-      .modal-box h3{font-size:34px}
+      .booking-card,.story-panel,.review,.contact-card,.gluten-box,.cta-band,.showcase-overlay{padding:22px}
+      .cta-band{flex-direction:column;align-items:flex-start}
+      .lang-switcher{justify-content:flex-end}
+      .wa-float{bottom:16px;right:16px}
     }
   </style>
 </head>
 <body>
-  
   <div class="topbar">
     <div class="container nav">
-      <a href="#top" class="brand" style="display:flex; align-items:center; justify-content:flex-start; gap:16px;">
-        <img src="logo.png" alt="Logo" style="width:140px; height:auto;">
-        <div style="color:#f2d28f; text-transform:uppercase; letter-spacing:3px; font-size:13px;">Dal 1992</div>
+      <a href="#top" class="brand">
+        <img src="logo.png" alt="Logo">
+        <div class="since" data-key="since">Dal 1992</div>
       </a>
 
       <div class="nav-links">
-        <a href="#storia">La nostra storia</a>
-        <a href="#menu">Menu</a>
-        <a href="#glutenfree">Senza Glutine</a>
-        <a href="#recensioni">Recensioni</a>
-        <a href="#contatti">Contatti</a>
+        <a href="#storia" data-key="nav_story">La nostra storia</a>
+        <a href="#menu" data-key="nav_menu">Menu</a>
+        <a href="#glutenfree" data-key="nav_gluten">Senza Glutine</a>
+        <a href="#recensioni" data-key="nav_reviews">Recensioni</a>
+        <a href="#contatti" data-key="nav_contacts">Contatti</a>
       </div>
 
-      <button class="cta" onclick="openModal()">Prenota ora</button>
+      <div class="nav-right">
+        <div class="lang-switcher">
+          <button class="lang-btn active" id="btn-it" onclick="setLanguage('it')">IT</button>
+          <button class="lang-btn" id="btn-en" onclick="setLanguage('en')">EN</button>
+        </div>
+        <button class="cta" onclick="openModal()"><span data-key="book_now">Prenota ora</span></button>
+      </div>
     </div>
   </div>
 
   <section class="hero" id="top">
     <div class="container hero-grid">
       <div class="hero-text">
-        
-        <h1>Il Gusto Autentico della Tradizione</h1>
-        <p>
-          Pizzeria e Ristorante a Chiavari. La vera pizza in forno a legna,
-          specialità di mare e un menù 100% senza glutine.
-        </p>
-
+        <h1 data-key="hero_title">Il Gusto Autentico della Tradizione</h1>
+        <p data-key="hero_text">Pizzeria e Ristorante a Chiavari. La vera pizza in forno a legna, specialità di mare e un menù 100% senza glutine.</p>
         <div class="hero-actions">
-          <button class="cta" onclick="openModal()">Prenota ora</button>
-          <a class="btn-secondary" href="tel:0185312963">Chiama 0185 312963</a>
+          <button class="cta" onclick="openModal()"><span data-key="book_now">Prenota ora</span></button>
+          <a class="btn-secondary" href="tel:0185312963"><span data-key="call_now">Chiama 0185 312963</span></a>
         </div>
-
         <div class="proofs">
-          <div class="proof">
-            <strong>4,1/5</strong>
-            <span>Valutazione media da oltre 1.100 recensioni online.</span>
-          </div>
-          <div class="proof">
-            <strong>Forno a legna</strong>
-            <span>Cottura autentica, profumo intenso e pizza memorabile.</span>
-          </div>
-          <div class="proof">
-            <strong>Senza glutine</strong>
-            <span>Una proposta chiara che allarga il pubblico e aumenta fiducia.</span>
-          </div>
+          <div class="proof"><strong data-key="proof_rating_value">4,1/5</strong><span data-key="proof_rating_text">Valutazione media da oltre 1.100 recensioni online.</span></div>
+          <div class="proof"><strong data-key="proof_wood_value">Forno a legna</strong><span data-key="proof_wood_text">Cottura autentica, profumo intenso e pizza memorabile.</span></div>
+          <div class="proof"><strong data-key="proof_gf_value">Senza glutine</strong><span data-key="proof_gf_text">Una proposta chiara che allarga il pubblico e aumenta fiducia.</span></div>
         </div>
       </div>
-
       <aside class="booking-card">
-        <h3>Prenota il tuo tavolo</h3>
-        <p>Un form rapido, elegante e ad alta conversione per trasformare la visita in prenotazione.</p>
+        <h3 data-key="booking_title">Prenota il tuo tavolo</h3>
+        <p data-key="booking_text">Un form rapido, elegante e ad alta conversione per trasformare la visita in prenotazione.</p>
         <form class="form" onsubmit="submitBooking(event)">
-          <input type="text" placeholder="Nome e cognome" required>
+          <input type="text" data-ph-it="Nome e cognome" data-ph-en="Full name" placeholder="Nome e cognome" required>
           <div class="grid-2">
-            <input type="tel" placeholder="Telefono" required>
-            <input type="number" placeholder="Persone" min="1" max="20" required>
+            <input type="tel" data-ph-it="Telefono" data-ph-en="Phone" placeholder="Telefono" required>
+            <input type="number" data-ph-it="Persone" data-ph-en="Guests" placeholder="Persone" min="1" max="20" required>
           </div>
           <div class="grid-2">
             <input type="date" required>
             <input type="time" required>
           </div>
-          <textarea rows="4" placeholder="Richieste speciali, allergie, preferenze..."></textarea>
-          <button class="cta" type="submit">Invia richiesta</button>
-          <div class="hint">Questo form può essere collegato facilmente a email, WhatsApp o Google Sheets.</div>
+          <textarea rows="4" data-ph-it="Richieste speciali, allergie, preferenze..." data-ph-en="Special requests, allergies, preferences..." placeholder="Richieste speciali, allergie, preferenze..."></textarea>
+          <button class="cta" type="submit"><span data-key="send_request">Invia richiesta</span></button>
+          <div class="hint" data-key="booking_hint">Questo form apre direttamente WhatsApp con il messaggio già pronto da inviare.</div>
         </form>
       </aside>
     </div>
@@ -695,119 +210,73 @@
     <div class="container story">
       <div class="story-panel">
         <div class="section-title">
-          <span class="kicker">Tradizione e Passione</span>
-          <h2>La Bitta: il calore di casa, dal 1992.</h2>
-          <p>
-            Nata nel cuore di Chiavari oltre 30 anni fa, La Bitta è il luogo dove la tradizione della pizza cotta nel forno a legna incontra la freschezza dei sapori liguri e del nostro mare.
-          </p>
-          <p style="margin-top:16px;color:var(--muted);line-height:1.8;font-size:17px;">
-            Il nostro segreto? Un impasto leggero, ingredienti scelti con cura e una dedizione che si tramanda di generazione in generazione. Che tu stia cercando una cena in famiglia, un'uscita con amici o un pasto sicuro senza glutine, qui troverai sempre un sorriso ad accoglierti.
-          </p>
+          <span class="kicker" data-key="story_kicker">Tradizione e Passione</span>
+          <h2 data-key="story_title">La Bitta: il calore di casa, dal 1992.</h2>
+          <p data-key="story_p1">Nata nel cuore di Chiavari oltre 30 anni fa, La Bitta è il luogo dove la tradizione della pizza cotta nel forno a legna incontra la freschezza dei sapori liguri e del nostro mare.</p>
+          <p style="margin-top:16px;color:var(--muted);line-height:1.8;font-size:17px" data-key="story_p2">Il nostro segreto? Un impasto leggero, ingredienti scelti con cura e una dedizione che si tramanda di generazione in generazione. Che tu stia cercando una cena in famiglia, un'uscita con amici o un pasto sicuro senza glutine, qui troverai sempre un sorriso ad accoglierti.</p>
         </div>
-
         <div class="story-stats">
-          <div class="proof" style="background:rgba(255,255,255,.04);">
-            <strong>30+</strong>
-            <span>Anni di Esperienza</span>
-          </div>
-          <div class="proof" style="background:rgba(255,255,255,.04);">
-            <strong>1M+</strong>
-            <span>Pizze Sfornate</span>
-          </div>
+          <div class="proof" style="background:rgba(255,255,255,.04)"><strong data-key="story_stat1_v">30+</strong><span data-key="story_stat1_t">Anni di Esperienza</span></div>
+          <div class="proof" style="background:rgba(255,255,255,.04)"><strong data-key="story_stat2_v">1M+</strong><span data-key="story_stat2_t">Pizze Sfornate</span></div>
         </div>
       </div>
-
       <div class="story-image" aria-label="Pizza premium"></div>
     </div>
   </section>
 
   <section class="section" id="menu">
     <div class="container">
-      <div class="section-title" style="text-align:center; max-width: 980px; margin: 0 auto 38px;">
-        <span class="kicker" style="font-size:14px; letter-spacing:3px;">Le nostre specialità</span>
-        <h2 style="font-size: clamp(42px, 5.5vw, 74px); margin-bottom: 14px;">
-          Cotti a Puntino, <span style="color: var(--gold2); font-style: italic; font-weight: 500;">Serviti con Amore</span>
-        </h2>
-        <p style="font-size: 18px; max-width: 900px; margin: 0 auto;">
-          Scopri i piatti più amati dai nostri clienti. Dal nostro storico forno a legna alle delizie del mar ligure.
-        </p>
+      <div class="section-title" style="text-align:center;max-width:980px;margin:0 auto 38px;">
+        <span class="kicker" style="font-size:14px;letter-spacing:3px;" data-key="menu_kicker">Le nostre specialità</span>
+        <h2 style="font-size:clamp(42px,5.5vw,74px);margin-bottom:14px;"><span data-key="menu_title_a">Cotti a Puntino,</span> <span style="color:var(--gold2);font-style:italic;font-weight:500;" data-key="menu_title_b">Serviti con Amore</span></h2>
+        <p style="font-size:18px;max-width:900px;margin:0 auto;" data-key="menu_intro">Scopri i piatti più amati dai nostri clienti. Dal nostro storico forno a legna alle delizie del mar ligure.</p>
       </div>
-
       <div class="menu-showcase">
-        <article class="showcase-card" style="background:url('IMG_0223.jpg') center/cover no-repeat;">
+        <article class="showcase-card" style="background-image:url('IMG_0223.jpg')">
           <div class="showcase-overlay">
             <div class="showcase-top">
-              <h3 class="showcase-title">Pizza della Casa</h3>
+              <h3 class="showcase-title" data-key="menu_card1_title">Pizza della Casa</h3>
               <div class="showcase-price">€14,50</div>
             </div>
             <div class="showcase-line"></div>
-            <p class="showcase-text">
-              Pomodoro, mozzarella fior di latte, ingredienti selezionati e cottura al forno a legna per un equilibrio perfetto tra gusto, struttura e fragranza.
-            </p>
-            <div class="showcase-tags">
-              <span>Forno a legna</span>
-              <span>Molto richiesta</span>
-            </div>
+            <p class="showcase-text" data-key="menu_card1_text">Pomodoro, mozzarella fior di latte, ingredienti selezionati e cottura al forno a legna per un equilibrio perfetto tra gusto, struttura e fragranza.</p>
+            <div class="showcase-tags"><span data-key="menu_card1_tag1">Forno a legna</span><span data-key="menu_card1_tag2">Molto richiesta</span></div>
           </div>
         </article>
-
-        <article class="showcase-card" style="background:url('IMG_0226.jpg') center/cover no-repeat;">
+        <article class="showcase-card" style="background-image:url('IMG_0226.jpg')">
           <div class="showcase-overlay">
             <div class="showcase-top">
-              <h3 class="showcase-title">Spaghetti allo Scoglio</h3>
+              <h3 class="showcase-title" data-key="menu_card2_title">Spaghetti allo Scoglio</h3>
               <div class="showcase-price">€18,00</div>
             </div>
             <div class="showcase-line"></div>
-            <p class="showcase-text">
-              Pasta, cozze, vongole, gamberi e prezzemolo fresco, per un primo di mare ricco, profumato e pensato per chi cerca sapore vero.
-            </p>
-            <div class="showcase-tags">
-              <span>Pesce fresco</span>
-              <span>Specialità</span>
-            </div>
+            <p class="showcase-text" data-key="menu_card2_text">Pasta, cozze, vongole, gamberi e prezzemolo fresco, per un primo di mare ricco, profumato e pensato per chi cerca sapore vero.</p>
+            <div class="showcase-tags"><span data-key="menu_card2_tag1">Pesce fresco</span><span data-key="menu_card2_tag2">Specialità</span></div>
           </div>
         </article>
       </div>
-
-      <div style="margin-top: 26px; display:flex; justify-content:center;">
-        <button class="cta" onclick="openModal()">Prenota ora</button>
-      </div>
+      <div style="margin-top:26px;display:flex;justify-content:center;"><button class="cta" onclick="openModal()"><span data-key="book_now">Prenota ora</span></button></div>
     </div>
   </section>
 
   <section class="section" id="glutenfree">
     <div class="container">
-      <div class="gluten-box" style="align-items:flex-start; grid-template-columns: 1.15fr .85fr;">
+      <div class="gluten-box">
         <div>
           <div class="section-title" style="margin-bottom:20px;">
-            <span class="kicker">Senza Glutine</span>
-            <h2>L'Eccellenza del Senza Glutine</h2>
-            <p>
-              La pizza è un alimento a cui è difficile rinunciare quando si è costretti a fare una dieta priva di glutine.
-            </p>
-            <p style="margin-top:12px;">
-              Trovare una pizzeria o un ristorante per celiaci è alle volte arduo. Il Ristorante Pizzeria La Bitta è fiero di garantire a tutti i clienti, anche quelli con determinate intolleranze alimentari come la celiachia, la possibilità di poter godersi una pizza o un piatto di cucina con gli amici.
-            </p>
-            <p style="margin-top:12px;">
-              Le pizze con farine senza glutine sono adeguatamente cotte nel forno apposito, regolarmente certificato.
-            </p>
-            <p style="margin-top:12px;">
-              Per gli intolleranti al lattosio abbiamo inoltre la possibilità di preparare pizze usando come ingrediente il formaggio vegano, un sostituto vegetale del formaggio perfetto anche per chi segue un'alimentazione vegana.
-            </p>
+            <span class="kicker" data-key="gf_kicker">Senza Glutine</span>
+            <h2 data-key="gf_title">L'Eccellenza del Senza Glutine</h2>
+            <p data-key="gf_p1">La pizza è un alimento a cui è difficile rinunciare quando si è costretti a fare una dieta priva di glutine.</p>
+            <p style="margin-top:12px;" data-key="gf_p2">Trovare una pizzeria o un ristorante per celiaci è alle volte arduo. Il Ristorante Pizzeria La Bitta è fiero di garantire a tutti i clienti, anche quelli con determinate intolleranze alimentari come la celiachia, la possibilità di poter godersi una pizza o un piatto di cucina con gli amici.</p>
+            <p style="margin-top:12px;" data-key="gf_p3">Le pizze con farine senza glutine sono adeguatamente cotte nel forno apposito, regolarmente certificato.</p>
+            <p style="margin-top:12px;" data-key="gf_p4">Per gli intolleranti al lattosio abbiamo inoltre la possibilità di preparare pizze usando come ingrediente il formaggio vegano, un sostituto vegetale del formaggio perfetto anche per chi segue un'alimentazione vegana.</p>
           </div>
         </div>
-
-        <div style="display:grid; gap:18px; align-content:start;">
-          <div style="display:flex; align-items:center; justify-content:center; padding:20px; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); border-radius:20px;">
-            <img src="IMG_0227.png" alt="Certificazione AIC" style="max-width:100%; border-radius:16px; box-shadow:var(--shadow);">
+        <div style="display:grid;gap:18px;align-content:start;">
+          <div style="display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:20px;">
+            <img src="IMG_0227.png" alt="Certificazione AIC" style="max-width:100%;border-radius:16px;box-shadow:var(--shadow);">
           </div>
-
-          <div class="gluten-points" style="grid-template-columns:1fr;">
-            <div class="gluten-pill">Pizze senza glutine gustose e croccanti</div>
-            <div class="gluten-pill">Birra artigianale Gluten Free</div>
-            <div class="gluten-pill">Dolci della casa sicuri al 100%</div>
-            <div class="gluten-pill">Preparazioni in aree dedicate</div>
-          </div>
+          <img src="chef-gluten.jpg" alt="Chef pizza senza glutine" style="width:100%;border-radius:16px;box-shadow:var(--shadow);">
         </div>
       </div>
     </div>
@@ -816,70 +285,46 @@
   <section class="section" id="recensioni">
     <div class="container">
       <div class="section-title">
-        <span class="kicker">Recensioni</span>
-        <h2>Prova sociale reale, messa nel punto giusto per convincere.</h2>
-        <p>
-          Le recensioni fanno vendere. Per questo vanno mostrate dopo aver presentato il valore del locale.
-        </p>
+        <span class="kicker" data-key="rev_kicker">Recensioni</span>
+        <h2 data-key="rev_title">Le parole dei nostri clienti</h2>
+        <p data-key="rev_intro">Le recensioni aiutano a scegliere con fiducia. Ecco cosa dicono di noi.</p>
       </div>
-
       <div class="review-grid">
-        <article class="review" style="position:relative;">
-          <div style="position:absolute; top:16px; right:16px; opacity:0.8;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 48 48">
-              <path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.6 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.7 1.1 7.8 2.9l5.7-5.7C34.1 6.5 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.3-.4-3.5z"/>
-            </svg>
-          </div>
+        <article class="review">
+          <div class="review-g"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.6 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.7 1.1 7.8 2.9l5.7-5.7C34.1 6.5 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.3-.4-3.5z"/></svg></div>
           <div class="stars">★★★★★</div>
-          <p>"Pizza buonissima, serviti in un batter d'occhio, anche i dolci veramente buoni."</p>
-          <strong>Cliente verificato</strong>
-          <span>Recensione online</span>
+          <p data-key="rev_1">"Pizza buonissima, serviti in un batter d'occhio, anche i dolci veramente buoni."</p>
+          <strong data-key="rev_author">Cliente verificato</strong>
+          <span data-key="rev_source">Recensione online</span>
         </article>
-
-        <article class="review" style="position:relative;">
-          <div style="position:absolute; top:16px; right:16px; opacity:0.8;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 48 48">
-              <path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.6 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.7 1.1 7.8 2.9l5.7-5.7C34.1 6.5 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.3-.4-3.5z"/>
-            </svg>
-          </div>
+        <article class="review">
+          <div class="review-g"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.6 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.7 1.1 7.8 2.9l5.7-5.7C34.1 6.5 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.3-.4-3.5z"/></svg></div>
           <div class="stars">★★★★★</div>
-          <p>"Pizza leggera, impasto gradevole, buona cottura e ingredienti genuini."</p>
-          <strong>Cliente verificato</strong>
-          <span>Recensione online</span>
+          <p data-key="rev_2">"Pizza leggera, impasto gradevole, buona cottura e ingredienti genuini."</p>
+          <strong data-key="rev_author">Cliente verificato</strong>
+          <span data-key="rev_source">Recensione online</span>
         </article>
-
-        <article class="review" style="position:relative;">
-          <div style="position:absolute; top:16px; right:16px; opacity:0.8;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 48 48">
-              <path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.6 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.7 1.1 7.8 2.9l5.7-5.7C34.1 6.5 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.3-.4-3.5z"/>
-            </svg>
-          </div>
+        <article class="review">
+          <div class="review-g"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.6 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.7 1.1 7.8 2.9l5.7-5.7C34.1 6.5 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.3-.4-3.5z"/></svg></div>
           <div class="stars">★★★★★</div>
-          <p>"La pizza senza glutine è davvero ottima, leggera e molto digeribile."</p>
-          <strong>Cliente verificato</strong>
-          <span>Recensione online</span>
+          <p data-key="rev_3">"La pizza senza glutine è davvero ottima, leggera e molto digeribile."</p>
+          <strong data-key="rev_author">Cliente verificato</strong>
+          <span data-key="rev_source">Recensione online</span>
         </article>
       </div>
-
-      <div style="margin-top:20px; text-align:center;">
-        <div style="margin-bottom:10px; font-size:18px; color:var(--gold2);">
-          ★ 4.5 su Google • Oltre 1200 recensioni
-        </div>
-        <div style="margin-top:10px; display:flex; justify-content:center;">
-        <a class="cta" href="https://www.google.com/maps/search/?api=1&query=La+Bitta+Chiavari" target="_blank" style="display:inline-flex; align-items:center; gap:10px;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 48 48">
-            <path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.6 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.7 1.1 7.8 2.9l5.7-5.7C34.1 6.5 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.3-.4-3.5z"/>
-          </svg>
-          Lascia una recensione su Google
+      <div class="google-score" data-key="google_score">★ 4.5 su Google • Oltre 1200 recensioni</div>
+      <div style="margin-top:10px;display:flex;justify-content:center;">
+        <a class="google-btn" href="https://www.google.com/maps/place/La+Bitta+Chiavari+dal+1992+Pizzeria+Ristorante/@44.3135825,9.3227303,17z/data=!4m8!3m7!1s0x12d4987db6169fcd:0x46919de3b18f9c0b!8m2!3d44.3135825!4d9.3253052!9m1!1b1!16s%2Fg%2F1x5cwml_?authuser=0&entry=ttu&g_ep=EgoyMDI2MDQwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.6 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.7 1.1 7.8 2.9l5.7-5.7C34.1 6.5 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.3-.4-3.5z"/></svg>
+          <span data-key="google_btn">Lascia una recensione su Google</span>
         </a>
       </div>
-
       <div class="cta-band">
         <div>
-          <h3>Passa a trovarci quando vuoi.</h3>
-          <p>Puoi prenotare facilmente in pochi secondi.</p>
+          <h3 data-key="cta_title">Passa a trovarci quando vuoi.</h3>
+          <p data-key="cta_text">Puoi prenotare facilmente in pochi secondi.</p>
         </div>
-        <button class="cta" onclick="openModal()">Prenota ora</button>
+        <button class="cta" onclick="openModal()"><span data-key="book_now">Prenota ora</span></button>
       </div>
     </div>
   </section>
@@ -888,137 +333,159 @@
     <div class="container contact-grid">
       <div class="contact-card">
         <div class="section-title" style="margin-bottom:0;">
-          <span class="kicker">Contatti</span>
-          <h2>Vieni a Trovarci</h2>
-          <p>
-            Siamo nel cuore di Chiavari, pronti ad accoglierti in un ambiente caldo e familiare.
-          </p>
+          <span class="kicker" data-key="contact_kicker">Contatti</span>
+          <h2 data-key="contact_title">Vieni a Trovarci</h2>
+          <p data-key="contact_intro">Siamo nel cuore di Chiavari, pronti ad accoglierti in un ambiente caldo e familiare.</p>
         </div>
-
         <div class="contact-list">
           <div class="contact-item">
-            <small>Indirizzo</small>
-            <p>Corso Giuseppe Garibaldi, 99<br>16043 Chiavari GE, Italia</p>
+            <small data-key="contact_address_label">Indirizzo</small>
+            <p data-key="contact_address">Corso Giuseppe Garibaldi, 99<br>16043 Chiavari GE, Italia</p>
           </div>
-
           <div class="contact-item">
-            <small>Telefono</small>
+            <small data-key="contact_phone_label">Telefono</small>
             <a href="tel:0185312963"><strong>0185 312963</strong></a>
           </div>
-
           <div class="contact-item">
-            <small>Orari</small>
-            <p>Lun, Mer - Dom: 19:00 - 00:00<br>Chiuso il Martedì</p>
+            <small data-key="contact_hours_label">Orari</small>
+            <p data-key="contact_hours">Lun, Mer - Dom: 19:00 - 00:00<br>Chiuso il Martedì</p>
           </div>
         </div>
-
         <div style="display:flex;gap:12px;flex-wrap:wrap;">
-          <button class="cta" onclick="openModal()">Prenota ora</button>
-          <a class="btn-secondary" href="tel:0185312963">Chiama adesso</a>
+          <button class="cta" onclick="openModal()"><span data-key="book_now">Prenota ora</span></button>
+          <a class="btn-secondary" href="tel:0185312963"><span data-key="call_now_short">Chiama adesso</span></a>
         </div>
       </div>
-
-      <div class="map-wrap">
-        <iframe src="https://www.google.com/maps?q=Corso%20Giuseppe%20Garibaldi%2099%20Chiavari&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
+      <div class="map-wrap"><iframe src="https://www.google.com/maps?q=Corso%20Giuseppe%20Garibaldi%2099%20Chiavari&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
     </div>
   </section>
 
   <footer>
-    <div class="container footer-row" style="flex-direction:column; gap:14px; text-align:center;">
-      <div>© 2026 La Bitta - Pizzeria & Ristorante</div>
-      <div>Corso Giuseppe Garibaldi, 99 • Chiavari</div>
-      <div>
-        📞 <a href="tel:0185312963">0185 312963</a> • 
-        🕒 Lun, Mer - Dom: 19:00 - 00:00 (Chiuso Martedì)
-      </div>
-      <div>
-        <a href="#" target="_blank" style="margin-right:10px; display:inline-flex; align-items:center; gap:6px;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm5 5a5 5 0 110 10 5 5 0 010-10zm6.5-.88a1.12 1.12 0 110 2.24 1.12 1.12 0 010-2.24zM12 9a3 3 0 100 6 3 3 0 000-6z"/>
-        </svg>
-        Instagram
-      </a>
-      </div>
-    </div>
-  </footer>
     <div class="container footer-row">
-      <div>© 2026 Labitta - Pizzeria & Ristorante</div>
-      <div>Forno a legna • Senza glutine • Prenotazione rapida</div>
+      <div data-key="footer_copy">© 2026 La Bitta - Pizzeria & Ristorante</div>
+      <div data-key="footer_address">Corso Giuseppe Garibaldi, 99 • Chiavari</div>
+      <div><span>📞 </span><a href="tel:0185312963">0185 312963</a> • <span>🕒 </span><span data-key="footer_hours">Lun, Mer - Dom: 19:00 - 00:00 (Chiuso Martedì)</span></div>
+      <div>
+        <a href="#" target="_blank" style="display:inline-flex;align-items:center;gap:6px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm5 5a5 5 0 110 10 5 5 0 010-10zm6.5-.88a1.12 1.12 0 110 2.24 1.12 1.12 0 010-2.24zM12 9a3 3 0 100 6 3 3 0 000-6z"/></svg>
+          <span>Instagram</span>
+        </a>
+      </div>
     </div>
   </footer>
 
   <div class="modal" id="bookingModal">
     <div class="modal-box">
       <button class="modal-close" type="button" onclick="closeModal()">×</button>
-      <h3>Prenota il tuo tavolo</h3>
-      <p>Compila il form e verrai ricontattato per conferma. Il layout è già predisposto per essere collegato a email o WhatsApp.</p>
-
+      <h3 data-key="modal_title">Prenota il tuo tavolo</h3>
+      <p data-key="modal_text">Compila il form e verrai reindirizzato su WhatsApp con il messaggio già pronto da inviare.</p>
       <form class="form" onsubmit="submitBooking(event)">
         <div class="grid-2">
-          <input type="text" placeholder="Nome e cognome" required>
-          <input type="tel" placeholder="Telefono" required>
+          <input type="text" data-ph-it="Nome e cognome" data-ph-en="Full name" placeholder="Nome e cognome" required>
+          <input type="tel" data-ph-it="Telefono" data-ph-en="Phone" placeholder="Telefono" required>
         </div>
         <div class="grid-2">
           <input type="date" required>
           <input type="time" required>
         </div>
         <div class="grid-2">
-          <input type="number" placeholder="Numero di persone" min="1" max="20" required>
+          <input type="number" data-ph-it="Numero di persone" data-ph-en="Number of guests" placeholder="Numero di persone" min="1" max="20" required>
           <select>
-            <option value="">Preferenza tavolo</option>
-            <option>Sala interna</option>
-            <option>Vicino finestra</option>
-            <option>Indifferente</option>
+            <option value="" data-opt-it="Preferenza tavolo" data-opt-en="Table preference">Preferenza tavolo</option>
+            <option data-opt-it="Sala interna" data-opt-en="Indoor">Sala interna</option>
+            <option data-opt-it="Vicino finestra" data-opt-en="Near window">Vicino finestra</option>
+            <option data-opt-it="Indifferente" data-opt-en="No preference">Indifferente</option>
           </select>
         </div>
-        <textarea rows="4" placeholder="Intolleranze, occasioni speciali, richieste particolari..."></textarea>
-        <button class="cta" style="width:100%;margin-top:4px" type="submit">Invia richiesta di prenotazione</button>
+        <textarea rows="4" data-ph-it="Intolleranze, occasioni speciali, richieste particolari..." data-ph-en="Intolerances, special occasions, special requests..." placeholder="Intolleranze, occasioni speciali, richieste particolari..."></textarea>
+        <button class="cta" style="width:100%;margin-top:4px" type="submit"><span data-key="modal_send">Invia su WhatsApp</span></button>
       </form>
     </div>
   </div>
 
+  <a href="https://wa.me/393XXXXXXXXX" target="_blank" class="wa-float" aria-label="WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" viewBox="0 0 24 24"><path d="M20.52 3.48A11.8 11.8 0 0012.01 0C5.38 0 .01 5.37 0 12c0 2.11.55 4.17 1.6 6L0 24l6.18-1.6A11.94 11.94 0 0012.01 24C18.64 24 24 18.63 24 12c0-3.2-1.25-6.2-3.48-8.52zM12.01 21.8c-1.8 0-3.57-.48-5.12-1.39l-.37-.22-3.67.95.98-3.58-.24-.37A9.77 9.77 0 012.2 12c0-5.4 4.4-9.8 9.8-9.8 2.62 0 5.08 1.02 6.93 2.87A9.72 9.72 0 0121.8 12c0 5.4-4.4 9.8-9.79 9.8zm5.39-7.34c-.29-.15-1.72-.85-1.99-.94-.27-.1-.47-.15-.67.15-.2.29-.77.94-.95 1.14-.17.2-.35.22-.64.07-.29-.15-1.24-.46-2.36-1.46-.87-.77-1.46-1.72-1.63-2.01-.17-.29-.02-.44.13-.59.13-.13.29-.35.44-.52.15-.17.2-.29.3-.49.1-.2.05-.37-.02-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.29-1.04 1.02-1.04 2.49 0 1.47 1.07 2.9 1.22 3.1.15.2 2.11 3.22 5.11 4.52.71.31 1.27.5 1.7.64.71.22 1.35.19 1.86.12.57-.08 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.12-.26-.2-.55-.35z"/></svg>
+  </a>
+
   <script>
-function submitBooking(event){
-  event.preventDefault();
+    const translations = {
+      it: {
+        since:'Dal 1992', nav_story:'La nostra storia', nav_menu:'Menu', nav_gluten:'Senza Glutine', nav_reviews:'Recensioni', nav_contacts:'Contatti',
+        book_now:'Prenota ora', call_now:'Chiama 0185 312963', call_now_short:'Chiama adesso',
+        hero_title:'Il Gusto Autentico della Tradizione', hero_text:'Pizzeria e Ristorante a Chiavari. La vera pizza in forno a legna, specialità di mare e un menù 100% senza glutine.',
+        proof_rating_value:'4,1/5', proof_rating_text:'Valutazione media da oltre 1.100 recensioni online.', proof_wood_value:'Forno a legna', proof_wood_text:'Cottura autentica, profumo intenso e pizza memorabile.', proof_gf_value:'Senza glutine', proof_gf_text:'Una proposta chiara che allarga il pubblico e aumenta fiducia.',
+        booking_title:'Prenota il tuo tavolo', booking_text:'Un form rapido, elegante e ad alta conversione per trasformare la visita in prenotazione.', send_request:'Invia richiesta', booking_hint:'Questo form apre direttamente WhatsApp con il messaggio già pronto da inviare.',
+        story_kicker:'Tradizione e Passione', story_title:'La Bitta: il calore di casa, dal 1992.', story_p1:'Nata nel cuore di Chiavari oltre 30 anni fa, La Bitta è il luogo dove la tradizione della pizza cotta nel forno a legna incontra la freschezza dei sapori liguri e del nostro mare.', story_p2:'Il nostro segreto? Un impasto leggero, ingredienti scelti con cura e una dedizione che si tramanda di generazione in generazione. Che tu stia cercando una cena in famiglia, un\'uscita con amici o un pasto sicuro senza glutine, qui troverai sempre un sorriso ad accoglierti.', story_stat1_v:'30+', story_stat1_t:'Anni di Esperienza', story_stat2_v:'1M+', story_stat2_t:'Pizze Sfornate',
+        menu_kicker:'Le nostre specialità', menu_title_a:'Cotti a Puntino,', menu_title_b:'Serviti con Amore', menu_intro:'Scopri i piatti più amati dai nostri clienti. Dal nostro storico forno a legna alle delizie del mar ligure.', menu_card1_title:'Pizza della Casa', menu_card1_text:'Pomodoro, mozzarella fior di latte, ingredienti selezionati e cottura al forno a legna per un equilibrio perfetto tra gusto, struttura e fragranza.', menu_card1_tag1:'Forno a legna', menu_card1_tag2:'Molto richiesta', menu_card2_title:'Spaghetti allo Scoglio', menu_card2_text:'Pasta, cozze, vongole, gamberi e prezzemolo fresco, per un primo di mare ricco, profumato e pensato per chi cerca sapore vero.', menu_card2_tag1:'Pesce fresco', menu_card2_tag2:'Specialità',
+        gf_kicker:'Senza Glutine', gf_title:'L\'Eccellenza del Senza Glutine', gf_p1:'La pizza è un alimento a cui è difficile rinunciare quando si è costretti a fare una dieta priva di glutine.', gf_p2:'Trovare una pizzeria o un ristorante per celiaci è alle volte arduo. Il Ristorante Pizzeria La Bitta è fiero di garantire a tutti i clienti, anche quelli con determinate intolleranze alimentari come la celiachia, la possibilità di poter godersi una pizza o un piatto di cucina con gli amici.', gf_p3:'Le pizze con farine senza glutine sono adeguatamente cotte nel forno apposito, regolarmente certificato.', gf_p4:'Per gli intolleranti al lattosio abbiamo inoltre la possibilità di preparare pizze usando come ingrediente il formaggio vegano, un sostituto vegetale del formaggio perfetto anche per chi segue un\'alimentazione vegana.', gf_b1:'Pizze senza glutine gustose e croccanti', gf_b2:'Birra artigianale Gluten Free', gf_b3:'Dolci della casa sicuri al 100%', gf_b4:'Preparazioni in aree dedicate',
+        rev_kicker:'Recensioni', rev_title:'Le parole dei nostri clienti', rev_intro:'Le recensioni aiutano a scegliere con fiducia. Ecco cosa dicono di noi.', rev_1:'"Pizza buonissima, serviti in un batter d\'occhio, anche i dolci veramente buoni."', rev_2:'"Pizza leggera, impasto gradevole, buona cottura e ingredienti genuini."', rev_3:'"La pizza senza glutine è davvero ottima, leggera e molto digeribile."', rev_author:'Cliente verificato', rev_source:'Recensione online', google_score:'★ 4.5 su Google • Oltre 1200 recensioni', google_btn:'Lascia una recensione su Google', cta_title:'Passa a trovarci quando vuoi.', cta_text:'Puoi prenotare facilmente in pochi secondi.',
+        contact_kicker:'Contatti', contact_title:'Vieni a Trovarci', contact_intro:'Siamo nel cuore di Chiavari, pronti ad accoglierti in un ambiente caldo e familiare.', contact_address_label:'Indirizzo', contact_address:'Corso Giuseppe Garibaldi, 99<br>16043 Chiavari GE, Italia', contact_phone_label:'Telefono', contact_hours_label:'Orari', contact_hours:'Lun, Mer - Dom: 19:00 - 00:00<br>Chiuso il Martedì', footer_copy:'© 2026 La Bitta - Pizzeria & Ristorante', footer_address:'Corso Giuseppe Garibaldi, 99 • Chiavari', footer_hours:'Lun, Mer - Dom: 19:00 - 00:00 (Chiuso Martedì)',
+        modal_title:'Prenota il tuo tavolo', modal_text:'Compila il form e verrai reindirizzato su WhatsApp con il messaggio già pronto da inviare.', modal_send:'Invia su WhatsApp'
+      },
+      en: {
+        since:'Since 1992', nav_story:'Our Story', nav_menu:'Menu', nav_gluten:'Gluten Free', nav_reviews:'Reviews', nav_contacts:'Contacts',
+        book_now:'Book now', call_now:'Call 0185 312963', call_now_short:'Call now',
+        hero_title:'The Authentic Taste of Tradition', hero_text:'Pizzeria and restaurant in Chiavari. Authentic wood-fired pizza, seafood specialties and a 100% gluten-free menu.',
+        proof_rating_value:'4.1/5', proof_rating_text:'Average rating from more than 1,100 online reviews.', proof_wood_value:'Wood-fired oven', proof_wood_text:'Authentic baking, rich aroma and unforgettable pizza.', proof_gf_value:'Gluten free', proof_gf_text:'A clear offering that broadens the audience and builds trust.',
+        booking_title:'Book your table', booking_text:'A fast, elegant form designed to turn visits into bookings.', send_request:'Send request', booking_hint:'This form opens WhatsApp with a pre-filled message ready to send.',
+        story_kicker:'Tradition and Passion', story_title:'La Bitta: the warmth of home, since 1992.', story_p1:'Founded in the heart of Chiavari over 30 years ago, La Bitta is where the tradition of wood-fired pizza meets the freshness of Ligurian flavors and the taste of the sea.', story_p2:'Our secret? Light dough, carefully selected ingredients and dedication passed down from generation to generation. Whether you are looking for a family dinner, a night out with friends or a safe gluten-free meal, you will always find a warm welcome here.', story_stat1_v:'30+', story_stat1_t:'Years of Experience', story_stat2_v:'1M+', story_stat2_t:'Pizzas Baked',
+        menu_kicker:'Our specialties', menu_title_a:'Cooked to Perfection,', menu_title_b:'Served with Care', menu_intro:'Discover the dishes most loved by our guests. From our historic wood-fired oven to the delights of the Ligurian sea.', menu_card1_title:'House Pizza', menu_card1_text:'Tomato, fior di latte mozzarella, selected ingredients and wood-fired baking for the perfect balance of taste, structure and fragrance.', menu_card1_tag1:'Wood-fired', menu_card1_tag2:'Best seller', menu_card2_title:'Seafood Spaghetti', menu_card2_text:'Pasta, mussels, clams, prawns and fresh parsley for a rich, fragrant seafood first course full of true flavor.', menu_card2_tag1:'Fresh seafood', menu_card2_tag2:'Specialty',
+        gf_kicker:'Gluten Free', gf_title:'Excellence in Gluten-Free Dining', gf_p1:'Pizza is one of those foods that is hard to give up when you have to follow a gluten-free diet.', gf_p2:'Finding a pizzeria or restaurant suitable for celiacs can often be difficult. La Bitta is proud to guarantee all guests, including those with food intolerances such as celiac disease, the opportunity to enjoy a pizza or a dish with friends.', gf_p3:'Pizzas made with gluten-free flours are properly baked in a dedicated certified oven.', gf_p4:'For lactose-intolerant guests we can also prepare pizzas using vegan cheese, a plant-based alternative that is also perfect for those following a vegan diet.', gf_b1:'Tasty and crispy gluten-free pizzas', gf_b2:'Artisanal gluten-free beer', gf_b3:'Homemade desserts, 100% safe', gf_b4:'Preparation in dedicated areas',
+        rev_kicker:'Reviews', rev_title:'What our guests say', rev_intro:'Reviews help people choose with confidence. Here is what they say about us.', rev_1:'"Excellent pizza, served in no time, and the desserts are truly delicious."', rev_2:'"Light pizza, pleasant dough, great baking and genuine ingredients."', rev_3:'"The gluten-free pizza is truly excellent, light and very easy to digest."', rev_author:'Verified customer', rev_source:'Online review', google_score:'★ 4.5 on Google • Over 1200 reviews', google_btn:'Leave a review on Google', cta_title:'Come and visit us anytime.', cta_text:'You can book your table in just a few seconds.',
+        contact_kicker:'Contacts', contact_title:'Come Visit Us', contact_intro:'We are in the heart of Chiavari, ready to welcome you in a warm and friendly setting.', contact_address_label:'Address', contact_address:'Corso Giuseppe Garibaldi, 99<br>16043 Chiavari GE, Italy', contact_phone_label:'Phone', contact_hours_label:'Opening Hours', contact_hours:'Mon, Wed - Sun: 7:00 PM - 12:00 AM<br>Closed on Tuesday', footer_copy:'© 2026 La Bitta - Pizzeria & Restaurant', footer_address:'Corso Giuseppe Garibaldi, 99 • Chiavari', footer_hours:'Mon, Wed - Sun: 7:00 PM - 12:00 AM (Closed Tuesday)',
+        modal_title:'Book your table', modal_text:'Fill in the form and you will be redirected to WhatsApp with a pre-filled message ready to send.', modal_send:'Send on WhatsApp'
+      }
+    };
 
-  const inputs = event.target.querySelectorAll("input, textarea");
+    function setLanguage(lang){
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-key]').forEach(el => {
+        const key = el.dataset.key;
+        const value = translations[lang][key];
+        if (value !== undefined) {
+          if (value.includes('<br>')) el.innerHTML = value;
+          else el.textContent = value;
+        }
+      });
+      document.querySelectorAll('[data-ph-it][data-ph-en]').forEach(el => {
+        el.placeholder = lang === 'en' ? el.dataset.phEn : el.dataset.phIt;
+      });
+      document.querySelectorAll('option[data-opt-it][data-opt-en]').forEach(el => {
+        el.textContent = lang === 'en' ? el.dataset.optEn : el.dataset.optIt;
+      });
+      document.getElementById('btn-it').classList.toggle('active', lang === 'it');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    }
 
-  const nome = inputs[0].value;
-  const telefono = inputs[1].value;
-  const persone = inputs[2].value;
-  const data = inputs[3].value;
-  const ora = inputs[4].value;
-  const note = inputs[5].value;
+    function submitBooking(event){
+      event.preventDefault();
+      const fields = event.target.querySelectorAll('input, textarea, select');
+      const nome = fields[0]?.value || '';
+      const telefono = fields[1]?.value || '';
+      const persone = fields[2]?.value || '';
+      const data = fields[3]?.value || '';
+      const ora = fields[4]?.value || '';
+      const note = fields[5]?.value || '';
+      const lang = document.documentElement.lang || 'it';
+      const msg = lang === 'en'
+        ? `Hello, I would like to book a table:%0A%0AName: ${nome}%0APhone: ${telefono}%0AGuests: ${persone}%0ADate: ${data}%0ATime: ${ora}%0ANotes: ${note}`
+        : `Ciao, vorrei prenotare:%0A%0ANome: ${nome}%0ATelefono: ${telefono}%0APersone: ${persone}%0AData: ${data}%0AOra: ${ora}%0ANote: ${note}`;
+      const numero = '393XXXXXXXXX';
+      window.open(`https://wa.me/${numero}?text=${msg}`, '_blank');
+    }
 
-  const messaggio = `Ciao, vorrei prenotare:%0A%0ANome: ${nome}%0ATelefono: ${telefono}%0APersone: ${persone}%0AData: ${data}%0AOra: ${ora}%0ANote: ${note}`;
-
-  const numero = "393473454532"; // INSERISCI NUMERO CLIENTE
-
-  const url = `https://wa.me/${numero}?text=${messaggio}`;
-
-  window.open(url, "_blank");
-}
-
-function openModal(){
-  document.getElementById('bookingModal').style.display='flex';
-  document.body.style.overflow='hidden';
-}
-function closeModal(){
-  document.getElementById('bookingModal').style.display='none';
-  document.body.style.overflow='auto';
-}
-window.addEventListener('click', function(e){
-  const modal = document.getElementById('bookingModal');
-  if(e.target === modal) closeModal();
-});
-</script>
-
-<!-- WHATSAPP FLOAT BUTTON -->
-<a href="https://wa.me/393473454532" target="_blank" style="position:fixed; bottom:20px; right:20px; background:#25D366; color:white; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 25px rgba(0,0,0,.3); z-index:100;">
-  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" viewBox="0 0 24 24">
-    <path d="M20.52 3.48A11.8 11.8 0 0012.01 0C5.38 0 .01 5.37 0 12c0 2.11.55 4.17 1.6 6L0 24l6.18-1.6A11.94 11.94 0 0012.01 24C18.64 24 24 18.63 24 12c0-3.2-1.25-6.2-3.48-8.52zM12.01 21.8c-1.8 0-3.57-.48-5.12-1.39l-.37-.22-3.67.95.98-3.58-.24-.37A9.77 9.77 0 012.2 12c0-5.4 4.4-9.8 9.8-9.8 2.62 0 5.08 1.02 6.93 2.87A9.72 9.72 0 0121.8 12c0 5.4-4.4 9.8-9.79 9.8zm5.39-7.34c-.29-.15-1.72-.85-1.99-.94-.27-.1-.47-.15-.67.15-.2.29-.77.94-.95 1.14-.17.2-.35.22-.64.07-.29-.15-1.24-.46-2.36-1.46-.87-.77-1.46-1.72-1.63-2.01-.17-.29-.02-.44.13-.59.13-.13.29-.35.44-.52.15-.17.2-.29.3-.49.1-.2.05-.37-.02-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.29-1.04 1.02-1.04 2.49 0 1.47 1.07 2.9 1.22 3.1.15.2 2.11 3.22 5.11 4.52.71.31 1.27.5 1.7.64.71.22 1.35.19 1.86.12.57-.08 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.12-.26-.2-.55-.35z"/>
-  </svg>
-</a>
+    function openModal(){
+      document.getElementById('bookingModal').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(){
+      document.getElementById('bookingModal').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+    window.addEventListener('click', function(e){
+      const modal = document.getElementById('bookingModal');
+      if(e.target === modal) closeModal();
+    });
+  </script>
 </body>
 </html>
