@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    .mobile-menu-toggle,.mobile-menu-panel{display:none}
     :root{
       --bg:#0f0d0b;
       --panel:rgba(22,18,14,.74);
@@ -113,6 +114,10 @@
     .modal-box h3{font-size:42px;margin-bottom:8px}
     .modal-box p{margin:0 0 20px;color:var(--muted);line-height:1.7}
     .wa-float{position:fixed;bottom:20px;right:20px;background:var(--wa);color:#fff;width:60px;height:60px;padding:0;box-shadow:0 8px 25px rgba(0,0,0,.3);z-index:100;border-radius:50%}
+    .mobile-menu-toggle{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:#fff;border-radius:14px;width:46px;height:46px;align-items:center;justify-content:center;cursor:pointer}
+    .mobile-menu-panel{position:fixed;top:86px;right:12px;left:12px;z-index:120;background:rgba(14,11,8,.97);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:14px;box-shadow:0 22px 40px rgba(0,0,0,.38)}
+    .mobile-menu-panel a{display:block;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,.06);font-size:15px}
+    .mobile-menu-panel a:last-child{border-bottom:0}
     .mobile-bookbar{display:none}
     @media (max-width:920px){
       .nav{flex-wrap:wrap}
@@ -124,65 +129,81 @@
       .brand img{width:110px}
     }
     @media (max-width:780px){
-      .hero{background-position:center;}
-      .hero-grid{padding:20px 0 10px;align-items:flex-end}
-      h1{font-size:34px;line-height:1.05;margin-bottom:8px;letter-spacing:-0.5px}
-      .hero-text p{font-size:14px;opacity:.9;margin-bottom:10px}
-      .hero-text{background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.6) 60%,rgba(0,0,0,.9) 100%);padding:20px;border-radius:18px}
-      .hero-actions{display:none !important}
-      .proofs{display:none !important}
-      .hero-actions{display:none !important}
-      .proofs{display:none !important}
-      body{padding-bottom:88px}
+      .mobile-menu-toggle{display:inline-flex}
+      .mobile-menu-panel.open{display:block}
+      .hero{background-position:center center}
+      .hero-grid{padding:18px 0 8px;align-items:flex-end}
+      h1{font-size:30px;line-height:1.04;margin-bottom:6px;max-width:100%;text-wrap:balance}
+      .hero-text p{font-size:13px;line-height:1.5;margin:0 0 8px;max-width:100%}
+      .hero-text{background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.56) 58%,rgba(0,0,0,.88) 100%);padding:16px;border-radius:18px}
       .container{width:min(var(--max),calc(100% - 18px))}
       .topbar{background:linear-gradient(180deg,rgba(9,8,7,.97),rgba(9,8,7,.88));backdrop-filter:blur(16px)}
       .nav{padding:10px 0;min-height:auto;align-items:flex-start;gap:10px}
       .nav-links{display:none}
-      .nav-right{width:100%;display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:center}
+      .nav-right{width:auto;display:flex;gap:8px;align-items:center}
       .nav-right > .cta{display:none}
-      .lang-switcher{justify-content:flex-start;width:100%;margin:0}
+      .lang-switcher{justify-content:flex-start;margin:0}
       .lang-btn{padding:8px 10px;font-size:12px}
-      .brand{gap:10px;align-items:center;width:100%}
+      .brand{gap:10px;align-items:center;width:100%;min-width:0}
       .brand img{width:124px}
       .since{font-size:11px;letter-spacing:2px}
-      .hero{min-height:auto;background-position:center center}
-      .hero-grid{min-height:auto;padding:30px 0 18px;gap:14px}
-      .booking-card{display:none}
-      h1{font-size:38px;line-height:.98;margin-bottom:10px;max-width:100%;text-wrap:balance}
-      .hero-text p{font-size:15px;line-height:1.55;margin:0 0 14px;max-width:100%}
-      .hero-actions{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:12px}
+      .hero-actions{display:none !important}
+      .proofs{display:none !important}
       .cta,.btn-secondary,.google-btn{width:100%;text-align:center;justify-content:center;min-height:52px;padding:14px 18px;font-size:15px;border-radius:18px}
-      .proofs{grid-template-columns:1fr;gap:10px}
       .proof{padding:14px;border-radius:16px;background:rgba(15,12,9,.56)}
       .proof strong{font-size:22px}
       .proof span{font-size:13px;line-height:1.45}
-      .section{padding:46px 0}
+      .booking-card{display:none}
+      .section{padding:44px 0}
       .section-title{margin-bottom:18px}
-      .section-title h2{font-size:32px;line-height:1.02;text-wrap:balance}
-      .section-title p{font-size:15px;line-height:1.62}
+      .section-title h2{font-size:30px;line-height:1.03;text-wrap:balance}
+      .section-title p{font-size:14px;line-height:1.6}
       .story,.menu-showcase,.gluten-box,.review-grid,.contact-grid{grid-template-columns:1fr;gap:16px}
       .story-panel,.review,.contact-card,.gluten-box,.cta-band,.showcase-overlay{padding:18px}
-      .story-image{min-height:240px;border-radius:22px}
+      .story-image{min-height:220px;border-radius:22px;background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#111}
       .story-stats{grid-template-columns:1fr 1fr;gap:10px}
-      .showcase-card{min-height:300px;border-radius:24px}
+      .showcase-card{min-height:280px;border-radius:24px;background-size:contain !important;background-position:center !important;background-repeat:no-repeat !important;background-color:#111}
       .showcase-top{flex-direction:column;align-items:flex-start;gap:6px}
-      .showcase-title{max-width:100%;font-size:30px}
+      .showcase-title{max-width:100%;font-size:28px}
       .showcase-price{font-size:20px}
       .showcase-line{width:92px;margin-bottom:14px}
       .showcase-text{font-size:14px;line-height:1.58;margin-bottom:12px}
       .showcase-tags{gap:8px}
       .showcase-tags span{padding:8px 12px;font-size:12px}
-      .gluten-box img{border-radius:14px}
+      .gluten-box img{border-radius:14px;object-fit:contain;background:#111}
       .review{padding-top:22px;border-radius:20px}
-      .review p{font-size:15px;line-height:1.62}
-      .google-score{font-size:15px;line-height:1.45}
+      .review p{font-size:14px;line-height:1.6}
+      .google-score{font-size:14px;line-height:1.45}
       .cta-band{flex-direction:column;align-items:flex-start;gap:12px;border-radius:24px}
-      .cta-band h3{font-size:27px}
-      .cta-band p{font-size:15px;line-height:1.58}
+      .cta-band h3{font-size:25px}
+      .cta-band p{font-size:14px;line-height:1.58}
       .contact-list{gap:12px;margin:18px 0}
-      .contact-item p,.contact-item a,.contact-item strong{font-size:15px;line-height:1.55}
+      .contact-item p,.contact-item a,.contact-item strong{font-size:14px;line-height:1.55}
       .map-wrap{border-radius:22px}
-      .map-wrap iframe{min-height:280px}
+      .map-wrap iframe{min-height:260px}
+      .modal{padding:12px}
+      .modal-box{padding:20px;border-radius:22px}
+      .modal-box h3{font-size:28px}
+      .modal-box p{font-size:14px;line-height:1.58}
+      .footer-row{gap:10px;font-size:13px}
+      .wa-float{bottom:84px;right:14px;width:58px;height:58px}
+      .mobile-bookbar{display:flex;position:fixed;left:10px;right:10px;bottom:12px;z-index:110;background:rgba(16,13,10,.95);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.08);box-shadow:0 18px 36px rgba(0,0,0,.34);border-radius:22px;padding:10px;gap:10px}
+      .mobile-bookbar .cta,.mobile-bookbar .btn-secondary{min-height:50px;font-size:15px;padding:12px 14px;border-radius:16px}
+      .mobile-bookbar .cta{flex:1}
+      .mobile-bookbar .btn-secondary{width:auto;min-width:58px;padding:0 14px}
+    }
+
+    @media (max-width:480px){
+      h1{font-size:27px}
+      .hero-text p{font-size:12.5px}
+      .brand img{width:112px}
+      .showcase-card{min-height:250px}
+      .story-image{min-height:200px}
+    }
+
+    @media (max-width:780px){
+      .map-wrap iframe{min-height:260px}
+    }
       .modal{padding:12px}
       .modal-box{padding:20px;border-radius:22px}
       .modal-box h3{font-size:30px}
@@ -214,6 +235,10 @@
         <a href="#recensioni" data-key="nav_reviews">Recensioni</a>
         <a href="#contatti" data-key="nav_contacts">Contatti</a>
       </div>
+
+      <button class="mobile-menu-toggle" type="button" onclick="toggleMobileMenu()" aria-label="Apri menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg>
+      </button>
 
       <div class="nav-right">
         <div class="lang-switcher">
@@ -333,9 +358,16 @@
           </div>
           <img src="chef-gluten.jpg" alt="Chef pizza senza glutine" style="width:100%;border-radius:16px;box-shadow:var(--shadow);">
         </div>
-      </div>
     </div>
   </section>
+
+  <div class="mobile-menu-panel" id="mobileMenuPanel">
+    <a href="#storia" onclick="closeMobileMenu()" data-key="nav_story">La nostra storia</a>
+    <a href="#menu" onclick="closeMobileMenu()" data-key="nav_menu">Menu</a>
+    <a href="#glutenfree" onclick="closeMobileMenu()" data-key="nav_gluten">Senza Glutine</a>
+    <a href="#recensioni" onclick="closeMobileMenu()" data-key="nav_reviews">Recensioni</a>
+    <a href="#contatti" onclick="closeMobileMenu()" data-key="nav_contacts">Contatti</a>
+  </div>
 
   <section class="section" id="recensioni">
     <div class="container">
@@ -499,6 +531,16 @@
       }
     };
 
+    function toggleMobileMenu(){
+      const panel = document.getElementById('mobileMenuPanel');
+      panel.classList.toggle('open');
+    }
+
+    function closeMobileMenu(){
+      const panel = document.getElementById('mobileMenuPanel');
+      panel.classList.remove('open');
+    }
+
     function setLanguage(lang){
       document.documentElement.lang = lang;
       document.querySelectorAll('[data-key]').forEach(el => {
@@ -546,7 +588,12 @@
     }
     window.addEventListener('click', function(e){
       const modal = document.getElementById('bookingModal');
+      const menu = document.getElementById('mobileMenuPanel');
+      const toggle = document.querySelector('.mobile-menu-toggle');
       if(e.target === modal) closeModal();
+      if(menu && menu.classList.contains('open') && !menu.contains(e.target) && toggle && !toggle.contains(e.target)) {
+        closeMobileMenu();
+      }
     });
   </script>
 </body>
