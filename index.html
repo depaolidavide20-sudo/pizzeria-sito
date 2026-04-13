@@ -129,7 +129,7 @@
       .brand img{width:110px}
     }
     @media (max-width:780px){
-      .mobile-menu-toggle{display:inline-flex;position:static;top:auto;right:auto;flex:0 0 46px}
+      .mobile-menu-toggle{display:inline-flex;position:static;top:auto;right:auto;flex:0 0 46px;order:2}
       .mobile-menu-panel.open{display:block}
       .hero{min-height:52vh;background-position:center center}
       .hero-grid{padding:18px 0 6px;align-items:end;justify-items:center;min-height:52vh}
@@ -145,17 +145,18 @@
       .since{font-size:10px;letter-spacing:1.6px;white-space:nowrap}
       .nav-right{width:auto;display:flex;gap:8px;align-items:center;justify-content:flex-end;grid-column:3 / 4;padding-right:0;margin-left:0}
       .nav-right > .cta{display:none}
-      .lang-switcher{justify-content:flex-end;margin:0;gap:6px}
+      .lang-switcher{justify-content:flex-end;margin:0;gap:6px;order:1}
       .lang-btn{padding:7px 8px;font-size:11px}
       .hero-actions{display:none !important}
       .proofs{display:none !important}
       .cta,.btn-secondary,.google-btn{width:100%;text-align:center;justify-content:center;min-height:52px;padding:14px 18px;font-size:15px;border-radius:18px}
       .booking-card{display:none}
-      .section{padding:42px 0}
-      .section-title{margin-bottom:16px}
+      .section{padding:34px 0}
+      .section + .section{padding-top:10px}
+      .section-title{margin-bottom:14px}
       .section-title h2{font-size:29px;line-height:1.03;text-wrap:balance}
       .section-title p,.story-panel p,.gluten-box p,.review p,.contact-item p{font-size:14px !important;line-height:1.6 !important}
-      .story,.gluten-box,.review-grid,.contact-grid{grid-template-columns:1fr;gap:16px}
+      .story,.gluten-box,.review-grid,.contact-grid{grid-template-columns:1fr;gap:14px}
       .story-panel,.review,.contact-card,.gluten-box,.cta-band,.showcase-overlay{padding:18px}
       .story-image{min-height:250px;border-radius:22px;background-size:cover;background-position:center;background-repeat:no-repeat;background-color:#111}
       .story-stats{grid-template-columns:1fr 1fr;gap:10px}
@@ -175,8 +176,32 @@
       .showcase-tags{gap:8px}
       .showcase-tags span{padding:8px 12px;font-size:12px}
       .gluten-box img{border-radius:14px;object-fit:contain;background:#111}
-      .review{padding-top:22px;border-radius:20px}
+      .review-grid{gap:12px}
+      .review{padding:16px 16px 14px 16px;padding-top:18px;border-radius:18px}
+      .review p{font-size:13px !important;line-height:1.52 !important;margin:0 0 12px}
+      .review strong{font-size:13px}
+      .review span{font-size:12px}
+      .stars{font-size:13px;margin-bottom:10px}
+      .review-g{top:12px;right:12px;transform:scale(.9)}
       .google-score{font-size:14px;line-height:1.45}
+      .cta-band{flex-direction:column;align-items:flex-start;gap:12px;border-radius:24px}
+      .cta-band h3{font-size:25px}
+      .cta-band p{font-size:14px;line-height:1.58}
+      .contact-list{gap:12px;margin:18px 0}
+      .contact-item a,.contact-item strong{font-size:14px;line-height:1.55}
+      .map-wrap{border-radius:22px}
+      .map-wrap iframe{min-height:260px}
+      .modal{padding:12px}
+      .modal-box{padding:20px;border-radius:22px}
+      .modal-box h3{font-size:28px}
+      .modal-box p{font-size:14px;line-height:1.58}
+      .footer-row{gap:10px;font-size:13px}
+      .wa-float{bottom:84px;right:14px;width:58px;height:58px}
+      .mobile-bookbar{display:flex;position:fixed;left:10px;right:10px;bottom:12px;z-index:110;background:rgba(16,13,10,.95);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.08);box-shadow:0 18px 36px rgba(0,0,0,.34);border-radius:22px;padding:10px;gap:10px}
+      .mobile-bookbar .cta,.mobile-bookbar .btn-secondary{min-height:50px;font-size:15px;padding:12px 14px;border-radius:16px}
+      .mobile-bookbar .cta{flex:1}
+      .mobile-bookbar .btn-secondary{width:auto;min-width:58px;padding:0 14px}
+    }
       .cta-band{flex-direction:column;align-items:flex-start;gap:12px;border-radius:24px}
       .cta-band h3{font-size:25px}
       .cta-band p{font-size:14px;line-height:1.58}
