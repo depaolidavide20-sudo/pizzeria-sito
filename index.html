@@ -129,18 +129,18 @@
       .brand img{width:110px}
     }
     @media (max-width:780px){
-      .mobile-menu-toggle{display:inline-flex}
+      .mobile-menu-toggle{display:inline-flex;position:absolute;top:12px;right:0}
       .mobile-menu-panel.open{display:block}
       .hero{background-position:center center}
-      .hero-grid{padding:18px 0 8px;align-items:flex-end}
+      .hero-grid{padding:56px 0 14px;align-items:center;justify-items:center}
+      .hero-text{background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.50) 56%,rgba(0,0,0,.84) 100%);padding:18px;border-radius:18px;text-align:center;width:100%}
       h1{font-size:30px;line-height:1.04;margin-bottom:6px;max-width:100%;text-wrap:balance}
-      .hero-text p{font-size:13px;line-height:1.5;margin:0 0 8px;max-width:100%}
-      .hero-text{background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.56) 58%,rgba(0,0,0,.88) 100%);padding:16px;border-radius:18px}
+      .hero-text p{font-size:13px;line-height:1.5;margin:0 auto 8px;max-width:92%}
       .container{width:min(var(--max),calc(100% - 18px))}
       .topbar{background:linear-gradient(180deg,rgba(9,8,7,.97),rgba(9,8,7,.88));backdrop-filter:blur(16px)}
-      .nav{padding:10px 0;min-height:auto;align-items:flex-start;gap:10px}
+      .nav{padding:10px 0;min-height:auto;align-items:flex-start;gap:10px;position:relative}
       .nav-links{display:none}
-      .nav-right{width:auto;display:flex;gap:8px;align-items:center}
+      .nav-right{width:auto;display:flex;gap:8px;align-items:center;margin-left:auto;padding-right:58px}
       .nav-right > .cta{display:none}
       .lang-switcher{justify-content:flex-start;margin:0}
       .lang-btn{padding:8px 10px;font-size:12px}
@@ -150,19 +150,20 @@
       .hero-actions{display:none !important}
       .proofs{display:none !important}
       .cta,.btn-secondary,.google-btn{width:100%;text-align:center;justify-content:center;min-height:52px;padding:14px 18px;font-size:15px;border-radius:18px}
-      .proof{padding:14px;border-radius:16px;background:rgba(15,12,9,.56)}
-      .proof strong{font-size:22px}
-      .proof span{font-size:13px;line-height:1.45}
       .booking-card{display:none}
       .section{padding:44px 0}
       .section-title{margin-bottom:18px}
       .section-title h2{font-size:30px;line-height:1.03;text-wrap:balance}
-      .section-title p{font-size:14px;line-height:1.6}
-      .story,.menu-showcase,.gluten-box,.review-grid,.contact-grid{grid-template-columns:1fr;gap:16px}
+      .section-title p,.story-panel p,.gluten-box p,.review p,.contact-item p{font-size:14px !important;line-height:1.6 !important}
+      .story,.gluten-box,.review-grid,.contact-grid{grid-template-columns:1fr;gap:16px}
       .story-panel,.review,.contact-card,.gluten-box,.cta-band,.showcase-overlay{padding:18px}
       .story-image{min-height:220px;border-radius:22px;background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#111}
       .story-stats{grid-template-columns:1fr 1fr;gap:10px}
-      .showcase-card{min-height:280px;border-radius:24px;background-size:contain !important;background-position:center !important;background-repeat:no-repeat !important;background-color:#111}
+      .menu-showcase{display:block;position:relative}
+      .showcase-card{display:none;min-height:280px;border-radius:24px;background-size:contain !important;background-position:center !important;background-repeat:no-repeat !important;background-color:#111}
+      .showcase-card.active{display:flex}
+      .menu-slider-controls{display:flex;justify-content:center;gap:10px;margin-top:12px}
+      .menu-slider-btn{width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);color:#fff;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
       .showcase-top{flex-direction:column;align-items:flex-start;gap:6px}
       .showcase-title{max-width:100%;font-size:28px}
       .showcase-price{font-size:20px}
@@ -172,13 +173,12 @@
       .showcase-tags span{padding:8px 12px;font-size:12px}
       .gluten-box img{border-radius:14px;object-fit:contain;background:#111}
       .review{padding-top:22px;border-radius:20px}
-      .review p{font-size:14px;line-height:1.6}
       .google-score{font-size:14px;line-height:1.45}
       .cta-band{flex-direction:column;align-items:flex-start;gap:12px;border-radius:24px}
       .cta-band h3{font-size:25px}
       .cta-band p{font-size:14px;line-height:1.58}
       .contact-list{gap:12px;margin:18px 0}
-      .contact-item p,.contact-item a,.contact-item strong{font-size:14px;line-height:1.55}
+      .contact-item a,.contact-item strong{font-size:14px;line-height:1.55}
       .map-wrap{border-radius:22px}
       .map-wrap iframe{min-height:260px}
       .modal{padding:12px}
@@ -311,8 +311,8 @@
         <h2 style="font-size:clamp(42px,5.5vw,74px);margin-bottom:14px;"><span data-key="menu_title_a">Cotti a Puntino,</span> <span style="color:var(--gold2);font-style:italic;font-weight:500;" data-key="menu_title_b">Serviti con Amore</span></h2>
         <p style="font-size:18px;max-width:900px;margin:0 auto;" data-key="menu_intro">Scopri i piatti più amati dai nostri clienti. Dal nostro storico forno a legna alle delizie del mar ligure.</p>
       </div>
-      <div class="menu-showcase">
-        <article class="showcase-card" style="background-image:url('IMG_0223.jpg')">
+      <div class="menu-showcase" id="menuShowcase">
+        <article class="showcase-card active" data-slide="0" style="background-image:url('IMG_0223.jpg')">
           <div class="showcase-overlay">
             <div class="showcase-top">
               <h3 class="showcase-title" data-key="menu_card1_title">Pizza della Casa</h3>
@@ -323,7 +323,7 @@
             <div class="showcase-tags"><span data-key="menu_card1_tag1">Forno a legna</span><span data-key="menu_card1_tag2">Molto richiesta</span></div>
           </div>
         </article>
-        <article class="showcase-card" style="background-image:url('IMG_0226.jpg')">
+        <article class="showcase-card" data-slide="1" style="background-image:url('IMG_0226.jpg')">
           <div class="showcase-overlay">
             <div class="showcase-top">
               <h3 class="showcase-title" data-key="menu_card2_title">Spaghetti allo Scoglio</h3>
@@ -334,6 +334,10 @@
             <div class="showcase-tags"><span data-key="menu_card2_tag1">Pesce fresco</span><span data-key="menu_card2_tag2">Specialità</span></div>
           </div>
         </article>
+      </div>
+      <div class="menu-slider-controls">
+        <button class="menu-slider-btn" type="button" onclick="prevMenuSlide()" aria-label="Precedente">‹</button>
+        <button class="menu-slider-btn" type="button" onclick="nextMenuSlide()" aria-label="Successivo">›</button>
       </div>
       <div style="margin-top:26px;display:flex;justify-content:center;"><button class="cta" onclick="openModal()"><span data-key="book_now">Prenota ora</span></button></div>
     </div>
@@ -530,6 +534,16 @@
         modal_title:'Book your table', modal_text:'Fill in the form and you will be redirected to WhatsApp with a pre-filled message ready to send.', modal_send:'Send on WhatsApp'
       }
     };
+
+    let currentMenuSlide = 0;
+    function showMenuSlide(index){
+      const slides = document.querySelectorAll('.showcase-card');
+      if (!slides.length) return;
+      currentMenuSlide = (index + slides.length) % slides.length;
+      slides.forEach((slide, i) => slide.classList.toggle('active', i === currentMenuSlide));
+    }
+    function prevMenuSlide(){ showMenuSlide(currentMenuSlide - 1); }
+    function nextMenuSlide(){ showMenuSlide(currentMenuSlide + 1); }
 
     function toggleMobileMenu(){
       const panel = document.getElementById('mobileMenuPanel');
