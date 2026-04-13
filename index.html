@@ -138,12 +138,12 @@
       .hero-text p{font-size:12.5px;line-height:1.45;margin:0 auto 4px;max-width:94%}
       .container{width:min(var(--max),calc(100% - 18px))}
       .topbar{background:linear-gradient(180deg,rgba(9,8,7,.97),rgba(9,8,7,.88));backdrop-filter:blur(16px)}
-      .nav{padding:10px 0;min-height:auto;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;position:relative}
+      .nav{padding:10px 0;min-height:auto;display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:8px;position:relative}
       .nav-links{display:none}
-      .brand{gap:8px;align-items:center;width:auto;min-width:0;grid-column:1 / 2}
+      .brand{gap:8px;align-items:center;width:auto;min-width:0;grid-column:1 / 2;overflow:hidden}
       .brand img{width:104px}
       .since{font-size:10px;letter-spacing:1.6px;white-space:nowrap}
-      .nav-right{width:auto;display:flex;gap:8px;align-items:center;justify-content:flex-end;grid-column:3 / 4;padding-right:0;margin-left:0}
+      .nav-right{width:auto;display:flex;gap:6px;align-items:center;justify-content:flex-end;grid-column:2 / 3;padding-right:0;margin-left:0}
       .nav-right > .cta{display:none}
       .lang-switcher{justify-content:flex-end;margin:0;gap:6px;order:1}
       .lang-btn{padding:7px 8px;font-size:11px}
@@ -177,12 +177,11 @@
       .showcase-tags span{padding:8px 12px;font-size:12px}
       .gluten-box img{border-radius:14px;object-fit:contain;background:#111}
       .review-grid{gap:12px}
-      .review{padding:16px 16px 14px 16px;padding-top:18px;border-radius:18px}
-      .review p{font-size:13px !important;line-height:1.52 !important;margin:0 0 12px}
-      .review strong{font-size:13px}
-      .review span{font-size:12px}
-      .stars{font-size:13px;margin-bottom:10px}
-      .review-g{top:12px;right:12px;transform:scale(.9)}
+      .review{padding:12px 12px 10px 12px;padding-top:14px;border-radius:16px;min-height:auto}
+      .review p{font-size:12.5px !important;line-height:1.48 !important;margin:0}
+      .review strong,.review span{display:none}
+      .stars{font-size:13px;margin-bottom:8px}
+      .review-g{top:10px;right:10px;transform:scale(.85)}
       .google-score{font-size:14px;line-height:1.45}
       .cta-band{flex-direction:column;align-items:flex-start;gap:12px;border-radius:24px}
       .cta-band h3{font-size:25px}
