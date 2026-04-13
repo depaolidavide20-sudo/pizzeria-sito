@@ -58,32 +58,15 @@
       display:flex;
       align-items:center;
       justify-content:flex-start;
-      gap:14px;
-      min-width:260px;
+      min-width:160px;
+      flex:0 0 auto;
     }
 
-    .brand-lockup{
-      display:flex;
-      flex-direction:column;
-      line-height:1;
-    }
-
-    .brand-wordmark{
-      font-family:"Cormorant Garamond",serif;
-      font-size:42px;
-      font-weight:700;
-      color:#ffffff;
-      letter-spacing:.6px;
-      text-shadow:0 4px 24px rgba(0,0,0,.42);
-    }
-
-    .since{
-      color:#f2d28f;
-      text-transform:uppercase;
-      letter-spacing:3px;
-      font-size:12px;
-      margin-top:4px;
-      white-space:nowrap;
+    .brand img{
+      width:140px;
+      height:auto;
+      display:block;
+      filter:brightness(0) invert(1);
     }
 
     .nav-links{
@@ -198,8 +181,17 @@
       font-size:clamp(52px,6.6vw,90px);
       line-height:.94;
       max-width:900px;
-      margin-bottom:18px;
+      margin:0 auto 18px;
       text-shadow:0 4px 24px rgba(0,0,0,.35);
+      text-align:center;
+    }
+
+    .hero-text{
+      text-align:center;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
     }
 
     .hero-text p{
@@ -207,8 +199,9 @@
       line-height:1.7;
       color:#f7efe4;
       max-width:760px;
-      margin:0 0 28px;
+      margin:0 auto 28px;
       text-shadow:0 3px 16px rgba(0,0,0,.28);
+      text-align:center;
     }
 
     .hero-actions{
@@ -216,6 +209,7 @@
       gap:14px;
       flex-wrap:wrap;
       margin-bottom:26px;
+      justify-content:center;
     }
 
     .proofs{
@@ -223,6 +217,7 @@
       grid-template-columns:repeat(3,minmax(0,1fr));
       gap:16px;
       max-width:880px;
+      width:100%;
     }
 
     .proof{
@@ -232,6 +227,7 @@
       padding:18px;
       box-shadow:var(--shadow);
       backdrop-filter:blur(6px);
+      text-align:left;
     }
 
     .proof strong{
@@ -447,14 +443,14 @@
 
     .gluten-title{
       max-width:680px;
-      margin:0 auto 18px;
-      text-align:center;
+      margin:0 0 18px;
+      text-align:left;
     }
 
     .gluten-copy{
       max-width:760px;
-      margin:0 auto;
-      text-align:center;
+      margin:0;
+      text-align:left;
     }
 
     .gluten-copy p{
@@ -674,13 +670,16 @@
     }
 
     @media (max-width:920px){
-      .nav{flex-wrap:wrap}
-      .brand{min-width:auto}
-      .nav-right{width:100%;justify-content:space-between}
-      .proofs,.story,.menu-showcase,.gluten-box,.review-grid,.contact-grid{grid-template-columns:1fr}
+      .nav{flex-wrap:nowrap}
+      .brand{min-width:120px}
+      .brand img{width:118px}
+      .nav-right{width:auto;justify-content:flex-end}
+      .proofs{grid-template-columns:1fr}
       .hero-grid{padding-top:96px}
       .booking-card{margin-left:0;max-width:none}
-      .brand-wordmark{font-size:34px}
+      .review-grid,.contact-grid{grid-template-columns:1fr}
+      .story,.gluten-box{grid-template-columns:1fr 1fr}
+      .story-image{min-height:420px}
     }
 
     @media (max-width:780px){
@@ -691,35 +690,33 @@
       }
 
       .nav{
-        padding:10px 0;
         min-height:auto;
         display:grid;
-        grid-template-columns:minmax(0,1fr) auto auto;
+        grid-template-columns:auto 1fr auto auto;
         align-items:center;
         gap:8px;
+        padding:10px 0;
+      }
+
+      .brand{
+        grid-column:1 / 2;
+        min-width:0;
+        overflow:visible;
+      }
+
+      .brand img{
+        width:108px;
       }
 
       .nav-links{display:none}
 
-      .brand{
-        gap:8px;
-        align-items:center;
-        width:auto;
-        min-width:0;
-        grid-column:1 / 2;
-        overflow:hidden;
-      }
-
-      .brand-wordmark{font-size:30px}
-      .since{font-size:10px;letter-spacing:1.6px}
-
       .nav-right{
+        grid-column:3 / 4;
         width:auto;
         display:flex;
         gap:6px;
         align-items:center;
         justify-content:flex-end;
-        grid-column:2 / 3;
       }
 
       .nav-right > .cta{display:none}
@@ -731,25 +728,28 @@
         order:1;
       }
 
-      .lang-btn{padding:7px 8px;font-size:11px}
+      .lang-btn{
+        padding:7px 8px;
+        font-size:11px;
+      }
 
       .mobile-menu-toggle{
         display:inline-flex;
+        grid-column:4 / 5;
         background:rgba(255,255,255,.08);
         border:1px solid rgba(255,255,255,.12);
         color:#fff;
         border-radius:14px;
-        width:46px;
-        height:46px;
+        width:44px;
+        height:44px;
         align-items:center;
         justify-content:center;
         cursor:pointer;
-        grid-column:3 / 4;
       }
 
       .mobile-menu-panel{
         position:fixed;
-        top:86px;
+        top:74px;
         right:12px;
         left:12px;
         z-index:120;
@@ -841,12 +841,22 @@
         line-height:1.6 !important;
       }
 
-      .story,.gluten-box,.review-grid,.contact-grid{
+      .story,.gluten-box{
+        grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+        gap:14px;
+        align-items:center;
+      }
+
+      .review-grid,.contact-grid{
         grid-template-columns:1fr;
         gap:14px;
       }
 
       .story-panel,.review,.contact-card,.gluten-box,.showcase-overlay{
+        padding:18px;
+      }
+
+      .story-panel{
         padding:18px;
       }
 
@@ -917,11 +927,13 @@
       .showcase-tags span{padding:8px 12px;font-size:12px}
 
       .gluten-title{
-        margin:0 auto 12px;
+        margin:0 0 12px;
+        text-align:left;
       }
 
       .gluten-copy{
         max-width:100%;
+        text-align:left;
       }
 
       .gluten-copy p{
@@ -929,11 +941,21 @@
         line-height:1.6;
       }
 
+      .gluten-media{
+        gap:10px;
+      }
+
+      .gluten-cert{
+        padding:10px;
+        border-radius:16px;
+      }
+
       .gluten-cert img,
       .gluten-chef{
         border-radius:14px;
-        object-fit:contain;
+        object-fit:cover;
         background:#111;
+        height:100%;
       }
 
       .review-grid{gap:12px}
@@ -1002,9 +1024,13 @@
     @media (max-width:480px){
       h1{font-size:27px}
       .hero-text p{font-size:12.5px}
-      .brand-wordmark{font-size:28px}
+      .brand img{width:98px}
       .showcase-card{min-height:250px}
       .story-image{min-height:200px}
+      .story,.gluten-box{
+        grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+        gap:10px;
+      }
     }
   </style>
 </head>
@@ -1012,10 +1038,7 @@
   <div class="topbar">
     <div class="container nav">
       <a href="#top" class="brand" aria-label="La Bitta">
-        <div class="brand-lockup">
-          <div class="brand-wordmark">La Bitta</div>
-          <div class="since" data-key="since">Dal 1992</div>
-        </div>
+        <img src="logo.png" alt="Logo La Bitta">
       </a>
 
       <div class="nav-links">
@@ -1026,22 +1049,16 @@
         <a href="#contatti" data-key="nav_contacts">Contatti</a>
       </div>
 
-      <button class="mobile-menu-toggle" type="button" onclick="toggleMobileMenu()" aria-label="Apri menu">
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg>
-      </button>
-
       <div class="nav-right">
         <div class="lang-switcher">
           <button class="lang-btn active" id="btn-it" onclick="setLanguage('it')">IT</button>
           <button class="lang-btn" id="btn-en" onclick="setLanguage('en')">EN</button>
         </div>
-        <button class="cta" onclick="openModal()">
-          <svg class="btn-wa-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M20.52 3.48A11.8 11.8 0 0012.01 0C5.38 0 .01 5.37 0 12c0 2.11.55 4.17 1.6 6L0 24l6.18-1.6A11.94 11.94 0 0012.01 24C18.64 24 24 18.63 24 12c0-3.2-1.25-6.2-3.48-8.52zM12.01 21.8c-1.8 0-3.57-.48-5.12-1.39l-.37-.22-3.67.95.98-3.58-.24-.37A9.77 9.77 0 012.2 12c0-5.4 4.4-9.8 9.8-9.8 2.62 0 5.08 1.02 6.93 2.87A9.72 9.72 0 0121.8 12c0 5.4-4.4 9.8-9.79 9.8zm5.39-7.34c-.29-.15-1.72-.85-1.99-.94-.27-.1-.47-.15-.67.15-.2.29-.77.94-.95 1.14-.17.2-.35.22-.64.07-.29-.15-1.24-.46-2.36-1.46-.87-.77-1.46-1.72-1.63-2.01-.17-.29-.02-.44.13-.59.13-.13.29-.35.44-.52.15-.17.2-.29.3-.49.1-.2.05-.37-.02-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.29-1.04 1.02-1.04 2.49 0 1.47 1.07 2.9 1.22 3.1.15.2 2.11 3.22 5.11 4.52.71.31 1.27.5 1.7.64.71.22 1.35.19 1.86.12.57-.08 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.12-.26-.2-.55-.35z"/>
-          </svg>
-          <span data-key="book_now">Prenota ora</span>
-        </button>
       </div>
+
+      <button class="mobile-menu-toggle" type="button" onclick="toggleMobileMenu()" aria-label="Apri menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg>
+      </button>
     </div>
   </div>
 
@@ -1393,7 +1410,6 @@
   <script>
     const translations = {
       it: {
-        since:'Dal 1992',
         nav_story:'La nostra storia',
         nav_menu:'Menu',
         nav_gluten:'Senza Glutine',
@@ -1474,7 +1490,6 @@
       },
 
       en: {
-        since:'Since 1992',
         nav_story:'Our Story',
         nav_menu:'Menu',
         nav_gluten:'Gluten Free',
