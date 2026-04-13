@@ -21,7 +21,6 @@
       --shadow:0 24px 70px rgba(0,0,0,.42);
       --radius:26px;
       --max:1180px;
-      --wa:#25D366;
     }
 
     *{box-sizing:border-box}
@@ -31,6 +30,7 @@
       font-family:Inter,sans-serif;
       background:linear-gradient(180deg,#090807 0%,#13100d 100%);
       color:var(--text);
+      overflow-x:hidden;
     }
 
     a{text-decoration:none;color:inherit}
@@ -40,9 +40,9 @@
     .topbar{
       position:sticky;
       top:0;
-      z-index:30;
+      z-index:40;
       background:rgba(9,8,7,.48);
-      backdrop-filter:blur(10px);
+      backdrop-filter:blur(12px);
       border-bottom:1px solid rgba(255,255,255,.04);
     }
 
@@ -58,15 +58,17 @@
       display:flex;
       align-items:center;
       justify-content:flex-start;
-      min-width:160px;
+      min-width:150px;
       flex:0 0 auto;
     }
 
     .brand img{
-      width:140px;
+      width:148px;
       height:auto;
       display:block;
       filter:brightness(0) invert(1);
+      mix-blend-mode:screen;
+      object-fit:contain;
     }
 
     .nav-links{
@@ -86,6 +88,7 @@
       display:flex;
       align-items:center;
       gap:10px;
+      flex:0 0 auto;
     }
 
     .lang-switcher{
@@ -126,9 +129,7 @@
       transition:.2s transform ease,.2s opacity ease;
     }
 
-    .cta:hover,.btn-secondary:hover,.google-btn:hover{
-      transform:translateY(-1px);
-    }
+    .cta:hover,.btn-secondary:hover,.google-btn:hover{transform:translateY(-1px)}
 
     .cta{
       color:#1b1408;
@@ -431,10 +432,6 @@
       align-items:center;
     }
 
-    .gluten-box-centered{
-      align-items:center;
-    }
-
     .gluten-content{
       display:flex;
       flex-direction:column;
@@ -460,9 +457,7 @@
       font-size:17px;
     }
 
-    .gluten-copy p + p{
-      margin-top:14px;
-    }
+    .gluten-copy p + p{margin-top:14px}
 
     .gluten-media{
       display:grid;
@@ -535,13 +530,8 @@
       color:var(--gold2);
     }
 
-    #recensioni{
-      padding-bottom:24px;
-    }
-
-    #contatti{
-      padding-top:0;
-    }
+    #recensioni{padding-bottom:24px}
+    #contatti{padding-top:0}
 
     .contact-grid{
       display:grid;
@@ -684,6 +674,7 @@
 
     @media (max-width:780px){
       .container{width:min(var(--max),calc(100% - 18px))}
+
       .topbar{
         background:linear-gradient(180deg,rgba(9,8,7,.97),rgba(9,8,7,.88));
         backdrop-filter:blur(16px);
@@ -701,7 +692,6 @@
       .brand{
         grid-column:1 / 2;
         min-width:0;
-        overflow:visible;
       }
 
       .brand img{
@@ -719,13 +709,10 @@
         justify-content:flex-end;
       }
 
-      .nav-right > .cta{display:none}
-
       .lang-switcher{
         justify-content:flex-end;
         margin:0;
         gap:6px;
-        order:1;
       }
 
       .lang-btn{
@@ -773,37 +760,37 @@
       .mobile-menu-panel a:last-child{border-bottom:0}
 
       .hero{
-        min-height:52vh;
+        min-height:58vh;
         background-position:center center;
       }
 
       .hero-grid{
-        padding:18px 0 6px;
+        padding:22px 0 12px;
         align-items:end;
         justify-items:center;
-        min-height:52vh;
+        min-height:58vh;
       }
 
       .hero-text{
-        background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.46) 54%,rgba(0,0,0,.82) 100%);
-        padding:14px 14px 12px;
-        border-radius:18px;
-        text-align:center;
         width:100%;
+        text-align:center;
+        background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.46) 54%,rgba(0,0,0,.82) 100%);
+        padding:18px 16px 14px;
+        border-radius:18px;
       }
 
       h1{
-        font-size:29px;
+        font-size:30px;
         line-height:1.03;
-        margin-bottom:6px;
+        margin-bottom:8px;
         max-width:100%;
         text-wrap:balance;
       }
 
       .hero-text p{
-        font-size:12.5px;
-        line-height:1.45;
-        margin:0 auto 4px;
+        font-size:13px;
+        line-height:1.5;
+        margin:0 auto 8px;
         max-width:94%;
       }
 
@@ -822,16 +809,16 @@
 
       .booking-card{display:none}
 
-      .section{padding:34px 0}
-      .section + .section{padding-top:10px}
+      .section{padding:36px 0}
+      .section + .section{padding-top:8px}
 
-      #recensioni{padding-bottom:10px}
+      #recensioni{padding-bottom:12px}
       #contatti{padding-top:0}
 
       .section-title{margin-bottom:14px}
 
       .section-title h2{
-        font-size:29px;
+        font-size:30px;
         line-height:1.03;
         text-wrap:balance;
       }
@@ -842,7 +829,7 @@
       }
 
       .story,.gluten-box{
-        grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+        grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
         gap:14px;
         align-items:center;
       }
@@ -961,15 +948,13 @@
       .review-grid{gap:12px}
 
       .review{
-        padding:12px 12px 10px 12px;
-        padding-top:14px;
+        padding:14px 14px 12px;
         border-radius:16px;
-        min-height:auto;
       }
 
       .review p{
-        font-size:12.5px !important;
-        line-height:1.48 !important;
+        font-size:12.8px !important;
+        line-height:1.5 !important;
         margin:0;
       }
 
@@ -1028,7 +1013,7 @@
       .showcase-card{min-height:250px}
       .story-image{min-height:200px}
       .story,.gluten-box{
-        grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+        grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
         gap:10px;
       }
     }
@@ -1207,7 +1192,7 @@
 
   <section class="section" id="glutenfree">
     <div class="container">
-      <div class="gluten-box gluten-box-centered">
+      <div class="gluten-box">
         <div class="gluten-content">
           <div class="section-title gluten-title">
             <span class="kicker" data-key="gf_kicker">Senza Glutine</span>
@@ -1418,22 +1403,18 @@
         book_now:'Prenota ora',
         call_now:'Chiama 0185 312963',
         call_now_short:'Chiama adesso',
-
         hero_title:'Il Gusto Autentico della Tradizione',
         hero_text:'Pizzeria e Ristorante a Chiavari. La vera pizza in forno a legna, specialità di mare e un menù 100% senza glutine.',
-
         proof_rating_value:'4,1/5',
         proof_rating_text:'Valutazione media da oltre 1.100 recensioni online.',
         proof_wood_value:'Forno a legna',
         proof_wood_text:'Cottura autentica, profumo intenso e pizza memorabile.',
         proof_gf_value:'Senza glutine',
         proof_gf_text:'Una proposta chiara che allarga il pubblico e aumenta fiducia.',
-
         booking_title:'Prenota il tuo tavolo',
         booking_text:'Un form rapido, elegante e ad alta conversione per trasformare la visita in prenotazione.',
         send_request:'Invia richiesta',
         booking_hint:'Questo form apre direttamente WhatsApp con il messaggio già pronto da inviare.',
-
         story_kicker:'Tradizione e Passione',
         story_title:'La Bitta: il calore di casa, dal 1992.',
         story_p1:'Nata nel cuore di Chiavari oltre 30 anni fa, La Bitta è il luogo dove la tradizione della pizza cotta nel forno a legna incontra la freschezza dei sapori liguri e del nostro mare.',
@@ -1442,7 +1423,6 @@
         story_stat1_t:'Anni di Esperienza',
         story_stat2_v:'1M+',
         story_stat2_t:'Pizze Sfornate',
-
         menu_kicker:'Le nostre specialità',
         menu_title_a:'Cotti a Puntino,',
         menu_title_b:'Serviti con Amore',
@@ -1455,13 +1435,11 @@
         menu_card2_text:'Pasta, cozze, vongole, gamberi e prezzemolo fresco, per un primo di mare ricco, profumato e pensato per chi cerca sapore vero.',
         menu_card2_tag1:'Pesce fresco',
         menu_card2_tag2:'Specialità',
-
         gf_kicker:'Senza Glutine',
         gf_title:'L\'Eccellenza del Senza Glutine',
         gf_p1:'Il Ristorante Pizzeria La Bitta è fiero di garantire a tutti i clienti, anche quelli con determinate intolleranze alimentari come la celiachia, la possibilità di poter godersi una pizza o un piatto di cucina con gli amici.',
         gf_p2:'Le pizze con farine senza glutine sono adeguatamente cotte nel forno apposito, regolarmente certificato.',
         gf_p3:'Per gli intolleranti al lattosio abbiamo inoltre la possibilità di preparare pizze usando come ingrediente il formaggio vegano, un sostituto vegetale del formaggio perfetto anche per chi segue un\'alimentazione vegana.',
-
         rev_kicker:'Recensioni',
         rev_title:'Le parole dei nostri clienti',
         rev_1:'"Pizza buonissima, serviti in un batter d\'occhio, anche i dolci veramente buoni."',
@@ -1471,7 +1449,6 @@
         rev_source:'Recensione online',
         google_score:'★ 4.5 su Google • Oltre 1200 recensioni',
         google_btn:'Lascia una recensione su Google',
-
         contact_kicker:'Contatti',
         contact_title:'Vieni a Trovarci',
         contact_address_label:'Indirizzo',
@@ -1479,16 +1456,13 @@
         contact_phone_label:'Telefono',
         contact_hours_label:'Orari',
         contact_hours:'Lun, Mer - Dom: 19:00 - 00:00<br>Chiuso il Martedì',
-
         footer_copy:'© 2026 La Bitta - Pizzeria & Ristorante',
         footer_address:'Corso Giuseppe Garibaldi, 99 • Chiavari',
         footer_hours:'Lun, Mer - Dom: 19:00 - 00:00 (Chiuso Martedì)',
-
         modal_title:'Prenota il tuo tavolo',
         modal_text:'Compila il form e verrai reindirizzato su WhatsApp con il messaggio già pronto da inviare.',
         modal_send:'Invia su WhatsApp'
       },
-
       en: {
         nav_story:'Our Story',
         nav_menu:'Menu',
@@ -1498,22 +1472,18 @@
         book_now:'Book now',
         call_now:'Call 0185 312963',
         call_now_short:'Call now',
-
         hero_title:'The Authentic Taste of Tradition',
         hero_text:'Pizzeria and restaurant in Chiavari. Authentic wood-fired pizza, seafood specialties and a 100% gluten-free menu.',
-
         proof_rating_value:'4.1/5',
         proof_rating_text:'Average rating from more than 1,100 online reviews.',
         proof_wood_value:'Wood-fired oven',
         proof_wood_text:'Authentic baking, rich aroma and unforgettable pizza.',
         proof_gf_value:'Gluten free',
         proof_gf_text:'A clear offering that broadens the audience and builds trust.',
-
         booking_title:'Book your table',
         booking_text:'A fast, elegant form designed to turn visits into bookings.',
         send_request:'Send request',
         booking_hint:'This form opens WhatsApp with a pre-filled message ready to send.',
-
         story_kicker:'Tradition and Passion',
         story_title:'La Bitta: the warmth of home, since 1992.',
         story_p1:'Founded in the heart of Chiavari over 30 years ago, La Bitta is where the tradition of wood-fired pizza meets the freshness of Ligurian flavors and the taste of the sea.',
@@ -1522,7 +1492,6 @@
         story_stat1_t:'Years of Experience',
         story_stat2_v:'1M+',
         story_stat2_t:'Pizzas Baked',
-
         menu_kicker:'Our specialties',
         menu_title_a:'Cooked to Perfection,',
         menu_title_b:'Served with Care',
@@ -1535,13 +1504,11 @@
         menu_card2_text:'Pasta, mussels, clams, prawns and fresh parsley for a rich, fragrant seafood first course full of true flavor.',
         menu_card2_tag1:'Fresh seafood',
         menu_card2_tag2:'Specialty',
-
         gf_kicker:'Gluten Free',
         gf_title:'Excellence in Gluten-Free Dining',
         gf_p1:'La Bitta is proud to guarantee all guests, including those with food intolerances such as celiac disease, the opportunity to enjoy a pizza or a dish with friends.',
         gf_p2:'Pizzas made with gluten-free flours are properly baked in a dedicated certified oven.',
         gf_p3:'For lactose-intolerant guests we can also prepare pizzas using vegan cheese, a plant-based alternative that is also perfect for those following a vegan diet.',
-
         rev_kicker:'Reviews',
         rev_title:'What our guests say',
         rev_1:'"Excellent pizza, served in no time, and the desserts are truly delicious."',
@@ -1551,7 +1518,6 @@
         rev_source:'Online review',
         google_score:'★ 4.5 on Google • Over 1200 reviews',
         google_btn:'Leave a review on Google',
-
         contact_kicker:'Contacts',
         contact_title:'Come Visit Us',
         contact_address_label:'Address',
@@ -1559,11 +1525,9 @@
         contact_phone_label:'Phone',
         contact_hours_label:'Opening Hours',
         contact_hours:'Mon, Wed - Sun: 7:00 PM - 12:00 AM<br>Closed on Tuesday',
-
         footer_copy:'© 2026 La Bitta - Pizzeria & Restaurant',
         footer_address:'Corso Giuseppe Garibaldi, 99 • Chiavari',
         footer_hours:'Mon, Wed - Sun: 7:00 PM - 12:00 AM (Closed Tuesday)',
-
         modal_title:'Book your table',
         modal_text:'Fill in the form and you will be redirected to WhatsApp with a pre-filled message ready to send.',
         modal_send:'Send on WhatsApp'
@@ -1675,9 +1639,9 @@
       const menu = document.getElementById('mobileMenuPanel');
       const toggle = document.querySelector('.mobile-menu-toggle');
 
-      if (e.target === modal) closeModal();
+      if(e.target === modal) closeModal();
 
-      if (menu && menu.classList.contains('open') && !menu.contains(e.target) && toggle && !toggle.contains(e.target)) {
+      if(menu && menu.classList.contains('open') && !menu.contains(e.target) && toggle && !toggle.contains(e.target)) {
         closeMobileMenu();
       }
     });
