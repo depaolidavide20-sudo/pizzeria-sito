@@ -5,11 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>La Bitta - Pizzeria & Ristorante</title>
   <meta name="description" content="Pizzeria e Ristorante a Chiavari. Pizza in forno a legna, specialità di mare e menù senza glutine." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Regular.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Medium.ttf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Bold.ttf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('/fonts/CormorantGaramond-Medium.ttf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('/fonts/CormorantGaramond-SemiBold.ttf');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('/fonts/CormorantGaramond-Bold.ttf');
+  font-weight: 700;
+}
     :root{
       --bg:#0f0d0b;
       --panel:rgba(22,18,14,.74);
@@ -1464,10 +1496,10 @@
       </div>
 
       <div class="map-wrap">
-        <div id="map-placeholder" style="text-align:center; padding:20px;">
-  <p>Per visualizzare la mappa accetta i cookie.</p>
-  <button onclick="loadMap()" class="btn-secondary">Mostra mappa</button>
-</div>
+  <div id="map-placeholder" style="text-align:center; padding:20px;">
+    <p>Per visualizzare la mappa è necessario caricare un contenuto esterno di Google Maps.</p>
+    <button type="button" onclick="loadMap()" class="btn-secondary">Mostra mappa</button>
+  </div>
 
 <div id="map-container" style="display:none;"></div>
       </div>
@@ -1501,9 +1533,8 @@
     </div>
 
     <div>
-      <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
-    </div>
-
+  <a href="https://www.instagram.com/labittachiavari?igsh=eWQ5cmpnemdjZ2ow" target="_blank" rel="noopener noreferrer">Instagram</a>
+</div>
   </div>
 </footer>
   <div class="modal" id="bookingModal">
@@ -1870,6 +1901,20 @@ function loadMap() {
   document.getElementById("map-container").innerHTML = `
     <iframe src="https://www.google.com/maps?q=Corso%20Giuseppe%20Garibaldi%2099%20Chiavari&output=embed"
     style="width:100%; height:520px; border:0;" loading="lazy"></iframe>
+  `;
+}
+</script>
+<script>
+function loadMap() {
+  document.getElementById("map-placeholder").style.display = "none";
+  document.getElementById("map-container").style.display = "block";
+  document.getElementById("map-container").innerHTML = `
+    <iframe
+      src="https://www.google.com/maps?q=Corso%20Giuseppe%20Garibaldi%2099%20Chiavari&output=embed"
+      style="width:100%; height:520px; border:0;"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
   `;
 }
 </script>
