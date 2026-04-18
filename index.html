@@ -1105,6 +1105,45 @@
 .privacy-check input {
   margin-top: 4px;
 }
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #1a1713;
+  color: #f7f1e8;
+  padding: 16px;
+  z-index: 9999;
+  box-shadow: 0 -5px 20px rgba(0,0,0,0.4);
+}
+
+.cookie-content {
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cookie-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cookie-actions button {
+  background: #d7b26d;
+  border: none;
+  padding: 8px 14px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.cookie-actions button:last-child {
+  background: transparent;
+  border: 1px solid #d7b26d;
+  color: #d7b26d;
+}
 </style>
 </head>
 <body>
@@ -1785,5 +1824,39 @@
       }
     });
   </script>
+<div id="cookie-banner" class="cookie-banner">
+  <div class="cookie-content">
+    <p>
+      Utilizziamo cookie tecnici e contenuti esterni (es. Google Maps) per migliorare l’esperienza. 
+      Puoi accettare o rifiutare.
+    </p>
+    <div class="cookie-actions">
+      <button id="accept-cookies">Accetta</button>
+      <button id="reject-cookies">Rifiuta</button>
+      <a href="/cookie.html" target="_blank" rel="noopener noreferrer">Scopri di più</a>
+     </div>
+</div>
+</div>
+<script>
+  const banner = document.getElementById("cookie-banner");
+  const acceptBtn = document.getElementById("accept-cookies");
+  const rejectBtn = document.getElementById("reject-cookies");
+
+  if (!localStorage.getItem("cookieChoice")) {
+    banner.style.display = "block";
+  } else {
+    banner.style.display = "none";
+  }
+
+  acceptBtn.onclick = () => {
+    localStorage.setItem("cookieChoice", "accepted");
+    banner.style.display = "none";
+  };
+
+  rejectBtn.onclick = () => {
+    localStorage.setItem("cookieChoice", "rejected");
+    banner.style.display = "none";
+  };
+</script>
 </body>
 </html>
