@@ -45,5 +45,12 @@
       "destination": "/menu",
       "statusCode": 301
     }
+  ],
+
+  "rewrites": [
+    {
+      "source": "/((?!.*\\.(?:jpg|jpeg|png|gif|webp|svg|ico|css|js|woff|woff2|ttf|otf|eot|mp4|webm|pdf|txt|xml|json)$).*)",
+      "destination": "/index.html"
+    }
   ]
 }
