@@ -1,13 +1,6 @@
 {
   "cleanUrls": true,
 
-  "rewrites": [
-    {
-      "source": "/",
-      "destination": "/index.html"
-    }
-  ],
-
   "redirects": [
     {
       "source": "/contact-us",
@@ -32,11 +25,6 @@
     },
     {
       "source": "/la-storia",
-      "destination": "/la-nostra-storia",
-      "permanent": true
-    },
-    {
-      "source": "/about",
       "destination": "/la-nostra-storia",
       "permanent": true
     },
@@ -68,6 +56,7 @@
       "destination": "/menu",
       "permanent": true
     },
+
     {
       "source": "/menucard/:path*",
       "destination": "/menu",
@@ -77,6 +66,13 @@
       "source": "/menucardcat/:path*",
       "destination": "/menu",
       "permanent": true
+    }
+  ],
+
+  "rewrites": [
+    {
+      "source": "/:path*",
+      "destination": "/index.html"
     }
   ],
 
