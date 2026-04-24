@@ -1,13 +1,54 @@
 {
   "cleanUrls": true,
+
   "rewrites": [
-    { "source": "/", "destination": "/index.html" }
+    {
+      "source": "/",
+      "destination": "/index.html"
+    }
   ],
+
+  "redirects": [
+    {
+      "source": "/contact-us",
+      "destination": "/contatti",
+      "permanent": true
+    },
+    {
+      "source": "/contacts",
+      "destination": "/contatti",
+      "permanent": true
+    },
+    {
+      "source": "/il-locale",
+      "destination": "/la-nostra-storia",
+      "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/la-nostra-storia",
+      "permanent": true
+    },
+    {
+      "source": "/menu-card",
+      "destination": "/menu",
+      "permanent": true
+    },
+    {
+      "source": "/menu.html",
+      "destination": "/menu",
+      "permanent": true
+    }
+  ],
+
   "headers": [
     {
       "source": "/index.html",
       "headers": [
-        { "key": "Content-Type", "value": "text/html; charset=utf-8" }
+        {
+          "key": "Content-Type",
+          "value": "text/html; charset=utf-8"
+        }
       ]
     }
   ]
