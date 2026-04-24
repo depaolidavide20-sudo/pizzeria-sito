@@ -1,90 +1,55 @@
 {
-  "cleanUrls": true,
-
   "redirects": [
-    {
-      "source": "/contact-us",
-      "destination": "/contatti",
-      "permanent": true
-    },
-    {
-      "source": "/contacts",
-      "destination": "/contatti",
-      "permanent": true
-    },
-    {
-      "source": "/contatti-e-orari",
-      "destination": "/contatti",
-      "permanent": true
-    },
-
     {
       "source": "/il-locale",
       "destination": "/la-nostra-storia",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/la-storia",
       "destination": "/la-nostra-storia",
-      "permanent": true
+      "statusCode": 301
     },
-
+    {
+      "source": "/contact-us",
+      "destination": "/contatti",
+      "statusCode": 301
+    },
+    {
+      "source": "/contatti-e-orari",
+      "destination": "/contatti",
+      "statusCode": 301
+    },
     {
       "source": "/pizze-senza-glutine",
       "destination": "/senza-glutine",
-      "permanent": true
-    },
-
-    {
-      "source": "/servizi-per-cani",
-      "destination": "/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/servizi-per-bebe",
       "destination": "/",
-      "permanent": true
-    },
-
-    {
-      "source": "/menu-card",
-      "destination": "/menu",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/menu.html",
-      "destination": "/menu",
-      "permanent": true
+      "source": "/servizi-per-cani",
+      "destination": "/",
+      "statusCode": 301
     },
-
     {
       "source": "/menucard/:path*",
       "destination": "/menu",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/menucardcat/:path*",
       "destination": "/menu",
-      "permanent": true
+      "statusCode": 301
     }
   ],
-
   "rewrites": [
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "destination": "/index.html"
-    }
-  ],
-
-  "headers": [
-    {
-      "source": "/index.html",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "text/html; charset=utf-8"
-        }
-      ]
     }
   ]
 }
