@@ -94,15 +94,28 @@
       display:flex;
       align-items:center;
       justify-content:flex-start;
+      gap:14px;
       min-width:150px;
       flex:0 0 auto;
     }
 
-    .brand img{
-      width:220px;
+    .brand-main{
+      width:232px;
       height:auto;
       display:block;
       object-fit:contain;
+      flex:0 0 auto;
+    }
+
+    .brand-badge{
+      width:90px;
+      height:auto;
+      display:block;
+      object-fit:contain;
+      border-radius:16px;
+      box-shadow:0 10px 24px rgba(0,0,0,.22);
+      border:1px solid rgba(255,255,255,.14);
+      flex:0 0 auto;
     }
 
     .nav-links{
@@ -381,12 +394,15 @@
 
     .story-image{
       min-height:560px;
+      aspect-ratio:4 / 5;
       border-radius:28px;
       border:1px solid var(--line);
       box-shadow:var(--shadow);
+      overflow:hidden;
+      background-color:#111;
       background:
-        linear-gradient(180deg,rgba(0,0,0,.06),rgba(0,0,0,.18)),
-        url('IMG_0222.jpg') center/cover no-repeat;
+        linear-gradient(180deg,rgba(0,0,0,.04),rgba(0,0,0,.16)),
+        url('glauco-ilaria.jpg') center top / cover no-repeat;
     }
 
     .menu-showcase{
@@ -406,6 +422,10 @@
       align-items:flex-end;
       background-size:cover;
       background-position:center;
+    }
+
+    .showcase-card.menu-card-seafood{
+      background-position:center 42%;
     }
 
     .showcase-overlay{
@@ -562,15 +582,7 @@
       font-size:14px;
     }
 
-    .google-score{
-      text-align:center;
-      margin-top:20px;
-      margin-bottom:10px;
-      font-size:18px;
-      color:var(--gold2);
-    }
-
-    #recensioni{padding-bottom:24px}
+    #recensioni{padding-bottom:96px}
     #contatti{padding-top:0}
 
     .contact-grid{
@@ -720,8 +732,9 @@
 
     @media (max-width:920px){
       .nav{flex-wrap:nowrap}
-      .brand{min-width:120px}
-      .brand img{width:180px}
+      .brand{min-width:120px;gap:12px}
+      .brand-main{width:188px}
+      .brand-badge{width:74px}
       .nav-right{width:auto;justify-content:flex-end}
       .proofs{grid-template-columns:1fr}
       .hero-grid{padding-top:96px}
@@ -749,10 +762,16 @@
       .brand{
         grid-column:1 / 2;
         min-width:0;
+        gap:8px;
       }
 
-      .brand img{
-        width:132px;
+      .brand-main{
+        width:140px;
+      }
+
+      .brand-badge{
+        width:56px;
+        border-radius:12px;
       }
 
       .nav-links{display:none}
@@ -871,7 +890,7 @@
       .section{padding:36px 0}
       .section + .section{padding-top:8px}
 
-      #recensioni{padding-bottom:12px}
+      #recensioni{padding-bottom:36px}
       #contatti{padding-top:0}
 
       .section-title{margin-bottom:14px}
@@ -904,10 +923,11 @@
 
       .story-image{
         order:2;
-        min-height:250px;
+        min-height:0;
+        aspect-ratio:3 / 4;
         border-radius:22px;
         background-size:cover;
-        background-position:center;
+        background-position:center top;
         background-repeat:no-repeat;
         background-color:#111;
       }
@@ -925,12 +945,16 @@
 
       .showcase-card{
         display:none;
-        min-height:280px;
+        min-height:320px;
         border-radius:24px;
         background-size:cover !important;
         background-position:center !important;
         background-repeat:no-repeat !important;
         background-color:#111;
+      }
+
+      .showcase-card.menu-card-seafood{
+        background-position:center 38% !important;
       }
 
       .showcase-card.active{display:flex}
@@ -1022,7 +1046,6 @@
       .review strong,.review span{display:none}
       .stars{font-size:13px;margin-bottom:8px}
       .review-g{top:10px;right:10px;transform:scale(.85)}
-      .google-score{font-size:14px;line-height:1.45}
 
       .contact-list{gap:12px;margin:18px 0}
       .contact-item a,.contact-item strong{font-size:14px;line-height:1.55}
@@ -1121,9 +1144,19 @@
     @media (max-width:480px){
       h1{font-size:27px}
       .hero-text p{font-size:12.5px}
-      .brand img{width:120px}
-      .showcase-card{min-height:250px}
-      .story-image{min-height:200px}
+      .brand{gap:6px}
+      .brand-main{width:128px}
+      .brand-badge{width:48px}
+      .showcase-card{min-height:280px}
+      .showcase-card.menu-card-seafood{
+        min-height:340px;
+        background-position:center 34% !important;
+      }
+      .story-image{
+        min-height:0;
+        aspect-ratio:7 / 9;
+        border-radius:20px;
+      }
     }
   .privacy-check {
   display: flex;
@@ -1182,7 +1215,8 @@
   <div class="topbar">
     <div class="container nav">
       <a href="#top" class="brand" aria-label="La Bitta">
-        <img src="logo.png" alt="Logo La Bitta">
+        <img class="brand-main" src="logo-cover.png" alt="Logo La Bitta Chiavari dal 1992" width="1200" height="401">
+        <img class="brand-badge" src="aic-badge.jpg" alt="Badge Associazione Italiana Celiachia">
       </a>
 
       <div class="nav-links">
@@ -1287,7 +1321,7 @@
           <span class="kicker" data-key="story_kicker">Tradizione e Passione</span>
           <h2 data-key="story_title">La Bitta: il calore di casa, dal 1992.</h2>
           <p data-key="story_p1">Nata nel cuore di Chiavari oltre 30 anni fa, La Bitta è il luogo dove la tradizione della pizza cotta nel forno a legna incontra la freschezza dei sapori liguri e del nostro mare.</p>
-          <p style="margin-top:16px;color:var(--muted);line-height:1.8;font-size:17px" data-key="story_p2">Il nostro segreto? Un impasto leggero, ingredienti scelti con cura e una dedizione che si tramanda di generazione in generazione. Che tu stia cercando una cena in famiglia, un'uscita con amici o un pasto sicuro senza glutine, qui troverai sempre un sorriso ad accoglierti.</p>
+          <p style="margin-top:16px;color:var(--muted);line-height:1.8;font-size:17px" data-key="story_p2">Dietro ogni impasto c'è l'esperienza di Glauco che da oltre 30 anni porta avanti il suo mestiere con cura, dedizione e amore per la tradizione. Accanto a lui, sua moglie Ilaria, accogliente e anima familiare del locale. Insieme hanno costruito un luogo dove sentirsi a casa, tra il profumo della pizza cotta nel forno a legna, ingredienti scelti con cura e sapori che raccontano la Liguria.</p>
         </div>
 
         <div class="story-stats">
@@ -1302,7 +1336,7 @@
         </div>
       </div>
 
-      <div class="story-image" aria-label="Pizza premium"></div>
+      <div class="story-image" aria-label="Glauco e Ilaria della Bitta"></div>
     </div>
   </section>
 
@@ -1333,7 +1367,7 @@
           </div>
         </article>
 
-        <article class="showcase-card" data-slide="1" style="background-image:url('IMG_0226.jpg')">
+        <article class="showcase-card menu-card-seafood" data-slide="1" style="background-image:url('menu-polpo.jpg')">
           <div class="showcase-overlay">
             <div class="showcase-top">
               <h3 class="showcase-title" data-key="menu_card2_title">Spaghetti allo Scoglio</h3>
@@ -1376,8 +1410,8 @@
 
           <div class="gluten-copy">
             <p data-key="gf_p1">Il Ristorante Pizzeria La Bitta è fiero di garantire a tutti i clienti, anche quelli con determinate intolleranze alimentari come la celiachia, la possibilità di poter godersi una pizza o un piatto di cucina con gli amici.</p>
-            <p data-key="gf_p2">Le pizze con farine senza glutine sono adeguatamente cotte nel forno apposito, regolarmente certificato.</p>
-            <p data-key="gf_p3">Per gli intolleranti al lattosio abbiamo inoltre la possibilità di preparare pizze usando come ingrediente il formaggio vegano, un sostituto vegetale del formaggio perfetto anche per chi segue un'alimentazione vegana.</p>
+            <p data-key="gf_p2">Le pizze con farine senza glutine sono adeguatamente cotte nel forno apposito, regolarmente certificato. Gran parte del nostro menu è disponibile anche in versione gluten free, così da offrire un'esperienza completa e senza rinunce.</p>
+            <p data-key="gf_p3">Per gli intolleranti al lattosio abbiamo inoltre la possibilità di preparare pizze usando come ingrediente il formaggio vegano, Violife, un sostituto vegetale del formaggio, perfetto anche per chi segue un'alimentazione vegana. Offriamo inoltre diverse soluzioni dedicate sia a chi è intollerante al lattosio sia a chi segue una dieta vegana.</p>
           </div>
         </div>
 
@@ -1437,8 +1471,6 @@
           <span data-key="rev_source">Recensione online</span>
         </article>
       </div>
-
-      <div class="google-score" data-key="google_score">★ 4.5 su Google • Oltre 1200 recensioni</div>
 
       <div style="margin-top:10px;display:flex;justify-content:center;">
         <a class="google-btn"
@@ -1632,7 +1664,7 @@
         story_kicker:'Tradizione e Passione',
         story_title:'La Bitta: il calore di casa, dal 1992.',
         story_p1:'Nata nel cuore di Chiavari oltre 30 anni fa, La Bitta è il luogo dove la tradizione della pizza cotta nel forno a legna incontra la freschezza dei sapori liguri e del nostro mare.',
-        story_p2:'Il nostro segreto? Un impasto leggero, ingredienti scelti con cura e una dedizione che si tramanda di generazione in generazione. Che tu stia cercando una cena in famiglia, un\'uscita con amici o un pasto sicuro senza glutine, qui troverai sempre un sorriso ad accoglierti.',
+        story_p2:'Dietro ogni impasto c\'è l\'esperienza di Glauco che da oltre 30 anni porta avanti il suo mestiere con cura, dedizione e amore per la tradizione. Accanto a lui, sua moglie Ilaria, accogliente e anima familiare del locale. Insieme hanno costruito un luogo dove sentirsi a casa, tra il profumo della pizza cotta nel forno a legna, ingredienti scelti con cura e sapori che raccontano la Liguria.',
         story_stat1_v:'30+',
         story_stat1_t:'Anni di Esperienza',
         story_stat2_v:'1M+',
@@ -1652,8 +1684,8 @@
         gf_kicker:'Senza Glutine',
         gf_title:'L\'Eccellenza del Senza Glutine',
         gf_p1:'Il Ristorante Pizzeria La Bitta è fiero di garantire a tutti i clienti, anche quelli con determinate intolleranze alimentari come la celiachia, la possibilità di poter godersi una pizza o un piatto di cucina con gli amici.',
-        gf_p2:'Le pizze con farine senza glutine sono adeguatamente cotte nel forno apposito, regolarmente certificato.',
-        gf_p3:'Per gli intolleranti al lattosio abbiamo inoltre la possibilità di preparare pizze usando come ingrediente il formaggio vegano, un sostituto vegetale del formaggio perfetto anche per chi segue un\'alimentazione vegana.',
+        gf_p2:'Le pizze con farine senza glutine sono adeguatamente cotte nel forno apposito, regolarmente certificato. Gran parte del nostro menu è disponibile anche in versione gluten free, così da offrire un\'esperienza completa e senza rinunce.',
+        gf_p3:'Per gli intolleranti al lattosio abbiamo inoltre la possibilità di preparare pizze usando come ingrediente il formaggio vegano, Violife, un sostituto vegetale del formaggio, perfetto anche per chi segue un\'alimentazione vegana. Offriamo inoltre diverse soluzioni dedicate sia a chi è intollerante al lattosio sia a chi segue una dieta vegana.',
         rev_kicker:'Recensioni',
         rev_title:'Le parole dei nostri clienti',
         rev_1:'"Pizza buonissima, serviti in un batter d\'occhio, anche i dolci veramente buoni."',
@@ -1661,7 +1693,6 @@
         rev_3:'"La pizza senza glutine è davvero ottima, leggera e molto digeribile."',
         rev_author:'Cliente verificato',
         rev_source:'Recensione online',
-        google_score:'★ 4.5 su Google • Oltre 1200 recensioni',
         google_btn:'Lascia una recensione su Google',
         contact_kicker:'Contatti',
         contact_title:'Vieni a Trovarci',
@@ -1701,7 +1732,7 @@
         story_kicker:'Tradition and Passion',
         story_title:'La Bitta: the warmth of home, since 1992.',
         story_p1:'Founded in the heart of Chiavari over 30 years ago, La Bitta is where the tradition of wood-fired pizza meets the freshness of Ligurian flavors and the taste of the sea.',
-        story_p2:'Our secret? Light dough, carefully selected ingredients and dedication passed down from generation to generation. Whether you are looking for a family dinner, a night out with friends or a safe gluten-free meal, you will always find a warm welcome here.',
+        story_p2:'Behind every dough is Glauco\'s experience, built over more than 30 years of carrying on his craft with care, dedication and love for tradition. Beside him is his wife Ilaria, welcoming and the warm family soul of the restaurant. Together they have created a place where you can feel at home, surrounded by the aroma of wood-fired pizza, carefully selected ingredients and flavors that tell the story of Liguria.',
         story_stat1_v:'30+',
         story_stat1_t:'Years of Experience',
         story_stat2_v:'1M+',
@@ -1720,9 +1751,9 @@
         menu_card2_tag2:'Specialty',
         gf_kicker:'Gluten Free',
         gf_title:'Excellence in Gluten-Free Dining',
-        gf_p1:'La Bitta is proud to guarantee all guests, including those with food intolerances such as celiac disease, the opportunity to enjoy a pizza or a dish with friends.',
-        gf_p2:'Pizzas made with gluten-free flours are properly baked in a dedicated certified oven.',
-        gf_p3:'For lactose-intolerant guests we can also prepare pizzas using vegan cheese, a plant-based alternative that is also perfect for those following a vegan diet.',
+        gf_p1:'La Bitta is proud to guarantee all guests, including those with food intolerances such as celiac disease, the opportunity to enjoy a pizza or one of our dishes with friends.',
+        gf_p2:'Pizzas made with gluten-free flours are properly baked in a dedicated certified oven. A large part of our menu is also available in a gluten-free version, offering a complete experience without compromise.',
+        gf_p3:'For lactose-intolerant guests we can also prepare pizzas using Violife vegan cheese, a plant-based cheese alternative that is also perfect for those following a vegan diet. We also offer several dedicated options for both lactose-intolerant guests and those who follow a vegan diet.',
         rev_kicker:'Reviews',
         rev_title:'What our guests say',
         rev_1:'"Excellent pizza, served in no time, and the desserts are truly delicious."',
@@ -1730,7 +1761,6 @@
         rev_3:'"The gluten-free pizza is truly excellent, light and very easy to digest."',
         rev_author:'Verified customer',
         rev_source:'Online review',
-        google_score:'★ 4.5 on Google • Over 1200 reviews',
         google_btn:'Leave a review on Google',
         contact_kicker:'Contacts',
         contact_title:'Come Visit Us',
