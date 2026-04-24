@@ -20,7 +20,18 @@
       "permanent": true
     },
     {
+      "source": "/contatti-e-orari",
+      "destination": "/contatti",
+      "permanent": true
+    },
+
+    {
       "source": "/il-locale",
+      "destination": "/la-nostra-storia",
+      "permanent": true
+    },
+    {
+      "source": "/la-storia",
       "destination": "/la-nostra-storia",
       "permanent": true
     },
@@ -29,6 +40,24 @@
       "destination": "/la-nostra-storia",
       "permanent": true
     },
+
+    {
+      "source": "/pizze-senza-glutine",
+      "destination": "/senza-glutine",
+      "permanent": true
+    },
+
+    {
+      "source": "/servizi-per-cani",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/servizi-per-bebe",
+      "destination": "/",
+      "permanent": true
+    },
+
     {
       "source": "/menu-card",
       "destination": "/menu",
@@ -36,6 +65,16 @@
     },
     {
       "source": "/menu.html",
+      "destination": "/menu",
+      "permanent": true
+    },
+    {
+      "source": "/menucard/:path*",
+      "destination": "/menu",
+      "permanent": true
+    },
+    {
+      "source": "/menucardcat/:path*",
       "destination": "/menu",
       "permanent": true
     }
