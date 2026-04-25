@@ -9,37 +9,37 @@
   <style>
 @font-face {
   font-family: 'Inter';
-  src: url('/fonts/Inter-Regular.ttf');
+  src: url('./:fonts/Inter-Regular.ttf');
   font-weight: 400;
 }
 
 @font-face {
   font-family: 'Inter';
-  src: url('/fonts/Inter-Medium.ttf');
+  src: url('./:fonts/Inter-Medium.ttf');
   font-weight: 500;
 }
 
 @font-face {
   font-family: 'Inter';
-  src: url('/fonts/Inter-Bold.ttf');
+  src: url('./:fonts/Inter-Bold.ttf');
   font-weight: 700;
 }
 
 @font-face {
   font-family: 'Cormorant Garamond';
-  src: url('/fonts/CormorantGaramond-Medium.ttf');
+  src: url('./:fonts/CormorantGaramond-Medium.ttf');
   font-weight: 500;
 }
 
 @font-face {
   font-family: 'Cormorant Garamond';
-  src: url('/fonts/CormorantGaramond-SemiBold.ttf');
+  src: url('./:fonts/CormorantGaramond-SemiBold.ttf');
   font-weight: 600;
 }
 
 @font-face {
   font-family: 'Cormorant Garamond';
-  src: url('/fonts/CormorantGaramond-Bold.ttf');
+  src: url('./:fonts/CormorantGaramond-Bold.ttf');
   font-weight: 700;
 }
     :root{
@@ -428,6 +428,10 @@
       background-position:center 42%;
     }
 
+    .showcase-card.menu-card-zena{
+      background-position:34% 52%;
+    }
+
     .showcase-overlay{
       width:100%;
       padding:34px;
@@ -652,6 +656,17 @@
       align-items:center;
       gap:14px;
       text-align:center;
+    }
+
+    .footer-inline-btn{
+      background:none;
+      border:0;
+      padding:0;
+      margin:0;
+      font:inherit;
+      color:inherit;
+      text-decoration:underline;
+      cursor:pointer;
     }
 
     .modal{
@@ -957,6 +972,10 @@
         background-position:center 38% !important;
       }
 
+      .showcase-card.menu-card-zena{
+        background-position:32% 50% !important;
+      }
+
       .showcase-card.active{display:flex}
 
       .menu-slider-controls{
@@ -1148,6 +1167,10 @@
       .brand-main{width:128px}
       .brand-badge{width:48px}
       .showcase-card{min-height:280px}
+      .showcase-card.menu-card-zena{
+        min-height:340px;
+        background-position:30% 50% !important;
+      }
       .showcase-card.menu-card-seafood{
         min-height:340px;
         background-position:center 34% !important;
@@ -1175,6 +1198,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
+  display: none;
   background: #1a1713;
   color: #f7f1e8;
   padding: 16px;
@@ -1190,28 +1214,51 @@
   gap: 10px;
 }
 
+.cookie-content p {
+  margin: 0;
+  line-height: 1.6;
+}
+
 .cookie-actions {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
-.cookie-actions button {
+.cookie-btn-primary,
+.cookie-btn-secondary,
+.cookie-link-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.cookie-btn-primary {
   background: #d7b26d;
   border: none;
-  padding: 8px 14px;
-  cursor: pointer;
-  border-radius: 6px;
+  color: #1b1408;
 }
 
-.cookie-actions button:last-child {
+.cookie-btn-secondary {
   background: transparent;
   border: 1px solid #d7b26d;
   color: #d7b26d;
 }
+
+.cookie-link-btn {
+  color: #f7f1e8;
+  border: 1px solid rgba(255,255,255,.14);
+}
 </style>
 </head>
-<base href="/">
 <body>
   <div class="topbar">
     <div class="container nav">
@@ -1296,9 +1343,8 @@
 <label class="privacy-check">
   <input type="checkbox" name="privacy_ack" required>
   <span>
-    Dichiaro di aver letto la 
-    <a href="/privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
-    e acconsento al trattamento dei miei dati per la gestione della richiesta di prenotazione.
+    Dichiaro di aver letto l'informativa privacy e di aver compreso che la richiesta verrà inviata tramite WhatsApp solo su mia azione volontaria. 
+    <a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
   </span>
 </label>
 
@@ -1353,14 +1399,14 @@
       </div>
 
       <div class="menu-showcase" id="menuShowcase">
-        <article class="showcase-card active" data-slide="0" style="background-image:url('IMG_0223.jpg')">
+        <article class="showcase-card menu-card-zena active" data-slide="0" style="background-image:url('menu-zena.jpg')">
           <div class="showcase-overlay">
             <div class="showcase-top">
-              <h3 class="showcase-title" data-key="menu_card1_title">Pizza della Casa</h3>
-              <div class="showcase-price">€14,50</div>
+              <h3 class="showcase-title" data-key="menu_card1_title">Zêna</h3>
+              <div class="showcase-price">€10,50</div>
             </div>
             <div class="showcase-line"></div>
-            <p class="showcase-text" data-key="menu_card1_text">Pomodoro, mozzarella fior di latte, ingredienti selezionati e cottura al forno a legna per un equilibrio perfetto tra gusto, struttura e fragranza.</p>
+            <p class="showcase-text" data-key="menu_card1_text">Pomodoro, mozzarella stracciatella, pesto, basilico.</p>
             <div class="showcase-tags">
               <span data-key="menu_card1_tag1">Forno a legna</span>
               <span data-key="menu_card1_tag2">Molto richiesta</span>
@@ -1371,11 +1417,11 @@
         <article class="showcase-card menu-card-seafood" data-slide="1" style="background-image:url('menu-polpo.jpg')">
           <div class="showcase-overlay">
             <div class="showcase-top">
-              <h3 class="showcase-title" data-key="menu_card2_title">Spaghetti allo Scoglio</h3>
-              <div class="showcase-price">€18,00</div>
+              <h3 class="showcase-title" data-key="menu_card2_title">Polpo, terra e mare.</h3>
+              <div class="showcase-price">14€</div>
             </div>
             <div class="showcase-line"></div>
-            <p class="showcase-text" data-key="menu_card2_text">Pasta, cozze, vongole, gamberi e prezzemolo fresco, per un primo di mare ricco, profumato e pensato per chi cerca sapore vero.</p>
+            <p class="showcase-text" data-key="menu_card2_text">Tentacolo di polipo alla griglia su una crema di ceci, finito con olio EVO ed erbette fresche.</p>
             <div class="showcase-tags">
               <span data-key="menu_card2_tag1">Pesce fresco</span>
               <span data-key="menu_card2_tag2">Specialità</span>
@@ -1530,8 +1576,8 @@
 
       <div class="map-wrap">
   <div id="map-placeholder" style="text-align:center; padding:20px;">
-    <p>Per visualizzare la mappa è necessario caricare un contenuto esterno di Google Maps.</p>
-    <button type="button" onclick="loadMap()" class="btn-secondary">Mostra mappa</button>
+    <p>Per visualizzare la mappa è necessario caricare un contenuto esterno di Google Maps. Cliccando qui sotto acconsenti al caricamento del servizio.</p>
+    <button type="button" onclick="loadMap()" class="btn-secondary">Accetta e mostra la mappa</button>
   </div>
 
 <div id="map-container" style="display:none;"></div>
@@ -1560,9 +1606,10 @@
     </div>
 
     <div>
-      <a href="/privacy.html">Privacy Policy</a> ·
-      <a href="/cookie.html">Cookie Policy</a> ·
-      <a href="/note-legali.html">Note legali</a>
+      <a href="privacy.html">Privacy Policy</a> ·
+      <a href="cookie.html">Cookie Policy</a> ·
+      <button type="button" class="footer-inline-btn" onclick="openCookiePreferences()">Preferenze cookie</button> ·
+      <a href="note-legali.html">Note legali</a>
     </div>
 
     <div>
@@ -1610,9 +1657,8 @@
 <label class="privacy-check">
   <input type="checkbox" name="privacy_ack" required>
   <span>
-    Dichiaro di aver letto la 
-    <a href="/privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
-    e acconsento al trattamento dei miei dati per la gestione della richiesta di prenotazione.
+    Dichiaro di aver letto l'informativa privacy e di aver compreso che la richiesta verrà inviata tramite WhatsApp solo su mia azione volontaria. 
+    <a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
   </span>
 </label>
 
@@ -1674,12 +1720,12 @@
         menu_title_a:'Cotti a Puntino,',
         menu_title_b:'Serviti con Amore',
         menu_intro:'Scopri i piatti più amati dai nostri clienti. Dal nostro storico forno a legna alle delizie del mar ligure.',
-        menu_card1_title:'Pizza della Casa',
-        menu_card1_text:'Pomodoro, mozzarella fior di latte, ingredienti selezionati e cottura al forno a legna per un equilibrio perfetto tra gusto, struttura e fragranza.',
+        menu_card1_title:'Zêna',
+        menu_card1_text:'Pomodoro, mozzarella stracciatella, pesto, basilico.',
         menu_card1_tag1:'Forno a legna',
         menu_card1_tag2:'Molto richiesta',
-        menu_card2_title:'Spaghetti allo Scoglio',
-        menu_card2_text:'Pasta, cozze, vongole, gamberi e prezzemolo fresco, per un primo di mare ricco, profumato e pensato per chi cerca sapore vero.',
+        menu_card2_title:'Polpo, terra e mare.',
+        menu_card2_text:'Tentacolo di polipo alla griglia su una crema di ceci, finito con olio EVO ed erbette fresche.',
         menu_card2_tag1:'Pesce fresco',
         menu_card2_tag2:'Specialità',
         gf_kicker:'Senza Glutine',
@@ -1742,12 +1788,12 @@
         menu_title_a:'Cooked to Perfection,',
         menu_title_b:'Served with Care',
         menu_intro:'Discover the dishes most loved by our guests. From our historic wood-fired oven to the delights of the Ligurian sea.',
-        menu_card1_title:'House Pizza',
-        menu_card1_text:'Tomato, fior di latte mozzarella, selected ingredients and wood-fired baking for the perfect balance of taste, structure and fragrance.',
+        menu_card1_title:'Zena',
+        menu_card1_text:'Tomato, stracciatella mozzarella, pesto, basil.',
         menu_card1_tag1:'Wood-fired',
         menu_card1_tag2:'Best seller',
-        menu_card2_title:'Seafood Spaghetti',
-        menu_card2_text:'Pasta, mussels, clams, prawns and fresh parsley for a rich, fragrant seafood first course full of true flavor.',
+        menu_card2_title:'Octopus, Land and Sea.',
+        menu_card2_text:'Grilled octopus tentacle on a chickpea cream, finished with extra virgin olive oil and fresh herbs.',
         menu_card2_tag1:'Fresh seafood',
         menu_card2_tag2:'Specialty',
         gf_kicker:'Gluten Free',
@@ -1894,60 +1940,149 @@
 <div id="cookie-banner" class="cookie-banner">
   <div class="cookie-content">
     <p>
-      Utilizziamo cookie tecnici e contenuti esterni (es. Google Maps) per migliorare l’esperienza. 
-      Puoi accettare o rifiutare.
+      Utilizziamo solo strumenti tecnici necessari al funzionamento del sito. Google Maps viene caricato solo con il tuo consenso e la tua scelta viene ricordata per 6 mesi.
     </p>
     <div class="cookie-actions">
-      <button id="accept-cookies">Accetta</button>
-      <button id="reject-cookies">Rifiuta</button>
-      <a href="/cookie.html" target="_blank" rel="noopener noreferrer">Scopri di più</a>
+      <button type="button" class="cookie-btn-primary" id="accept-cookies">Accetta Google Maps</button>
+      <button type="button" class="cookie-btn-secondary" id="reject-cookies">Continua senza Google Maps</button>
+      <a class="cookie-link-btn" href="cookie.html" target="_blank" rel="noopener noreferrer">Scopri di più</a>
      </div>
 </div>
 </div>
 <script>
-  const banner = document.getElementById("cookie-banner");
-  const acceptBtn = document.getElementById("accept-cookies");
-  const rejectBtn = document.getElementById("reject-cookies");
+  const COOKIE_PREF_KEY = 'cookiePreference';
+  const COOKIE_PREF_TTL = 180 * 24 * 60 * 60 * 1000;
 
-  if (!localStorage.getItem("cookieChoice")) {
-    banner.style.display = "block";
-  } else {
-    banner.style.display = "none";
+  function getCookieBanner(){
+    return document.getElementById('cookie-banner');
   }
 
-  acceptBtn.onclick = () => {
-    localStorage.setItem("cookieChoice", "accepted");
-    banner.style.display = "none";
-  };
+  function openCookiePreferences(){
+    const banner = getCookieBanner();
+    if (!banner) return;
+    banner.hidden = false;
+    banner.style.display = 'block';
+    banner.setAttribute('aria-hidden', 'false');
+  }
 
-  rejectBtn.onclick = () => {
-    localStorage.setItem("cookieChoice", "rejected");
-    banner.style.display = "none";
-  };
-</script>
-<script>
-function loadMap() {
-  document.getElementById("map-placeholder").style.display = "none";
-  document.getElementById("map-container").style.display = "block";
-  document.getElementById("map-container").innerHTML = `
-    <iframe src="https://www.google.com/maps?q=Corso%20Giuseppe%20Garibaldi%2099%20Chiavari&output=embed"
-    style="width:100%; height:520px; border:0;" loading="lazy"></iframe>
-  `;
-}
-</script>
-<script>
-function loadMap() {
-  document.getElementById("map-placeholder").style.display = "none";
-  document.getElementById("map-container").style.display = "block";
-  document.getElementById("map-container").innerHTML = `
-    <iframe
-      src="https://www.google.com/maps?q=Corso%20Giuseppe%20Garibaldi%2099%20Chiavari&output=embed"
-      style="width:100%; height:520px; border:0;"
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  `;
-}
+  function closeCookiePreferences(){
+    const banner = getCookieBanner();
+    if (!banner) return;
+    banner.hidden = true;
+    banner.style.display = 'none';
+    banner.setAttribute('aria-hidden', 'true');
+  }
+
+  function getStoredCookiePreference(){
+    try {
+      const raw = localStorage.getItem(COOKIE_PREF_KEY);
+      if (!raw) return null;
+
+      const parsed = JSON.parse(raw);
+      if (!parsed || typeof parsed !== 'object') return null;
+      if (!parsed.choice || !parsed.timestamp) return null;
+
+      if (Date.now() - parsed.timestamp > COOKIE_PREF_TTL) {
+        localStorage.removeItem(COOKIE_PREF_KEY);
+        return null;
+      }
+
+      return parsed.choice;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function storeCookiePreference(choice){
+    try {
+      localStorage.setItem(COOKIE_PREF_KEY, JSON.stringify({
+        choice,
+        timestamp: Date.now()
+      }));
+    } catch (error) {
+      // localStorage might be unavailable in private browsing or restricted contexts
+    }
+  }
+
+  function getMapElements(){
+    return {
+      placeholder: document.getElementById('map-placeholder'),
+      container: document.getElementById('map-container')
+    };
+  }
+
+  function resetMap(){
+    const { placeholder, container } = getMapElements();
+    if (!placeholder || !container) return;
+
+    placeholder.style.display = 'block';
+    container.style.display = 'none';
+    container.innerHTML = '';
+    container.dataset.loaded = 'false';
+  }
+
+  function renderMap(){
+    const { placeholder, container } = getMapElements();
+    if (!placeholder || !container) return;
+
+    placeholder.style.display = 'none';
+    container.style.display = 'block';
+
+    if (container.dataset.loaded === 'true') return;
+
+    container.innerHTML = `
+      <iframe
+        src="https://www.google.com/maps?q=Corso%20Giuseppe%20Garibaldi%2099%20Chiavari&output=embed"
+        style="width:100%; height:520px; border:0;"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    `;
+    container.dataset.loaded = 'true';
+  }
+
+  function applyCookiePreference(){
+    const choice = getStoredCookiePreference();
+
+    if (choice === 'accepted') {
+      closeCookiePreferences();
+      renderMap();
+      return;
+    }
+
+    resetMap();
+
+    if (choice === 'rejected') {
+      closeCookiePreferences();
+      return;
+    }
+
+    openCookiePreferences();
+  }
+
+  function acceptExternalContent(){
+    storeCookiePreference('accepted');
+    closeCookiePreferences();
+    renderMap();
+  }
+
+  function rejectExternalContent(){
+    storeCookiePreference('rejected');
+    closeCookiePreferences();
+    resetMap();
+  }
+
+  function loadMap() {
+    acceptExternalContent();
+  }
+
+  const acceptBtn = document.getElementById('accept-cookies');
+  const rejectBtn = document.getElementById('reject-cookies');
+
+  if (acceptBtn) acceptBtn.onclick = acceptExternalContent;
+  if (rejectBtn) rejectBtn.onclick = rejectExternalContent;
+
+  applyCookiePreference();
 </script>
 </body>
 </html>
