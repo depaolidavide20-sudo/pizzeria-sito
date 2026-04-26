@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    { "source": "/il-locale", "destination": "/storia.html", "statusCode": 301 },
+    { "source": "/la-storia", "destination": "/storia.html", "statusCode": 301 },
+    { "source": "/contact-us", "destination": "/contatti.html", "statusCode": 301 },
+    { "source": "/contatti-e-orari", "destination": "/contatti.html", "statusCode": 301 },
+    { "source": "/privacy-policy", "destination": "/privacy.html", "statusCode": 301 },
+    { "source": "/pizze-senza-glutine", "destination": "/senza-glutine.html", "statusCode": 301 },
+    { "source": "/menu", "destination": "/menu.html", "statusCode": 301 }
+  ]
+}
