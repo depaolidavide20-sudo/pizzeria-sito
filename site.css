@@ -1380,6 +1380,16 @@
   margin-top:24px;
 }
 
+.story-home-action,
+.gluten-home-action{
+  justify-content:flex-start;
+}
+
+.story-home-action .cta,
+.gluten-home-action .cta{
+  min-width:min(100%,280px);
+}
+
 .page-badges,
 .mini-proof-grid{
   display:grid;
@@ -1448,6 +1458,9 @@
   margin-top:22px;
   display:flex;
   justify-content:center;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
 }
 
 .contact-quick-actions{
@@ -1500,7 +1513,8 @@
 
   .page-actions,
   .section-actions,
-  .contact-quick-actions{
+  .contact-quick-actions,
+  .review-page-actions{
     width:100%;
   }
 
@@ -1509,7 +1523,9 @@
   .section-actions .cta,
   .section-actions .btn-secondary,
   .contact-quick-actions .cta,
-  .contact-quick-actions .btn-secondary{
+  .contact-quick-actions .btn-secondary,
+  .review-page-actions .google-btn,
+  .review-page-actions .btn-secondary{
     width:100%;
   }
 
