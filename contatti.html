@@ -34,7 +34,7 @@
 
     <div class="nav-links">
       <a href="storia.html" data-key="nav_story">La nostra storia</a>
-      <a href="menu.html" data-key="nav_menu">Menu</a>
+      <a href="menu.html" data-key="nav_menu">Menù</a>
       <a href="senza-glutine.html" data-key="nav_gluten">Senza Glutine</a>
       <a href="recensioni.html" data-key="nav_reviews">Recensioni</a>
       <a href="contatti.html" data-key="nav_contacts">Contatti</a>
@@ -47,7 +47,7 @@
       </div>
     </div>
 
-    <button class="mobile-menu-toggle" type="button" onclick="toggleMobileMenu()" aria-label="Apri menu">
+    <button class="mobile-menu-toggle" type="button" onclick="toggleMobileMenu()" aria-label="Apri menù">
       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg>
     </button>
   </div>
@@ -55,7 +55,7 @@
 
 <div class="mobile-menu-panel" id="mobileMenuPanel">
   <a href="storia.html" onclick="closeMobileMenu()" data-key="nav_story">La nostra storia</a>
-  <a href="menu.html" onclick="closeMobileMenu()" data-key="nav_menu">Menu</a>
+  <a href="menu.html" onclick="closeMobileMenu()" data-key="nav_menu">Menù</a>
   <a href="senza-glutine.html" onclick="closeMobileMenu()" data-key="nav_gluten">Senza Glutine</a>
   <a href="recensioni.html" onclick="closeMobileMenu()" data-key="nav_reviews">Recensioni</a>
   <a href="contatti.html" onclick="closeMobileMenu()" data-key="nav_contacts">Contatti</a>
@@ -69,6 +69,10 @@
       <span data-key="page_badge1">Corso Giuseppe Garibaldi, 99</span>
       <span data-key="page_badge2">Aperto la sera</span>
       <span data-key="page_badge3">Prenotazioni rapide via WhatsApp</span>
+    </div>
+    <div class="page-actions">
+      <button class="cta" type="button" onclick="openModal()"><span data-key="book_now">Prenota ora</span></button>
+      <a class="btn-secondary" href="tel:0185312963" data-key="call_now_short">Chiama adesso</a>
     </div>
   </div>
 </section>
@@ -124,50 +128,6 @@
   </div>
 </section>
 
-<section class="section booking-section" style="padding-top:0;">
-  <div class="container">
-    <div class="section-title centered-title">
-      <span class="kicker" data-key="contact_booking_kicker">Prenotazioni</span>
-      <h2 data-key="contact_booking_title">Prenota in pochi passaggi</h2>
-      <p class="contact-page-note" data-key="contact_booking_intro">Compila il form qui sotto oppure usa il pulsante WhatsApp: il sito prepara il messaggio e ti accompagna all'invio.</p>
-    </div>
-    <aside class="booking-card">
-  <h3 data-key="booking_title">Prenota il tuo tavolo</h3>
-  <form class="form booking-form" onsubmit="submitBooking(event)">
-    <input type="text" name="name" data-ph-it="Nome e cognome" data-ph-en="Full name" placeholder="Nome e cognome" required>
-
-    <div class="grid-2">
-      <input type="tel" name="phone" data-ph-it="Telefono" data-ph-en="Phone" placeholder="Telefono" required>
-      <input type="number" name="guests" data-ph-it="Persone" data-ph-en="Guests" placeholder="Persone" min="1" max="20" required>
-    </div>
-
-    <div class="grid-2">
-      <input type="date" name="date" required>
-      <input type="time" name="time" required>
-    </div>
-
-    <textarea rows="4" name="notes" data-ph-it="Richieste particolari (tavolo, seggiolone, orario...)" data-ph-en="Special requests (table, stroller, timing...)" placeholder="Richieste particolari (tavolo, seggiolone, orario...)"></textarea>
-    <div class="hint" data-key="form_hint">Per esigenze alimentari specifiche ti invitiamo a contattarci telefonicamente.</div>
-    <label class="privacy-check">
-      <input type="checkbox" name="privacy_ack" required>
-      <span data-key="privacy_notice">Dichiaro di aver letto l'informativa privacy e di aver compreso che la richiesta verrà inviata tramite WhatsApp solo su mia azione volontaria. <a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a></span>
-    </label>
-
-    <button class="cta" type="submit">
-      <svg class="btn-wa-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M20.52 3.48A11.8 11.8 0 0012.01 0C5.38 0 .01 5.37 0 12c0 2.11.55 4.17 1.6 6L0 24l6.18-1.6A11.94 11.94 0 0012.01 24C18.64 24 24 18.63 24 12c0-3.2-1.25-6.2-3.48-8.52zM12.01 21.8c-1.8 0-3.57-.48-5.12-1.39l-.37-.22-3.67.95.98-3.58-.24-.37A9.77 9.77 0 012.2 12c0-5.4 4.4-9.8 9.8-9.8 2.62 0 5.08 1.02 6.93 2.87A9.72 9.72 0 0121.8 12c0 5.4-4.4 9.8-9.79 9.8zm5.39-7.34c-.29-.15-1.72-.85-1.99-.94-.27-.1-.47-.15-.67.15-.2.29-.77.94-.95 1.14-.17.2-.35.22-.64.07-.29-.15-1.24-.46-2.36-1.46-.87-.77-1.46-1.72-1.63-2.01-.17-.29-.02-.44.13-.59.13-.13.29-.35.44-.52.15-.17.2-.29.3-.49.1-.2.05-.37-.02-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.29-1.04 1.02-1.04 2.49 0 1.47 1.07 2.9 1.22 3.1.15.2 2.11 3.22 5.11 4.52.71.31 1.27.5 1.7.64.71.22 1.35.19 1.86.12.57-.08 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.12-.26-.2-.55-.35z"/>
-      </svg>
-      <span data-key="send_request">Invia richiesta</span>
-    </button>
-
-    <div class="hint" data-key="booking_hint">Questo form apre direttamente WhatsApp con il messaggio già pronto da inviare.</div>
-  </form>
-</aside>
-    <div class="section-actions" style="justify-content:center;">
-      <a class="btn-secondary" href="menu.html" data-key="contact_cta_secondary">Guarda il menu</a>
-    </div>
-  </div>
-</section>
 <footer>
   <div class="container footer-row legal-footer">
     <div>CAN.GU S.r.l</div>
@@ -261,7 +221,7 @@
   </div>
 </div>
 <script>
-window.pageTranslations = {"it": {"nav_story": "La nostra storia", "nav_menu": "Menu", "nav_gluten": "Senza Glutine", "nav_reviews": "Recensioni", "nav_contacts": "Contatti", "book_now": "Prenota ora", "call_now": "Chiama 0185 312963", "call_now_short": "Chiama adesso", "booking_title": "Prenota il tuo tavolo", "send_request": "Invia richiesta", "booking_hint": "Questo form apre direttamente WhatsApp con il messaggio già pronto da inviare.", "modal_title": "Prenota il tuo tavolo", "modal_text": "Compila il form e verrai reindirizzato su WhatsApp con il messaggio già pronto da inviare.", "modal_send": "Invia su WhatsApp", "form_hint": "Per esigenze alimentari specifiche ti invitiamo a contattarci telefonicamente.", "privacy_notice": "Dichiaro di aver letto l'informativa privacy e di aver compreso che la richiesta verrà inviata tramite WhatsApp solo su mia azione volontaria. <a href=\"privacy.html\" target=\"_blank\" rel=\"noopener noreferrer\">Privacy Policy</a>", "map_notice": "Per visualizzare la mappa è necessario caricare un contenuto esterno di Google Maps. Cliccando qui sotto acconsenti al caricamento del servizio.", "map_button": "Accetta e mostra la mappa", "contact_kicker": "Contatti", "contact_title": "Vieni a Trovarci", "contact_address_label": "Indirizzo", "contact_address": "Corso Giuseppe Garibaldi, 99<br>16043 Chiavari GE, Italia", "contact_phone_label": "Telefono", "contact_hours_label": "Orari", "contact_hours": "Lun, Mer - Dom: 19:00 - 00:00<br>Chiuso il Martedì", "google_btn": "Lascia una recensione su Google", "review_boost": "Ci vogliono solo 10 secondi", "page_kicker": "Contatti e prenotazioni", "page_title": "Vieni a trovarci a Chiavari", "page_intro": "Trovi La Bitta nel cuore di Chiavari. Qui puoi contattarci, chiamarci o inviarci una richiesta di prenotazione rapida via WhatsApp.", "page_badge1": "Corso Giuseppe Garibaldi, 99", "page_badge2": "Aperto la sera", "page_badge3": "Prenotazioni rapide via WhatsApp", "contact_booking_kicker": "Prenotazioni", "contact_booking_title": "Prenota in pochi passaggi", "contact_booking_intro": "Compila il form qui sotto oppure usa il pulsante WhatsApp: il sito prepara il messaggio e ti accompagna all'invio.", "contact_cta_secondary": "Guarda il menu"}, "en": {"nav_story": "Our Story", "nav_menu": "Menu", "nav_gluten": "Gluten Free", "nav_reviews": "Reviews", "nav_contacts": "Contacts", "book_now": "Book now", "call_now": "Call 0185 312963", "call_now_short": "Call now", "booking_title": "Book your table", "send_request": "Send request", "booking_hint": "This form opens WhatsApp with a pre-filled message ready to send.", "modal_title": "Book your table", "modal_text": "Fill in the form and you will be redirected to WhatsApp with a pre-filled message ready to send.", "modal_send": "Send on WhatsApp", "form_hint": "For specific dietary needs, please contact us by phone.", "privacy_notice": "I confirm that I have read the privacy notice and that this request will be sent via WhatsApp only through my voluntary action. <a href=\"privacy.html\" target=\"_blank\" rel=\"noopener noreferrer\">Privacy Policy</a>", "map_notice": "To view the map, an external Google Maps service must be loaded. By clicking below you consent to loading the service.", "map_button": "Accept and show the map", "contact_kicker": "Contacts", "contact_title": "Come Visit Us", "contact_address_label": "Address", "contact_address": "Corso Giuseppe Garibaldi, 99<br>16043 Chiavari GE, Italy", "contact_phone_label": "Phone", "contact_hours_label": "Opening Hours", "contact_hours": "Mon, Wed - Sun: 7:00 PM - 12:00 AM<br>Closed on Tuesday", "google_btn": "Leave a review on Google", "review_boost": "It only takes 10 seconds", "page_kicker": "Contacts and bookings", "page_title": "Come visit us in Chiavari", "page_intro": "You can find La Bitta in the heart of Chiavari. Here you can contact us, call us or send a quick WhatsApp booking request.", "page_badge1": "Corso Giuseppe Garibaldi, 99", "page_badge2": "Open in the evening", "page_badge3": "Fast WhatsApp bookings", "contact_booking_kicker": "Bookings", "contact_booking_title": "Book in just a few steps", "contact_booking_intro": "Fill in the form below or use the WhatsApp button: the site prepares the message and takes you to the final send action.", "contact_cta_secondary": "View the menu"}};
+window.pageTranslations = {"it":{"nav_story":"La nostra storia","nav_menu":"Menù","nav_gluten":"Senza Glutine","nav_reviews":"Recensioni","nav_contacts":"Contatti","book_now":"Prenota ora","call_now":"Chiama 0185 312963","call_now_short":"Chiama adesso","booking_title":"Prenota il tuo tavolo","send_request":"Invia richiesta","booking_hint":"Questo form apre direttamente WhatsApp con il messaggio già pronto da inviare.","modal_title":"Prenota il tuo tavolo","modal_text":"Compila il form e verrai reindirizzato su WhatsApp con il messaggio già pronto da inviare.","modal_send":"Invia su WhatsApp","form_hint":"Per esigenze alimentari specifiche ti invitiamo a contattarci telefonicamente.","privacy_notice":"Dichiaro di aver letto l'informativa privacy e di aver compreso che la richiesta verrà inviata tramite WhatsApp solo su mia azione volontaria. <a href=\"privacy.html\" target=\"_blank\" rel=\"noopener noreferrer\">Privacy Policy</a>","map_notice":"Per visualizzare la mappa è necessario caricare un contenuto esterno di Google Maps. Cliccando qui sotto acconsenti al caricamento del servizio.","map_button":"Accetta e mostra la mappa","contact_kicker":"Contatti","contact_title":"Vieni a Trovarci","contact_address_label":"Indirizzo","contact_address":"Corso Giuseppe Garibaldi, 99<br>16043 Chiavari GE, Italia","contact_phone_label":"Telefono","contact_hours_label":"Orari","contact_hours":"Lun, Mer - Dom: 19:00 - 00:00<br>Chiuso il Martedì","google_btn":"Lascia una recensione su Google","review_boost":"Ci vogliono solo 10 secondi","page_kicker":"Contatti e prenotazioni","page_title":"Vieni a trovarci a Chiavari","page_intro":"Trovi La Bitta nel cuore di Chiavari. Qui puoi contattarci, chiamarci o inviarci una richiesta di prenotazione rapida via WhatsApp.","page_badge1":"Corso Giuseppe Garibaldi, 99","page_badge2":"Aperto la sera","page_badge3":"Prenotazioni rapide via WhatsApp","contact_booking_kicker":"Prenotazioni","contact_booking_title":"Prenota in pochi passaggi","contact_booking_intro":"Compila il form qui sotto oppure usa il pulsante WhatsApp: il sito prepara il messaggio e ti accompagna all'invio.","contact_cta_secondary":"Guarda il menù"},"en":{"nav_story":"Our Story","nav_menu":"Menu","nav_gluten":"Gluten Free","nav_reviews":"Reviews","nav_contacts":"Contacts","book_now":"Book now","call_now":"Call 0185 312963","call_now_short":"Call now","booking_title":"Book your table","send_request":"Send request","booking_hint":"This form opens WhatsApp with a pre-filled message ready to send.","modal_title":"Book your table","modal_text":"Fill in the form and you will be redirected to WhatsApp with a pre-filled message ready to send.","modal_send":"Send on WhatsApp","form_hint":"For specific dietary needs, please contact us by phone.","privacy_notice":"I confirm that I have read the privacy notice and that this request will be sent via WhatsApp only through my voluntary action. <a href=\"privacy.html\" target=\"_blank\" rel=\"noopener noreferrer\">Privacy Policy</a>","map_notice":"To view the map, an external Google Maps service must be loaded. By clicking below you consent to loading the service.","map_button":"Accept and show the map","contact_kicker":"Contacts","contact_title":"Come Visit Us","contact_address_label":"Address","contact_address":"Corso Giuseppe Garibaldi, 99<br>16043 Chiavari GE, Italy","contact_phone_label":"Phone","contact_hours_label":"Opening Hours","contact_hours":"Mon, Wed - Sun: 7:00 PM - 12:00 AM<br>Closed on Tuesday","google_btn":"Leave a review on Google","review_boost":"It only takes 10 seconds","page_kicker":"Contacts and bookings","page_title":"Come visit us in Chiavari","page_intro":"You can find La Bitta in the heart of Chiavari. Here you can contact us, call us or send a quick WhatsApp booking request.","page_badge1":"Corso Giuseppe Garibaldi, 99","page_badge2":"Open in the evening","page_badge3":"Fast WhatsApp bookings","contact_booking_kicker":"Bookings","contact_booking_title":"Book in just a few steps","contact_booking_intro":"Fill in the form below or use the WhatsApp button: the site prepares the message and takes you to the final send action.","contact_cta_secondary":"View the menu"}};
 </script>
 <script src="site.js"></script>
 </body>
