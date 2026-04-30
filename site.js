@@ -1,7 +1,7 @@
 const LANGUAGE_KEY = 'siteLanguage';
 let currentMenuSlide = 0;
 const WHATSAPP_NUMBER = '390185312963';
-const WHATSAPP_SEND_URL = 'https://api.whatsapp.com/send';
+const WHATSAPP_SEND_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 
 function getPageTranslations() {
   const translations = window.pageTranslations || {};
@@ -132,7 +132,6 @@ function submitBooking(event) {
   }
 
   const params = new URLSearchParams({
-    phone: WHATSAPP_NUMBER,
     text: messageLines.join('\n')
   });
 

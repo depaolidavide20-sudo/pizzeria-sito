@@ -2405,3 +2405,393 @@
     font-size:clamp(34px,12vw,46px);
   }
 }
+
+/* Mobile premium polish */
+@media (max-width:780px){
+  html{
+    scroll-padding-top:72px;
+  }
+
+  body{
+    padding-bottom:92px;
+  }
+
+  .topbar .nav{
+    min-height:64px;
+    padding:7px 10px;
+    gap:7px;
+  }
+
+  .brand{
+    gap:7px;
+  }
+
+  .brand-main{
+    width:clamp(112px,31vw,132px);
+  }
+
+  .brand-badge{
+    width:clamp(40px,10.8vw,48px);
+    border-radius:11px;
+  }
+
+  .lang-switcher{
+    gap:7px;
+  }
+
+  .lang-btn{
+    min-width:36px;
+    min-height:36px;
+    padding:8px 9px;
+    font-size:11px;
+  }
+
+  .mobile-menu-toggle{
+    width:40px;
+    height:40px;
+    border-radius:13px;
+  }
+
+  .mobile-menu-panel{
+    top:72px;
+  }
+
+  .hero{
+    min-height:clamp(520px,calc(100svh - 64px),680px);
+    overflow:hidden;
+    background:
+      linear-gradient(180deg,rgba(0,0,0,.04) 0%,rgba(0,0,0,.10) 34%,rgba(0,0,0,.58) 72%,rgba(0,0,0,.88) 100%),
+      url('/hero-bitta-cover-mobile.jpg') center 34% / cover no-repeat,
+      url('hero-bitta-cover-mobile.jpg') center 34% / cover no-repeat;
+  }
+
+  .hero-grid{
+    min-height:clamp(520px,calc(100svh - 64px),680px);
+    padding:0;
+  }
+
+  .hero-text{
+    min-height:clamp(520px,calc(100svh - 64px),680px);
+    justify-content:center;
+    padding:58px 16px 132px;
+    border-radius:0;
+    background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.06) 34%,rgba(0,0,0,.52) 72%,rgba(0,0,0,.88) 100%);
+  }
+
+  .hero h1{
+    width:min(92vw,520px);
+    max-width:92vw;
+    margin:0 auto;
+    font-size:clamp(34px,10.8vw,48px);
+    line-height:.94;
+    text-shadow:0 5px 24px rgba(0,0,0,.58);
+  }
+
+  .hero-text > p{
+    display:none;
+  }
+
+  .mobile-bookbar{
+    left:12px;
+    right:12px;
+    bottom:calc(env(safe-area-inset-bottom,0px) + 10px);
+    padding:8px;
+    gap:8px;
+    border-radius:20px;
+    background:rgba(14,12,10,.94);
+  }
+
+  .mobile-bookbar .cta,
+  .mobile-bookbar .btn-secondary{
+    min-height:48px;
+    border-radius:16px;
+    font-size:14px;
+  }
+
+  .mobile-bookbar .btn-secondary{
+    min-width:56px;
+  }
+
+  .page-hero{
+    padding:30px 0 22px;
+  }
+
+  .page-hero-shell{
+    gap:10px;
+  }
+
+  .page-hero .kicker{
+    font-size:11px;
+    letter-spacing:.2em;
+  }
+
+  .page-hero h1{
+    max-width:94vw;
+    font-size:clamp(31px,9.4vw,42px);
+    line-height:.98;
+  }
+
+  .page-lead{
+    font-size:14.5px;
+    line-height:1.58;
+  }
+
+  .page-badges,
+  .mini-proof-grid,
+  .story-stats{
+    display:none !important;
+  }
+
+  .page-actions,
+  .section-actions{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:9px;
+    width:100%;
+    margin-top:8px;
+  }
+
+  .page-actions .cta,
+  .page-actions .btn-secondary,
+  .page-actions .google-btn,
+  .section-actions .cta,
+  .section-actions .btn-secondary{
+    width:100%;
+    min-height:48px;
+    border-radius:999px;
+    padding:12px 18px;
+  }
+
+  .section{
+    padding:34px 0;
+  }
+
+  .section + .section{
+    padding-top:6px;
+  }
+
+  .page-hero + .section .story{
+    gap:18px;
+  }
+
+  .page-hero + .section .story-image{
+    order:1;
+    aspect-ratio:4 / 5;
+    max-height:500px;
+    border-radius:24px;
+  }
+
+  .page-hero + .section .story-panel{
+    order:2;
+    padding:2px 2px 0;
+    border:0;
+    background:transparent;
+    box-shadow:none;
+  }
+
+  .page-hero + .section .story-panel .section-title{
+    margin-bottom:0;
+  }
+
+  .page-hero + .section .story-panel .kicker{
+    display:none;
+  }
+
+  .page-hero + .section .story-panel h2{
+    font-size:clamp(30px,8.8vw,38px);
+    line-height:1;
+  }
+
+  .page-hero + .section .story-panel p{
+    margin-top:12px !important;
+    color:#e7dccf !important;
+  }
+
+  .page-hero + .section .story-panel p[data-key="story_p2"]{
+    display:none;
+  }
+
+  .menu-page-shell{
+    gap:18px;
+  }
+
+  .menu-page-shell .centered-title{
+    margin-bottom:0;
+  }
+
+  .menu-page-shell .centered-title h2{
+    font-size:clamp(34px,10vw,46px) !important;
+    line-height:1;
+    margin-bottom:0 !important;
+  }
+
+  .menu-page-note{
+    display:none;
+  }
+
+  .menu-showcase{
+    margin-top:2px;
+  }
+
+  .showcase-card,
+  .showcase-card.menu-card-zena,
+  .showcase-card.menu-card-seafood{
+    min-height:390px;
+    border-radius:24px;
+  }
+
+  .showcase-overlay{
+    padding:22px 20px;
+  }
+
+  .showcase-title{
+    font-size:clamp(32px,10vw,42px);
+    line-height:.98;
+  }
+
+  .showcase-text{
+    max-width:95%;
+  }
+
+  .menu-board-card-full{
+    padding:20px;
+    border-radius:22px;
+    background:linear-gradient(180deg,rgba(255,255,255,.052),rgba(255,255,255,.024));
+    box-shadow:0 18px 44px rgba(0,0,0,.24);
+  }
+
+  .menu-board-copy{
+    gap:10px;
+  }
+
+  .menu-board-copy h2,
+  .menu-board-copy h3{
+    font-size:clamp(29px,8.5vw,38px);
+    line-height:1;
+  }
+
+  .menu-board-copy p{
+    font-size:14px;
+    line-height:1.58;
+  }
+
+  .page-hero + .section .gluten-box{
+    gap:18px;
+    padding:20px;
+    border-radius:24px;
+  }
+
+  .page-hero + .section .gluten-title h2{
+    font-size:clamp(30px,8.8vw,39px);
+    line-height:1;
+  }
+
+  .page-hero + .section .gluten-copy p{
+    font-size:14.5px !important;
+    line-height:1.62 !important;
+  }
+
+  .page-hero + .section .gluten-copy p[data-key="gf_p3"]{
+    display:none;
+  }
+
+  .page-hero + .section .gluten-cert{
+    display:none;
+  }
+
+  .page-hero + .section .gluten-chef{
+    width:100%;
+    max-height:320px;
+    object-fit:cover;
+    border-radius:20px;
+  }
+
+  .page-hero + .section .reviews-shell .centered-title{
+    display:none;
+  }
+
+  .review-grid{
+    padding:0 1px 12px;
+    gap:14px;
+  }
+
+  .review-grid .review{
+    flex:0 0 min(84vw,340px);
+    min-height:190px;
+    padding:20px;
+    border-radius:20px;
+  }
+
+  .review strong,
+  .review span{
+    display:block;
+  }
+
+  .review-page-actions{
+    margin-top:10px;
+  }
+
+  .review-page-actions .google-btn{
+    min-height:50px;
+  }
+
+  .review-boost{
+    margin-top:5px;
+  }
+
+  .page-hero + .section .contact-grid{
+    gap:16px;
+  }
+
+  .page-hero + .section .contact-card{
+    padding:20px;
+    border-radius:24px;
+  }
+
+  .page-hero + .section .contact-card .section-title h2{
+    font-size:clamp(30px,8.8vw,39px);
+    line-height:1;
+  }
+
+  .page-hero + .section .contact-list{
+    margin:18px 0;
+    gap:12px;
+  }
+
+  .page-hero + .section .contact-quick-actions{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:9px;
+  }
+
+  .page-hero + .section .map-wrap{
+    border-radius:24px;
+  }
+
+  .page-hero + .section .map-wrap iframe{
+    min-height:310px;
+  }
+}
+
+@media (max-width:380px){
+  .brand-main{
+    width:106px;
+  }
+
+  .brand-badge{
+    width:38px;
+  }
+
+  .lang-btn{
+    min-width:34px;
+  }
+
+  .mobile-menu-toggle{
+    width:38px;
+    height:38px;
+  }
+
+  .hero h1{
+    font-size:clamp(31px,10.2vw,40px);
+  }
+}
