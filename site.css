@@ -1567,7 +1567,7 @@
   align-items:center;
   background:
     linear-gradient(180deg,rgba(6,4,3,.50) 0%,rgba(10,8,6,.18) 32%,rgba(10,8,6,.72) 100%),
-    url('hero-bitta-cover.jpg') center 64%/cover no-repeat;
+    url('/hero-bitta-cover.jpg') center 64%/cover no-repeat;
 }
 
 .hero-grid{
