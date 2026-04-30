@@ -1,5 +1,7 @@
 const LANGUAGE_KEY = 'siteLanguage';
 let currentMenuSlide = 0;
+const WHATSAPP_NUMBER = '390185312963';
+const WHATSAPP_SEND_URL = 'https://api.whatsapp.com/send';
 
 function getPageTranslations() {
   const translations = window.pageTranslations || {};
@@ -99,34 +101,42 @@ function submitBooking(event) {
   const tavolo = form.querySelector('[name="preference"]')?.value?.trim() || '';
   const note = form.querySelector('[name="notes"]')?.value?.trim() || '';
 
-  let msg = '';
+  let messageLines = [];
 
   if (lang === 'en') {
-    msg =
-      `Hello, I would like to book a table:%0A%0A` +
-      `Name: ${encodeURIComponent(nome)}%0A` +
-      `Phone: ${encodeURIComponent(telefono)}%0A` +
-      `Guests: ${encodeURIComponent(persone)}%0A` +
-      `Date: ${encodeURIComponent(data)}%0A` +
-      `Time: ${encodeURIComponent(ora)}`;
+    messageLines = [
+      'Hello, I would like to book a table:',
+      '',
+      `Name: ${nome}`,
+      `Phone: ${telefono}`,
+      `Guests: ${persone}`,
+      `Date: ${data}`,
+      `Time: ${ora}`
+    ];
 
-    if (tavolo) msg += `%0ATable preference: ${encodeURIComponent(tavolo)}`;
-    if (note) msg += `%0ANotes: ${encodeURIComponent(note)}`;
+    if (tavolo) messageLines.push(`Table preference: ${tavolo}`);
+    if (note) messageLines.push(`Notes: ${note}`);
   } else {
-    msg =
-      `Ciao, vorrei prenotare:%0A%0A` +
-      `Nome: ${encodeURIComponent(nome)}%0A` +
-      `Telefono: ${encodeURIComponent(telefono)}%0A` +
-      `Persone: ${encodeURIComponent(persone)}%0A` +
-      `Data: ${encodeURIComponent(data)}%0A` +
-      `Ora: ${encodeURIComponent(ora)}`;
+    messageLines = [
+      'Ciao, vorrei prenotare:',
+      '',
+      `Nome: ${nome}`,
+      `Telefono: ${telefono}`,
+      `Persone: ${persone}`,
+      `Data: ${data}`,
+      `Ora: ${ora}`
+    ];
 
-    if (tavolo) msg += `%0APreferenza tavolo: ${encodeURIComponent(tavolo)}`;
-    if (note) msg += `%0ANote: ${encodeURIComponent(note)}`;
+    if (tavolo) messageLines.push(`Preferenza tavolo: ${tavolo}`);
+    if (note) messageLines.push(`Note: ${note}`);
   }
 
-  const numero = '393XXXXXXXXX';
-  window.open(`https://wa.me/${numero}?text=${msg}`, '_blank');
+  const params = new URLSearchParams({
+    phone: WHATSAPP_NUMBER,
+    text: messageLines.join('\n')
+  });
+
+  window.open(`${WHATSAPP_SEND_URL}?${params.toString()}`, '_blank', 'noopener');
 }
 
 function openModal() {
