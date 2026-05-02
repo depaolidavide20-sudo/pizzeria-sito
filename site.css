@@ -2961,61 +2961,28 @@
 
 @media (max-width:780px){
   .hero{
-    min-height:calc(100svh - 64px) !important;
     padding:0 !important;
     margin-bottom:0 !important;
-    background:#050403 !important;
-    overflow:hidden;
   }
 
   .hero-grid{
-    min-height:calc(100svh - 64px) !important;
     padding:0 !important;
     margin:0 !important;
-    align-items:stretch;
   }
 
   .hero-text{
-    min-height:calc(100svh - 64px) !important;
     line-height:0;
-    isolation:isolate;
-  }
-
-  .hero-text::before{
-    content:"";
-    position:absolute;
-    inset:-18px;
-    z-index:0;
-    pointer-events:none;
-    background:
-      linear-gradient(180deg,rgba(5,4,3,.18) 0%,rgba(5,4,3,.18) 40%,rgba(5,4,3,.86) 100%),
-      url('/hero-bitta-cover.jpg') center 48% / cover no-repeat,
-      url('hero-bitta-cover.jpg') center 48% / cover no-repeat;
-    filter:blur(16px);
-    opacity:.82;
-    transform:scale(1.08);
   }
 
   .hero-photo-mobile{
-    position:absolute;
-    top:45%;
-    left:50%;
-    z-index:1;
-    width:118% !important;
+    width:103% !important;
     max-width:none;
-    margin:0 !important;
-    transform:translate(-50%,-50%);
-    transform-origin:center center;
-  }
-
-  .hero-text::after{
-    z-index:2;
-    background:linear-gradient(180deg,rgba(0,0,0,.02) 0%,rgba(0,0,0,.04) 35%,rgba(0,0,0,.34) 62%,rgba(0,0,0,.88) 100%);
+    margin-left:-1.5% !important;
+    transform:scale(1.01);
+    transform-origin:center top;
   }
 
   .hero h1{
-    z-index:3;
-    bottom:calc(env(safe-area-inset-bottom,0px) + 104px);
     line-height:.94;
   }
 
