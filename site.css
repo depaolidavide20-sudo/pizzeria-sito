@@ -1493,6 +1493,32 @@
   margin-top:24px;
 }
 
+@media (min-width:781px){
+  .page-hero .page-actions{
+    width:100%;
+    justify-content:center;
+    align-items:center;
+  }
+
+  .page-hero .page-actions .cta,
+  .page-hero .page-actions .btn-secondary{
+    min-width:220px;
+  }
+
+  .story-home-action,
+  .gluten-home-action,
+  .contact-quick-actions{
+    width:100%;
+    justify-content:center;
+    align-items:center;
+  }
+
+  .story-home-action .cta,
+  .gluten-home-action .cta{
+    min-width:260px;
+  }
+}
+
 .menu-page-note,
 .gluten-page-note,
 .story-page-note,
