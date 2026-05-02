@@ -2918,10 +2918,10 @@
   max-width:920px;
   margin:0 auto;
   color:#fff8ee;
-  font-family:Inter,sans-serif;
-  font-size:clamp(24px,2.1vw,34px);
-  font-weight:700;
-  line-height:1.42;
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(30px,2.55vw,42px);
+  font-weight:600;
+  line-height:1.18;
   text-align:center;
   text-wrap:balance;
 }
@@ -2949,12 +2949,45 @@
 
 @media (max-width:780px){
   .page-closing-lead{
-    font-size:clamp(20px,5.2vw,25px);
-    line-height:1.45;
+    font-size:clamp(25px,6.6vw,32px);
+    line-height:1.16;
   }
 
   .page-hero .page-lead{
     font-size:14.5px;
     line-height:1.68;
+  }
+}
+
+@media (max-width:780px){
+  .hero{
+    padding:0 !important;
+    margin-bottom:0 !important;
+  }
+
+  .hero-grid{
+    padding:0 !important;
+    margin:0 !important;
+  }
+
+  .hero-text{
+    line-height:0;
+  }
+
+  .hero-photo-mobile{
+    width:103% !important;
+    max-width:none;
+    margin-left:-1.5% !important;
+    transform:scale(1.01);
+    transform-origin:center top;
+  }
+
+  .hero h1{
+    line-height:.94;
+  }
+
+  .hero + .section{
+    padding-top:0 !important;
+    margin-top:0 !important;
   }
 }
