@@ -2847,13 +2847,13 @@
   .hero h1{
     position:absolute;
     left:50%;
-    bottom:clamp(94px,14vh,132px);
+    bottom:clamp(58px,9vh,86px);
     z-index:1;
     width:min(92vw,460px);
     max-width:92vw;
     margin:0;
     transform:translateX(-50%);
-    font-size:clamp(34px,10.7vw,48px);
+    font-size:clamp(31px,9.4vw,42px);
     line-height:.94;
     color:#fffaf2;
     text-shadow:0 5px 24px rgba(0,0,0,.64);
@@ -2861,6 +2861,10 @@
 
   .hero-text > p{
     display:none !important;
+  }
+
+  .page-hero + .section .story-panel p[data-key="story_p2"]{
+    display:block;
   }
 
   .story-home-action,
