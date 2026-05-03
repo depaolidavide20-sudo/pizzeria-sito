@@ -1026,33 +1026,33 @@
       .menu-slider-controls{
         display:flex;
         justify-content:center;
-        gap:10px;
+        gap:6px;
         position:absolute;
         left:50%;
-        bottom:14px;
+        bottom:12px;
         z-index:5;
         margin-top:0;
         transform:translateX(-50%);
-        padding:6px;
-        border:1px solid rgba(255,255,255,.12);
+        padding:4px;
+        border:1px solid rgba(255,255,255,.07);
         border-radius:999px;
-        background:rgba(11,9,7,.58);
-        box-shadow:0 14px 30px rgba(0,0,0,.26);
-        backdrop-filter:blur(12px);
+        background:rgba(11,9,7,.32);
+        box-shadow:0 10px 22px rgba(0,0,0,.14);
+        backdrop-filter:blur(8px);
       }
 
       .menu-slider-btn{
-        width:42px;
-        height:42px;
+        width:34px;
+        height:34px;
         border-radius:50%;
-        border:1px solid rgba(255,255,255,.14);
-        background:rgba(255,255,255,.08);
-        color:#fff;
+        border:1px solid rgba(255,255,255,.08);
+        background:rgba(255,255,255,.035);
+        color:rgba(255,248,238,.78);
         display:inline-flex;
         align-items:center;
         justify-content:center;
         cursor:pointer;
-        font-size:28px;
+        font-size:22px;
         line-height:1;
       }
 
@@ -3016,4 +3016,19 @@
     padding-top:0 !important;
     margin-top:0 !important;
   }
+}
+
+/* Unified section eyebrow labels */
+.kicker,
+.page-hero .kicker,
+.centered-title .kicker,
+#menu-home .kicker,
+.menu-board-kicker{
+  font-family:Inter,sans-serif !important;
+  font-size:12px !important;
+  font-weight:800 !important;
+  line-height:1.2;
+  letter-spacing:.22em !important;
+  text-transform:uppercase;
+  color:var(--gold2) !important;
 }
