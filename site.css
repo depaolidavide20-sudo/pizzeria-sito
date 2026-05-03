@@ -1027,20 +1027,33 @@
         display:flex;
         justify-content:center;
         gap:10px;
-        margin-top:12px;
+        position:absolute;
+        left:50%;
+        bottom:14px;
+        z-index:5;
+        margin-top:0;
+        transform:translateX(-50%);
+        padding:6px;
+        border:1px solid rgba(255,255,255,.12);
+        border-radius:999px;
+        background:rgba(11,9,7,.58);
+        box-shadow:0 14px 30px rgba(0,0,0,.26);
+        backdrop-filter:blur(12px);
       }
 
       .menu-slider-btn{
-        width:46px;
-        height:46px;
+        width:42px;
+        height:42px;
         border-radius:50%;
         border:1px solid rgba(255,255,255,.14);
-        background:rgba(255,255,255,.06);
+        background:rgba(255,255,255,.08);
         color:#fff;
         display:inline-flex;
         align-items:center;
         justify-content:center;
         cursor:pointer;
+        font-size:28px;
+        line-height:1;
       }
 
       .showcase-top{
@@ -2031,7 +2044,7 @@
   }
 
   #menu-home .menu-slider-controls{
-    margin-top:10px;
+    bottom:14px;
   }
 
   #menu-home .menu-home-cta{
@@ -2193,7 +2206,7 @@
   }
 
   #menu-home .showcase-overlay{
-    padding:20px;
+    padding:20px 20px 72px;
   }
 
   #menu-home .showcase-title{
@@ -2667,7 +2680,7 @@
   }
 
   .showcase-overlay{
-    padding:22px 20px;
+    padding:22px 20px 74px;
   }
 
   .showcase-title{
