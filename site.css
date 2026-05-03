@@ -2961,28 +2961,41 @@
 
 @media (max-width:780px){
   .hero{
+    min-height:calc(100svh - 78px) !important;
     padding:0 !important;
     margin-bottom:0 !important;
+    overflow:hidden;
   }
 
   .hero-grid{
+    min-height:calc(100svh - 78px) !important;
     padding:0 !important;
     margin:0 !important;
+    align-items:stretch;
   }
 
   .hero-text{
+    min-height:calc(100svh - 78px) !important;
+    height:calc(100svh - 78px);
     line-height:0;
   }
 
   .hero-photo-mobile{
+    position:absolute;
+    top:-78px;
+    left:0;
     width:100% !important;
+    height:calc(100% + 92px) !important;
     max-width:none;
     margin-left:0 !important;
+    object-fit:cover;
+    object-position:center top;
     transform:none;
     transform-origin:center top;
   }
 
   .hero h1{
+    bottom:clamp(136px,18vh,184px);
     line-height:.94;
   }
 
