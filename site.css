@@ -2975,10 +2975,10 @@
   }
 
   .hero-photo-mobile{
-    width:103% !important;
+    width:100% !important;
     max-width:none;
-    margin-left:-1.5% !important;
-    transform:scale(1.01);
+    margin-left:0 !important;
+    transform:none;
     transform-origin:center top;
   }
 
