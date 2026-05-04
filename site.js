@@ -2,6 +2,7 @@ const LANGUAGE_KEY = 'siteLanguage';
 let currentMenuSlide = 0;
 const WHATSAPP_NUMBER = '390185312963';
 const WHATSAPP_SEND_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
+const INSTAGRAM_WEB_URL = 'https://www.instagram.com/labittachiavari/?hl=it';
 
 function getPageTranslations() {
   const translations = window.pageTranslations || {};
@@ -168,6 +169,18 @@ function markCurrentNav() {
   });
 }
 
+function bindInstagramWebFallback() {
+  const isMobileLike = window.matchMedia('(max-width: 780px), (hover: none), (pointer: coarse)').matches;
+  if (!isMobileLike) return;
+
+  document.querySelectorAll('a[href*="instagram.com/labittachiavari"]').forEach((link) => {
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
+      window.location.href = INSTAGRAM_WEB_URL;
+    });
+  });
+}
+
 window.addEventListener('click', function (e) {
   const modal = document.getElementById('bookingModal');
   const menu = document.getElementById('mobileMenuPanel');
@@ -315,6 +328,7 @@ function loadMap() {
 
 document.addEventListener('DOMContentLoaded', function () {
   markCurrentNav();
+  bindInstagramWebFallback();
   showMenuSlide(0);
   setLanguage(getStoredLanguage());
 
