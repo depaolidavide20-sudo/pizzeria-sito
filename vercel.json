@@ -1,5 +1,13 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "headers": [
+    {
+      "source": "/instagram.html",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store, max-age=0" }
+      ]
+    }
+  ],
   "redirects": [
     { "source": "/il-locale", "destination": "/storia.html", "statusCode": 301 },
     { "source": "/la-storia", "destination": "/storia.html", "statusCode": 301 },

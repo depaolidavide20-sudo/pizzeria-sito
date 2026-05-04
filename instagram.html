@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta http-equiv="refresh" content="3; url=https://www.instagram.com/labittachiavari/?hl=it" />
+  <title>Instagram La Bitta Chiavari</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #1f1712;
+      --muted: #6d625a;
+      --paper: #fffaf3;
+      --accent: #9f2d20;
+      --line: rgba(31, 23, 18, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 28px;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, Arial, sans-serif;
+      text-align: center;
+    }
+
+    main {
+      width: min(100%, 420px);
+    }
+
+    img {
+      width: 112px;
+      height: auto;
+      margin-bottom: 26px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(28px, 7vw, 40px);
+      line-height: 1;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 0 auto 24px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    a {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--accent);
+      border-radius: 4px;
+      padding: 0 20px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .hint {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <img src="logo.png" alt="La Bitta" />
+    <h1>La Bitta su Instagram</h1>
+    <p>Stiamo aprendo il profilo ufficiale.</p>
+    <a id="instagram-link" href="https://www.instagram.com/labittachiavari/?hl=it" rel="noopener noreferrer external">Apri Instagram</a>
+    <p class="hint">Se il reindirizzamento non parte, usa il pulsante.</p>
+  </main>
+
+  <script>
+    const instagramUrl = 'https://www.instagram.com/labittachiavari/?hl=it';
+    const redirectDelay = 450;
+
+    function openInstagram() {
+      window.location.replace(instagramUrl);
+    }
+
+    document.getElementById('instagram-link').addEventListener('click', function (event) {
+      event.preventDefault();
+      openInstagram();
+    });
+
+    window.setTimeout(openInstagram, redirectDelay);
+  </script>
+</body>
+</html>
