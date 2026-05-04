@@ -36,31 +36,37 @@
       width: min(100%, 430px);
     }
 
-    img {
-      width: 112px;
+    .logo-frame {
+      width: min(100%, 272px);
+      height: 148px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.54);
+      padding: 24px;
+    }
+
+    .logo-frame img {
+      display: block;
+      width: 100%;
       height: auto;
-      margin-bottom: 26px;
     }
 
     h1 {
-      margin: 0 0 10px;
+      margin: 0;
       font-size: clamp(28px, 7vw, 40px);
       line-height: 1;
       font-family: Georgia, "Times New Roman", serif;
       font-weight: 700;
     }
 
-    p {
-      margin: 0 auto 22px;
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.55;
-    }
-
     .actions {
       display: grid;
       gap: 12px;
-      margin-top: 26px;
+      margin-top: 30px;
     }
 
     a {
@@ -90,26 +96,19 @@
       color: var(--accent);
     }
 
-    .hint {
-      margin-top: 22px;
-      padding-top: 18px;
-      border-top: 1px solid var(--line);
-      font-size: 13px;
-    }
   </style>
 </head>
 <body>
   <main>
-    <img src="logo.png" alt="La Bitta" />
+    <div class="logo-frame">
+      <img src="/logo-cover.png" alt="La Bitta" />
+    </div>
     <h1>La Bitta su Instagram</h1>
-    <p>Apri il profilo ufficiale nella versione piu stabile per il tuo telefono.</p>
 
     <div class="actions">
       <a class="primary" href="https://www.instagram.com/labittachiavari/?short_redirect=1#weblink" target="_blank" rel="noopener noreferrer external">Apri nel browser</a>
       <a class="secondary" href="instagram://user?id=7200669140" onclick="openInstagramApp(event)" rel="noopener noreferrer external">Apri nell'app Instagram</a>
     </div>
-
-    <p class="hint">Se l'app mostra un errore, torna qui e usa la versione browser.</p>
   </main>
 
   <script>
