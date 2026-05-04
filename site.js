@@ -2,7 +2,7 @@ const LANGUAGE_KEY = 'siteLanguage';
 let currentMenuSlide = 0;
 const WHATSAPP_NUMBER = '390185312963';
 const WHATSAPP_SEND_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
-const INSTAGRAM_WEB_URL = 'https://www.instagram.com/labittachiavari/?hl=it';
+const INSTAGRAM_WEB_URL = 'https://www.instagram.com/labittachiavari?igsh=eWQ5cmpnemdjZ2ow';
 
 function getPageTranslations() {
   const translations = window.pageTranslations || {};
@@ -171,8 +171,7 @@ function markCurrentNav() {
 
 function openInstagramProfile(event) {
   if (event) event.preventDefault();
-  const opened = window.open(INSTAGRAM_WEB_URL, '_blank', 'noopener,noreferrer');
-  if (!opened) window.location.href = INSTAGRAM_WEB_URL;
+  window.location.assign(INSTAGRAM_WEB_URL);
 }
 
 window.addEventListener('click', function (e) {
