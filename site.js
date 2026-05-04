@@ -2,7 +2,7 @@ const LANGUAGE_KEY = 'siteLanguage';
 let currentMenuSlide = 0;
 const WHATSAPP_NUMBER = '390185312963';
 const WHATSAPP_SEND_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
-const INSTAGRAM_WEB_URL = 'https://www.instagram.com/labittachiavari?igsh=eWQ5cmpnemdjZ2ow';
+const INSTAGRAM_WEB_URL = 'https://www.instagram.com/labittachiavari/';
 
 function getPageTranslations() {
   const translations = window.pageTranslations || {};
