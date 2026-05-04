@@ -168,6 +168,19 @@ function markCurrentNav() {
   });
 }
 
+function bindMobileExternalLinks() {
+  const isMobile = window.matchMedia('(max-width: 780px)').matches;
+  if (!isMobile) return;
+
+  document.querySelectorAll('a[rel~="external"]').forEach((link) => {
+    link.addEventListener('click', function (event) {
+      if (event.defaultPrevented || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      window.location.assign(link.href);
+    });
+  });
+}
+
 window.addEventListener('click', function (e) {
   const modal = document.getElementById('bookingModal');
   const menu = document.getElementById('mobileMenuPanel');
@@ -315,6 +328,7 @@ function loadMap() {
 
 document.addEventListener('DOMContentLoaded', function () {
   markCurrentNav();
+  bindMobileExternalLinks();
   showMenuSlide(0);
   setLanguage(getStoredLanguage());
 
