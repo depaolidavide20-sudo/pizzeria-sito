@@ -1506,6 +1506,19 @@
   margin-top:24px;
 }
 
+.desktop-contact-actions{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+  margin-top:22px;
+}
+
+.desktop-contact-actions .cta,
+.desktop-contact-actions .btn-secondary{
+  min-width:220px;
+}
+
 @media (min-width:781px){
   .page-hero .page-actions{
     width:100%;
@@ -1595,6 +1608,10 @@
     min-height:auto;
     padding:10px 14px;
     font-size:13px;
+  }
+
+  .desktop-contact-actions{
+    display:none !important;
   }
 }
 
