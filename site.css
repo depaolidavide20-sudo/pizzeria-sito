@@ -3060,6 +3060,11 @@
     padding-bottom:76px !important;
   }
 
+  .menu-page-shell .showcase-card.menu-card-zena,
+  #menu-home .showcase-card.menu-card-zena{
+    background-position:66% 44% !important;
+  }
+
   .mobile-bookbar{
     position:fixed !important;
     left:0 !important;

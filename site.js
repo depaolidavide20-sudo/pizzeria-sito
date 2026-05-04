@@ -168,19 +168,6 @@ function markCurrentNav() {
   });
 }
 
-function bindMobileExternalLinks() {
-  const isMobile = window.matchMedia('(max-width: 780px)').matches;
-  if (!isMobile) return;
-
-  document.querySelectorAll('a[rel~="external"]').forEach((link) => {
-    link.addEventListener('click', function (event) {
-      if (event.defaultPrevented || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-      event.preventDefault();
-      window.location.assign(link.href);
-    });
-  });
-}
-
 window.addEventListener('click', function (e) {
   const modal = document.getElementById('bookingModal');
   const menu = document.getElementById('mobileMenuPanel');
@@ -275,7 +262,7 @@ function renderMap() {
 
   container.innerHTML = `
     <iframe
-      src="https://www.google.com/maps?q=Corso%20Giuseppe%20Garibaldi%2099%20Chiavari&output=embed"
+      src="https://www.google.com/maps?q=La%20Bitta%20Chiavari%20dal%201992%20Pizzeria%20Ristorante%2C%20Corso%20Giuseppe%20Garibaldi%2099%20Chiavari&output=embed"
       style="width:100%; height:520px; border:0;"
       loading="lazy"
       referrerpolicy="no-referrer-when-downgrade">
@@ -328,7 +315,6 @@ function loadMap() {
 
 document.addEventListener('DOMContentLoaded', function () {
   markCurrentNav();
-  bindMobileExternalLinks();
   showMenuSlide(0);
   setLanguage(getStoredLanguage());
 
