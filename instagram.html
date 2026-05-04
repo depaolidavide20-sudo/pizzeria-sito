@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
-  <meta http-equiv="refresh" content="3; url=https://www.instagram.com/labittachiavari/#weblink" />
   <title>Instagram La Bitta Chiavari</title>
   <style>
     :root {
@@ -13,6 +12,7 @@
       --muted: #6d625a;
       --paper: #fffaf3;
       --accent: #9f2d20;
+      --accent-dark: #7d2118;
       --line: rgba(31, 23, 18, 0.16);
     }
 
@@ -33,7 +33,7 @@
     }
 
     main {
-      width: min(100%, 420px);
+      width: min(100%, 430px);
     }
 
     img {
@@ -51,29 +51,47 @@
     }
 
     p {
-      margin: 0 auto 24px;
+      margin: 0 auto 22px;
       color: var(--muted);
       font-size: 16px;
       line-height: 1.55;
     }
 
+    .actions {
+      display: grid;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
     a {
       display: inline-flex;
-      min-height: 48px;
+      min-height: 50px;
       align-items: center;
       justify-content: center;
       border: 1px solid var(--accent);
       border-radius: 4px;
       padding: 0 20px;
-      background: var(--accent);
-      color: #fff;
       font-size: 15px;
       font-weight: 700;
       text-decoration: none;
     }
 
+    .primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .primary:active {
+      background: var(--accent-dark);
+    }
+
+    .secondary {
+      background: transparent;
+      color: var(--accent);
+    }
+
     .hint {
-      margin-top: 18px;
+      margin-top: 22px;
       padding-top: 18px;
       border-top: 1px solid var(--line);
       font-size: 13px;
@@ -84,25 +102,34 @@
   <main>
     <img src="logo.png" alt="La Bitta" />
     <h1>La Bitta su Instagram</h1>
-    <p>Stiamo aprendo il profilo ufficiale.</p>
-    <a id="instagram-link" href="https://www.instagram.com/labittachiavari/#weblink" rel="noopener noreferrer external">Apri Instagram</a>
-    <p class="hint">Se il reindirizzamento non parte, usa il pulsante.</p>
+    <p>Apri il profilo ufficiale nella versione piu stabile per il tuo telefono.</p>
+
+    <div class="actions">
+      <a class="primary" href="https://www.instagram.com/labittachiavari/?short_redirect=1#weblink" target="_blank" rel="noopener noreferrer external">Apri nel browser</a>
+      <a class="secondary" href="instagram://user?id=7200669140" onclick="openInstagramApp(event)" rel="noopener noreferrer external">Apri nell'app Instagram</a>
+    </div>
+
+    <p class="hint">Se l'app mostra un errore, torna qui e usa la versione browser.</p>
   </main>
 
   <script>
-    const instagramUrl = 'https://www.instagram.com/labittachiavari/#weblink';
-    const redirectDelay = 450;
+    const instagramWebUrl = 'https://www.instagram.com/labittachiavari/?short_redirect=1#weblink';
+    const instagramAppUrl = 'instagram://user?id=7200669140';
+    const instagramAndroidIntentUrl = 'intent://user?id=7200669140#Intent;scheme=instagram;package=com.instagram.android;S.browser_fallback_url=' + encodeURIComponent(instagramWebUrl) + ';end';
 
-    function openInstagram() {
-      window.location.replace(instagramUrl);
-    }
-
-    document.getElementById('instagram-link').addEventListener('click', function (event) {
+    function openInstagramApp(event) {
       event.preventDefault();
-      openInstagram();
-    });
+      const startedAt = Date.now();
+      const isAndroid = /Android/i.test(navigator.userAgent);
 
-    window.setTimeout(openInstagram, redirectDelay);
+      window.location.href = isAndroid ? instagramAndroidIntentUrl : instagramAppUrl;
+
+      window.setTimeout(function () {
+        if (Date.now() - startedAt < 1600 && !document.hidden) {
+          window.location.href = instagramWebUrl;
+        }
+      }, 900);
+    }
   </script>
 </body>
 </html>
