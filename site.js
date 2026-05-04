@@ -169,14 +169,10 @@ function markCurrentNav() {
   });
 }
 
-function bindInstagramLinks() {
-  document.querySelectorAll('[data-instagram-link]').forEach((link) => {
-    link.addEventListener('click', function (event) {
-      event.preventDefault();
-      const opened = window.open(INSTAGRAM_WEB_URL, '_blank', 'noopener,noreferrer');
-      if (!opened) window.location.href = INSTAGRAM_WEB_URL;
-    });
-  });
+function openInstagramProfile(event) {
+  if (event) event.preventDefault();
+  const opened = window.open(INSTAGRAM_WEB_URL, '_blank', 'noopener,noreferrer');
+  if (!opened) window.location.href = INSTAGRAM_WEB_URL;
 }
 
 window.addEventListener('click', function (e) {
@@ -326,7 +322,6 @@ function loadMap() {
 
 document.addEventListener('DOMContentLoaded', function () {
   markCurrentNav();
-  bindInstagramLinks();
   showMenuSlide(0);
   setLanguage(getStoredLanguage());
 
