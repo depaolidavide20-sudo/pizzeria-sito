@@ -3105,7 +3105,70 @@
     -webkit-tap-highlight-color:rgba(235,202,135,.18);
   }
 
-  footer{
+footer{
     padding-bottom:calc(120px + env(safe-area-inset-bottom,0px));
+  }
+}
+
+/* Targeted refinements for the home mobile path and closing copy */
+.home-mobile-quicklinks{
+  display:none;
+}
+
+.closing-copy-balanced .page-closing-lead,
+.closing-copy-balanced .page-lead{
+  max-width:960px;
+  margin:0 auto;
+  color:#fff8ee;
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(29px,2.35vw,38px);
+  font-weight:600;
+  line-height:1.2;
+  text-align:center;
+  text-wrap:balance;
+}
+
+.closing-copy-balanced .page-lead{
+  margin-top:2px;
+}
+
+@media (max-width:780px){
+  .home-mobile-quicklinks{
+    width:min(100% - 32px,480px);
+    margin:12px auto 0;
+    display:grid;
+    gap:10px;
+    position:relative;
+    z-index:8;
+  }
+
+  .home-mobile-quicklinks a{
+    min-height:50px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:13px 16px;
+    border:1px solid rgba(235,202,135,.22);
+    border-radius:999px;
+    color:#fff8ee;
+    background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.025));
+    box-shadow:0 12px 30px rgba(0,0,0,.22);
+    font-size:13px;
+    font-weight:800;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    text-decoration:none;
+  }
+
+  .home-mobile-quicklinks a:first-child{
+    color:#17120c;
+    border-color:rgba(235,202,135,.72);
+    background:linear-gradient(135deg,#e9cf8a,#d7ae63);
+  }
+
+  .closing-copy-balanced .page-closing-lead,
+  .closing-copy-balanced .page-lead{
+    font-size:clamp(24px,6.3vw,31px);
+    line-height:1.17;
   }
 }
