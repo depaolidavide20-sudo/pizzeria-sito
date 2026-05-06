@@ -3219,3 +3219,13 @@ footer{
     padding:3px;
   }
 }
+
+.gluten-copy p.mobile-gluten-extra{
+  display:none !important;
+}
+
+@media (max-width:780px){
+  .gluten-copy p.mobile-gluten-extra{
+    display:block !important;
+  }
+}
