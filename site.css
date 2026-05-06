@@ -3181,13 +3181,11 @@ footer{
   height:38px;
   flex:0 0 auto;
   padding:4px;
+  display:block;
+  object-fit:contain;
   border-radius:50%;
   background:#fffdf8;
   box-shadow:0 8px 18px rgba(0,0,0,.16);
-}
-
-.vegan-menu-badge + .menu-page-note{
-  margin-top:14px;
 }
 
 @media (max-width:780px){
@@ -3217,6 +3215,61 @@ footer{
     width:31px;
     height:31px;
     padding:3px;
+  }
+}
+
+.menu-home-cta{
+  align-items:center;
+}
+
+#menu-home .menu-home-cta{
+  flex-wrap:nowrap;
+}
+
+#menu-home .menu-home-cta .vegan-menu-badge{
+  margin:0;
+}
+
+.menu-closing-badge-row{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  max-width:1060px;
+  margin:0 auto;
+}
+
+.menu-closing-badge-row .page-lead{
+  flex:1 1 760px;
+}
+
+.menu-closing-badge-row .vegan-menu-badge{
+  flex:0 0 auto;
+  margin:0;
+}
+
+@media (max-width:780px){
+  #menu-home .menu-home-cta{
+    gap:10px;
+  }
+
+  #menu-home .menu-home-cta .cta{
+    flex:1 1 auto;
+    min-width:0 !important;
+  }
+
+  #menu-home .menu-home-cta .vegan-menu-badge{
+    flex:0 0 auto;
+  }
+
+  .menu-closing-badge-row{
+    flex-direction:column;
+    gap:12px;
+    margin-top:0;
+  }
+
+  .menu-closing-badge-row .page-lead{
+    flex:initial;
   }
 }
 
