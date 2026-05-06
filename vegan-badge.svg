@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="title">
+  <title id="title">Bollino opzioni vegane</title>
+  <circle cx="60" cy="60" r="52" fill="none" stroke="#20b326" stroke-width="8"/>
+  <path fill="#20b326" d="M29 34c11 8 20 19 27 33l7 16 6-22c8-28 21-43 40-47-4 15-11 26-22 33-6 4-13 6-21 7-3 8-6 19-10 33-1 5-5 8-10 8-4 0-7-2-9-6L25 40c-1-4 1-7 4-6z"/>
+  <path fill="#fffdf8" d="M77 40c9-5 17-9 25-11-8 4-15 10-22 18-4 4-8 8-12 12 2-7 5-13 9-19z"/>
+</svg>
