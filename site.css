@@ -3411,6 +3411,10 @@ footer{
 }
 
 @media (max-width:780px){
+  .showcase-card .showcase-tags{
+    display:none !important;
+  }
+
   .showcase-card.menu-card-pasta{
     background-position:center 48% !important;
   }
