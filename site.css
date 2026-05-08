@@ -3230,24 +3230,6 @@ footer{
   margin:0;
 }
 
-.menu-closing-badge-row{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:18px;
-  max-width:1060px;
-  margin:0 auto;
-}
-
-.menu-closing-badge-row .page-lead{
-  flex:1 1 760px;
-}
-
-.menu-closing-badge-row .vegan-menu-badge{
-  flex:0 0 auto;
-  margin:0;
-}
-
 @media (max-width:780px){
   #menu-home .menu-home-cta{
     gap:10px;
@@ -3261,16 +3243,6 @@ footer{
   #menu-home .menu-home-cta .vegan-menu-badge{
     flex:0 0 auto;
   }
-
-  .menu-closing-badge-row{
-    flex-direction:column;
-    gap:12px;
-    margin-top:0;
-  }
-
-  .menu-closing-badge-row .page-lead{
-    flex:initial;
-  }
 }
 
 .gluten-copy p.mobile-gluten-extra{
@@ -3280,5 +3252,113 @@ footer{
 @media (max-width:780px){
   .gluten-copy p.mobile-gluten-extra{
     display:block !important;
+  }
+}
+
+@media (min-width:781px){
+  .menu-showcase{
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:16px;
+  }
+
+  .showcase-card{
+    min-height:410px;
+    border-radius:24px;
+  }
+
+  .showcase-overlay{
+    padding:24px;
+  }
+
+  .showcase-top{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:6px;
+    margin-bottom:10px;
+  }
+
+  .showcase-title{
+    max-width:100%;
+    font-size:clamp(27px,2.35vw,40px);
+    line-height:.98;
+  }
+
+  .showcase-price{
+    font-size:16px;
+  }
+
+  .showcase-line{
+    width:86px;
+    margin-bottom:12px;
+  }
+
+  .showcase-text{
+    font-size:14px;
+    line-height:1.55;
+    margin-bottom:12px;
+  }
+
+  .showcase-tags span{
+    padding:8px 12px;
+    font-size:12px;
+  }
+
+  .showcase-card.menu-card-pasta{
+    background-position:center 46%;
+  }
+
+  .showcase-card.menu-card-dessert{
+    background-position:center 50%;
+  }
+}
+
+.story-chef-figure{
+  width:min(880px,100%);
+  margin:26px auto 34px;
+}
+
+.story-chef-figure img{
+  display:block;
+  width:100%;
+  aspect-ratio:16/9;
+  object-fit:cover;
+  object-position:center;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:22px;
+  box-shadow:0 22px 60px rgba(0,0,0,.32);
+}
+
+.story-chef-figure figcaption{
+  max-width:760px;
+  margin:14px auto 0;
+  color:#e9dece;
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(21px,1.8vw,28px);
+  font-style:italic;
+  font-weight:500;
+  line-height:1.35;
+  text-align:center;
+}
+
+@media (max-width:780px){
+  .showcase-card.menu-card-pasta{
+    background-position:center 48% !important;
+  }
+
+  .showcase-card.menu-card-dessert{
+    background-position:center 50% !important;
+  }
+
+  .story-chef-figure{
+    margin:18px auto 24px;
+  }
+
+  .story-chef-figure img{
+    border-radius:18px;
+  }
+
+  .story-chef-figure figcaption{
+    font-size:20px;
+    line-height:1.32;
   }
 }
